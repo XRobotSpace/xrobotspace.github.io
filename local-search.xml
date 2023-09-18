@@ -4,25 +4,24 @@
   
   
   <entry>
-    <title>My New Post</title>
-    <link href="/2023/09/17/My-New-Post/"/>
-    <url>/2023/09/17/My-New-Post/</url>
+    <title>ubuntu系统U盘启动盘制作</title>
+    <link href="/2023/09/18/ubuntu%E7%B3%BB%E7%BB%9FU%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%E5%88%B6%E4%BD%9C/"/>
+    <url>/2023/09/18/ubuntu%E7%B3%BB%E7%BB%9FU%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%E5%88%B6%E4%BD%9C/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul><li><a href="#1-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85ultraiso%E8%BD%AF%E4%BB%B6">1. 下载安装UltraISO软件</a></li><li><a href="#2-%E4%B8%8B%E8%BD%BDubuntu%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F">2. 下载Ubuntu系统镜像</a></li><li><a href="#3-ultraiso%E8%BD%AF%E4%BB%B6%E5%88%B6%E4%BD%9Cu%E7%9B%98%E5%90%AF%E5%8A%A8%E5%99%A8">3. UltraISO软件制作U盘启动器</a></li><li><a href="#4-%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98">4. 可能遇到的问题</a></li></ul><h1 id="1-下载安装UltraISO软件"><a href="#1-下载安装UltraISO软件" class="headerlink" title="1. 下载安装UltraISO软件"></a>1. 下载安装UltraISO软件</h1><p><a href="https://cn.ultraiso.net/xiazai.html">https://cn.ultraiso.net/xiazai.html</a></p><h1 id="2-下载Ubuntu系统镜像"><a href="#2-下载Ubuntu系统镜像" class="headerlink" title="2. 下载Ubuntu系统镜像"></a>2. 下载Ubuntu系统镜像</h1><p>以ubuntu20.04为例，各版本步骤一致。</p><p><a href="https://releases.ubuntu.com/focal/">https://releases.ubuntu.com/focal/</a></p><h1 id="3-UltraISO软件制作U盘启动器"><a href="#3-UltraISO软件制作U盘启动器" class="headerlink" title="3. UltraISO软件制作U盘启动器"></a>3. UltraISO软件制作U盘启动器</h1><p>1) 选择【继续试用】</p><p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_OZ7Js49hJl.png"></p><p>2) 点击【文件】菜单选择【打开】按钮或直接点击【打开】菜单，选择要安装的 .iso 文件</p><p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_mgC5eTuF2P.png"></p><p>3) 点击【启动】菜单，选择【写入硬盘映像…】</p><p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_j-RDPEA2M1.png"></p><p>确认磁盘驱动器为要安装系统的U盘，映像文件为要安装的 .iso系统文件，隐藏启动分区设置为【隐藏】，隐藏分区专门放置Ubuntu系统（打开U盘看不到），另外一个分区空置，可以放其他东西，这样增删东西不会感觉的很乱。</p><p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_xGr4g5ZTug.png"></p><p>最后点击【写入】开始制作U盘启动盘：</p><p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_umq4wKHiJ7.png"></p><p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_2z1Mb58z37.png"></p><p>写入完成，点击【返回】即可。</p><p>至此，UltraISO制作Ubuntu系统U盘启动盘步骤完成。</p><h1 id="4-可能遇到的问题"><a href="#4-可能遇到的问题" class="headerlink" title="4. 可能遇到的问题"></a>4. 可能遇到的问题</h1><ol><li><p>制作完U盘后，总是提示需要格式化</p><p>使用管理员身份启动UltraISO。</p></li><li><p>将系统U盘变为普通盘</p><p>将空白系统写入U盘。</p><p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_lEUq-oDAJO.png"></p></li></ol>]]></content>
     
     
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="/2023/09/16/hello-world/"/>
-    <url>/2023/09/16/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
+    <categories>
+      
+      <category>基础技术栈</category>
+      
+      <category>软件安装</category>
+      
+      <category>Linux环境</category>
+      
+      <category>windows/ubuntu双系统安装</category>
+      
+    </categories>
     
     
   </entry>
