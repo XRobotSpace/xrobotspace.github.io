@@ -8,9 +8,29 @@
     <link href="/2023/09/20/Windows%E7%A1%AC%E7%9B%98%E5%88%A0%E9%99%A4%E5%8D%B7%E6%98%BE%E7%A4%BA%E7%81%B0%E8%89%B2%EF%BC%8C%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4/"/>
     <url>/2023/09/20/Windows%E7%A1%AC%E7%9B%98%E5%88%A0%E9%99%A4%E5%8D%B7%E6%98%BE%E7%A4%BA%E7%81%B0%E8%89%B2%EF%BC%8C%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="Windows硬盘删除卷显示灰色，无法删除"><a href="#Windows硬盘删除卷显示灰色，无法删除" class="headerlink" title="Windows硬盘删除卷显示灰色，无法删除"></a>Windows硬盘删除卷显示灰色，无法删除</h1><hr><ul><li>操作系统：ubuntu 18.04 &#x2F; 20.04 + win10 &#x2F; win11 双系统</li><li>修改时间：2021年12月21日</li></ul><hr><blockquote><p>📌<strong>请务必谨慎操作，删错了，就没了！</strong></p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/9.png"></p><p>1.<strong>cmd 打开命令提示符窗口，输入指令</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">diskpart    <span class="hljs-comment"># 打卡一个新的窗口</span><br></code></pre></td></tr></table></figure><p><strong>2. 新窗口输入指令</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">list disk<br><br><span class="hljs-keyword">select</span> disk  [number]     <span class="hljs-comment"># 选择删除卷所在的硬盘号，根据实际情况选择</span><br><br>list partition<br><br><span class="hljs-keyword">select</span> partition  [number]     <span class="hljs-comment"># 选择具体要删除的卷号，根据实际情况选择</span><br><br>delete partition override    <span class="hljs-comment"># 删除，谨慎操作！</span><br></code></pre></td></tr></table></figure>]]></content>
     
     
+    <categories>
+      
+      <category>基础技术栈</category>
+      
+      <category>软件安装</category>
+      
+      <category>Linux环境</category>
+      
+      <category>windows/ubuntu双系统安装</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>系统安装</tag>
+      
+      <tag>Linux</tag>
+      
+    </tags>
     
   </entry>
   
