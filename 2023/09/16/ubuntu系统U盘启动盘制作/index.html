@@ -16,12 +16,12 @@
   <meta name="author" content="SLAM">
   <meta name="keywords" content="keywords">
   
-    <meta name="description" content="目录 1. 下载安装UltraISO软件 2. 下载Ubuntu系统镜像 3. UltraISO软件制作U盘启动器 4. 可能遇到的问题  1. 下载安装UltraISO软件  https:&#x2F;&#x2F;cn.ultraiso.net&#x2F;xiazai.html 2. 下载Ubuntu系统镜像  以ubuntu20.04为例，各版本步骤一致。   https:&#x2F;&#x2F;releases.ubuntu.com&#x2F;foca">
+    <meta name="description" content="操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 + win10 &#x2F; win11 双系统 修改时间：2021年12月21日   目录 1. 下载安装UltraISO软件 2. 下载Ubuntu系统镜像 3. UltraISO软件制作U盘启动盘 4. 可能遇到的问题  1. 下载安装UltraISO软件  https:&#x2F;&#x2F;cn.ultraiso.n">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu系统U盘启动盘制作">
 <meta property="og:url" content="https://xrobotspace.github.io/2023/09/16/ubuntu%E7%B3%BB%E7%BB%9FU%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%E5%88%B6%E4%BD%9C/index.html">
 <meta property="og:site_name" content="title">
-<meta property="og:description" content="目录 1. 下载安装UltraISO软件 2. 下载Ubuntu系统镜像 3. UltraISO软件制作U盘启动器 4. 可能遇到的问题  1. 下载安装UltraISO软件  https:&#x2F;&#x2F;cn.ultraiso.net&#x2F;xiazai.html 2. 下载Ubuntu系统镜像  以ubuntu20.04为例，各版本步骤一致。   https:&#x2F;&#x2F;releases.ubuntu.com&#x2F;foca">
+<meta property="og:description" content="操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 + win10 &#x2F; win11 双系统 修改时间：2021年12月21日   目录 1. 下载安装UltraISO软件 2. 下载Ubuntu系统镜像 3. UltraISO软件制作U盘启动盘 4. 可能遇到的问题  1. 下载安装UltraISO软件  https:&#x2F;&#x2F;cn.ultraiso.n">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_OZ7Js49hJl.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_mgC5eTuF2P.png">
@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_2z1Mb58z37.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_lEUq-oDAJO.png">
 <meta property="article:published_time" content="2023-09-16T13:40:30.640Z">
-<meta property="article:modified_time" content="2023-09-20T04:48:44.259Z">
+<meta property="article:modified_time" content="2023-09-20T06:55:45.450Z">
 <meta property="article:author" content="SLAM">
 <meta property="article:tag" content="系统安装">
 <meta property="article:tag" content="Linux">
@@ -229,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          501 words
+          572 words
         
       </span>
     
@@ -282,36 +282,54 @@
             
               <div class="markdown-body">
                 
-                <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+                <hr>
+<ul>
+<li>操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 + win10 &#x2F; win11 双系统</li>
+<li>修改时间：2021年12月21日</li>
+</ul>
+<hr>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
 <li><a href="#1-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85ultraiso%E8%BD%AF%E4%BB%B6">1. 下载安装UltraISO软件</a></li>
 <li><a href="#2-%E4%B8%8B%E8%BD%BDubuntu%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F">2. 下载Ubuntu系统镜像</a></li>
-<li><a href="#3-ultraiso%E8%BD%AF%E4%BB%B6%E5%88%B6%E4%BD%9Cu%E7%9B%98%E5%90%AF%E5%8A%A8%E5%99%A8">3. UltraISO软件制作U盘启动器</a></li>
+<li><a href="#3-ultraiso%E8%BD%AF%E4%BB%B6%E5%88%B6%E4%BD%9Cu%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98">3. UltraISO软件制作U盘启动盘</a></li>
 <li><a href="#4-%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98">4. 可能遇到的问题</a></li>
 </ul>
-<h1 id="1-下载安装UltraISO软件"><a href="#1-下载安装UltraISO软件" class="headerlink" title="1. 下载安装UltraISO软件"></a>1. 下载安装UltraISO软件</h1><p>  <a target="_blank" rel="noopener" href="https://cn.ultraiso.net/xiazai.html">https://cn.ultraiso.net/xiazai.html</a></p>
-<h1 id="2-下载Ubuntu系统镜像"><a href="#2-下载Ubuntu系统镜像" class="headerlink" title="2. 下载Ubuntu系统镜像"></a>2. 下载Ubuntu系统镜像</h1><p>  以ubuntu20.04为例，各版本步骤一致。</p>
-<p>  <a target="_blank" rel="noopener" href="https://releases.ubuntu.com/focal/">https://releases.ubuntu.com/focal/</a></p>
-<h1 id="3-UltraISO软件制作U盘启动器"><a href="#3-UltraISO软件制作U盘启动器" class="headerlink" title="3. UltraISO软件制作U盘启动器"></a>3. UltraISO软件制作U盘启动器</h1><ol>
-<li><p>选择【继续试用】<br>  <img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_OZ7Js49hJl.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="1-下载安装UltraISO软件"><a href="#1-下载安装UltraISO软件" class="headerlink" title="1. 下载安装UltraISO软件"></a>1. 下载安装UltraISO软件</h2><p>  <a target="_blank" rel="noopener" href="https://cn.ultraiso.net/xiazai.html">https://cn.ultraiso.net/xiazai.html</a></p>
+<h2 id="2-下载Ubuntu系统镜像"><a href="#2-下载Ubuntu系统镜像" class="headerlink" title="2. 下载Ubuntu系统镜像"></a>2. 下载Ubuntu系统镜像</h2><p>  <a target="_blank" rel="noopener" href="https://releases.ubuntu.com/focal/">https://releases.ubuntu.com/focal/</a></p>
+<h2 id="3-UltraISO软件制作U盘启动盘"><a href="#3-UltraISO软件制作U盘启动盘" class="headerlink" title="3. UltraISO软件制作U盘启动盘"></a>3. UltraISO软件制作U盘启动盘</h2><ol>
+<li><p>选择【继续试用】</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_OZ7Js49hJl.png" srcset="/img/loading.gif" lazyload> </p>
 </li>
-<li><p>点击【文件】菜单选择【打开】按钮或直接点击【打开】菜单，选择要安装的 .iso 文件<br>  <img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_mgC5eTuF2P.png" srcset="/img/loading.gif" lazyload></p>
+<li><p>点击【文件】菜单选择【打开】按钮或直接点击【打开】菜单，选择要安装的 .iso 系统镜像文件</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_mgC5eTuF2P.png" srcset="/img/loading.gif" lazyload> </p>
 </li>
-<li><p>点击【启动】菜单，选择【写入硬盘映像…】<br>  <img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_j-RDPEA2M1.png" srcset="/img/loading.gif" lazyload></p>
+<li><p>点击【启动】菜单，选择【写入硬盘映像…】</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_j-RDPEA2M1.png" srcset="/img/loading.gif" lazyload> </p>
+</li>
+<li><p>确认安装</p>
 </li>
 </ol>
-<p>  确认磁盘驱动器为要安装系统的U盘，映像文件为要安装的 .iso系统文件，隐藏启动分区设置为【隐藏】，隐藏分区专门放置Ubuntu系统（打开U盘看不到），另外一个分区空置，可以放其他东西，这样增删东西不会感觉的很乱。</p>
-<p>  <img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_xGr4g5ZTug.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><p>确认磁盘驱动器为要安装系统的U盘；</p>
+</li>
+<li><p>确认映像文件为要安装的.iso系统文件；</p>
+</li>
+<li><p>隐藏启动分区设置为【隐藏】，隐藏分区专门放置Ubuntu系统（打开U盘看不到），另外一个分区空置，可以放其他东西，这样增删东西不会感觉的很乱。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_xGr4g5ZTug.png" srcset="/img/loading.gif" lazyload></p>
 <p>最后点击【写入】开始制作U盘启动盘：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_umq4wKHiJ7.png" srcset="/img/loading.gif" lazyload></p>
-<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_2z1Mb58z37.png" srcset="/img/loading.gif" lazyload></p>
 <p>写入完成，点击【返回】即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_2z1Mb58z37.png" srcset="/img/loading.gif" lazyload></p>
 <p>至此，UltraISO制作Ubuntu系统U盘启动盘步骤完成。</p>
-<h1 id="4-可能遇到的问题"><a href="#4-可能遇到的问题" class="headerlink" title="4. 可能遇到的问题"></a>4. 可能遇到的问题</h1><ol>
-<li><p>制作完U盘后，总是提示需要格式化</p>
-<p>使用管理员身份启动UltraISO。</p>
 </li>
-<li><p>将系统U盘变为普通盘<br>将空白系统写入U盘。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_lEUq-oDAJO.png" srcset="/img/loading.gif" lazyload></p>
+</ul>
+<h2 id="4-可能遇到的问题"><a href="#4-可能遇到的问题" class="headerlink" title="4. 可能遇到的问题"></a>4. 可能遇到的问题</h2><ol>
+<li><p>制作完U盘后，总是提示需要格式化</p>
+<p> 解决方案：使用管理员身份启动UltraISO。</p>
+</li>
+<li><p>将系统U盘变为普通盘</p>
+<p> 解决方案：将空白系统写入U盘。</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_lEUq-oDAJO.png" srcset="/img/loading.gif" lazyload></p>
 </li>
 </ol>
 
@@ -342,12 +360,12 @@
   
     <span>></span>
     
-  <a href="/categories/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%8E%AF%E5%A2%83/" class="category-chain-item">Linux环境</a>
+  <a href="/categories/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/" class="category-chain-item">Linux系统</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%8E%AF%E5%A2%83/windows-ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" class="category-chain-item">windows/ubuntu双系统安装</a>
+  <a href="/categories/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ubuntu-windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" class="category-chain-item">ubuntu/windows双系统安装</a>
   
   
 
