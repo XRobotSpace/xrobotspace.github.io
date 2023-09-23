@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>ros文件权限</title>
+    <link href="/2023/09/24/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ROS%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ros%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/"/>
+    <url>/2023/09/24/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ROS%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ros%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1-错误"><a href="#1-错误" class="headerlink" title="1. 错误"></a>1. 错误</h2><p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/40.png"></p><h2 id="2-解决方案"><a href="#2-解决方案" class="headerlink" title="2. 解决方案"></a>2. 解决方案</h2><p>这个问题是由于该路径下ros文件权限造成的。输入以下命令修改权限：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">chmod</span> 777 -R ~/.ros/<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>基础技术栈</category>
+      
+      <category>错误处理</category>
+      
+      <category>ROS错误处理</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ROS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>gazebo Error in REST request 错误处理</title>
     <link href="/2023/09/24/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ROS%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/gazebo%20Error%20in%20REST%20request%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/"/>
     <url>/2023/09/24/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ROS%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/gazebo%20Error%20in%20REST%20request%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</url>
