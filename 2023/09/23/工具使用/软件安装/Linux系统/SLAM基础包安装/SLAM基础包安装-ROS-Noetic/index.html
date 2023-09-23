@@ -1,0 +1,852 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="SLAM">
+  <meta name="keywords" content="keywords">
+  
+    <meta name="description" content="目录 一 、 注意事项 二 、 二进制安装软件包 三 、 源码安装软件包 1. g2o安装 2. abseil-cpp安装 3. cartographer   四、不用安装，仅做记录 1. IPOPT 1）X86正确安装方式 2）X86错误安装方式 3）ARM版本正确   2. osqp 3. control_box_rst 4. protobuf安装 5. gtsam 6. ceres 7. R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SLAM基础包安装 - ROS Noetic">
+<meta property="og:url" content="https://xrobotspace.github.io/2023/09/23/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/SLAM%E5%9F%BA%E7%A1%80%E5%8C%85%E5%AE%89%E8%A3%85/SLAM%E5%9F%BA%E7%A1%80%E5%8C%85%E5%AE%89%E8%A3%85-ROS-Noetic/index.html">
+<meta property="og:site_name" content="title">
+<meta property="og:description" content="目录 一 、 注意事项 二 、 二进制安装软件包 三 、 源码安装软件包 1. g2o安装 2. abseil-cpp安装 3. cartographer   四、不用安装，仅做记录 1. IPOPT 1）X86正确安装方式 2）X86错误安装方式 3）ARM版本正确   2. osqp 3. control_box_rst 4. protobuf安装 5. gtsam 6. ceres 7. R">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/21.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/22.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/23.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/24.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/25.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/26.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/27.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/28.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/29.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/30.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/31.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/32.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/33.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/34.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/35.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/36.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/37.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/38.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/39.png">
+<meta property="article:published_time" content="2023-09-23T14:29:16.847Z">
+<meta property="article:modified_time" content="2023-09-23T16:25:46.854Z">
+<meta property="article:author" content="SLAM">
+<meta property="article:tag" content="SLAM">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/21.png">
+  
+  
+  
+  <title>SLAM基础包安装 - ROS Noetic - title</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"xrobotspace.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>XRobotSpace</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="SLAM基础包安装 - ROS Noetic"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-23 22:29" pubdate>
+          September 23, 2023 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          13k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          111 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">SLAM基础包安装 - ROS Noetic</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#%E4%B8%80--%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">一 <strong>、</strong> 注意事项</a></li>
+<li><a href="#%E4%BA%8C--%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85">二 <strong>、</strong> 二进制安装软件包</a></li>
+<li><a href="#%E4%B8%89--%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85">三 <strong>、</strong> 源码安装软件包</a><ul>
+<li><a href="#1-g2o%E5%AE%89%E8%A3%85">1. g2o安装</a></li>
+<li><a href="#2-abseil-cpp%E5%AE%89%E8%A3%85">2. abseil-cpp安装</a></li>
+<li><a href="#3-cartographer">3. cartographer</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9B%9B%E4%B8%8D%E7%94%A8%E5%AE%89%E8%A3%85%E4%BB%85%E5%81%9A%E8%AE%B0%E5%BD%95">四、不用安装，仅做记录</a><ul>
+<li><a href="#1-ipopt">1. IPOPT</a><ul>
+<li><a href="#1x86%E6%AD%A3%E7%A1%AE%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F">1）X86正确安装方式</a></li>
+<li><a href="#2x86%E9%94%99%E8%AF%AF%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F">2）X86错误安装方式</a></li>
+<li><a href="#3arm%E7%89%88%E6%9C%AC%E6%AD%A3%E7%A1%AE">3）ARM版本正确</a></li>
+</ul>
+</li>
+<li><a href="#2-osqp">2. osqp</a></li>
+<li><a href="#3-control_box_rst">3. control_box_rst</a></li>
+<li><a href="#4-protobuf%E5%AE%89%E8%A3%85">4. protobuf安装</a></li>
+<li><a href="#5-gtsam">5. gtsam</a></li>
+<li><a href="#6-ceres">6. ceres</a></li>
+<li><a href="#7-realsense">7. RealSense</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%94--%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">五 <strong>、</strong> 错误提示与解决方案</a><ul>
+<li><a href="#1-cartographer---gmock_library-">1. cartographer - GMOCK_LIBRARY </a></li>
+<li><a href="#2-%E5%AE%98%E6%96%B9mpc----teb_local_planner%E5%8F%82%E6%95%B0%E4%B8%8D%E5%8C%B9%E9%85%8D">2. 官方MPC -  teb_local_planner参数不匹配</a></li>
+<li><a href="#3-aloam--lego-loam--lio-sam---pcl">3. ALOAM \ Lego-LOAM &#x2F; LIO-SAM - PCL</a></li>
+<li><a href="#4-aloam--lego-loam--lio-sam---opencvcvh">4. ALOAM &#x2F; Lego-LOAM &#x2F; LIO-SAM - opencv&#x2F;cv.h</a></li>
+<li><a href="#5-a-loam---cv_load_image_grayscale">5. A-LOAM - CV_LOAD_IMAGE_GRAYSCALE</a></li>
+<li><a href="#6-serialization%E6%8A%A5%E9%94%99">6. serialization报错</a></li>
+<li><a href="#7-neither-eigen3_include_dirs-nor-eigen3_libraries-is-defined---%E8%AD%A6%E5%91%8A">7. neither ‘Eigen3_INCLUDE_DIRS’ nor ‘Eigen3_LIBRARIES’ is defined - 警告</a></li>
+<li><a href="#8-neither-ompl_include_dirs-nor-ompl_libraries-is-defined---%E8%AD%A6%E5%91%8A">8. neither ‘ompl_INCLUDE_DIRS’ nor ‘ompl_LIBRARIES’ is defined - 警告</a></li>
+<li><a href="#9-cmake_clang_tools---%E8%AD%A6%E5%91%8A">9. cmake_clang_tools - 警告</a></li>
+<li><a href="#10-vtk---%E8%AD%A6%E5%91%8A">10. vtk - 警告</a></li>
+<li><a href="#11-ompl">11. ompl</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%AD%E6%9C%AA%E8%A7%A3%E5%86%B3">六、未解决</a><ul>
+<li><a href="#1-vtk---%E8%AD%A6%E5%91%8A">1. vtk - 警告</a></li>
+<li><a href="#2-cmp0037---%E8%AD%A6%E5%91%8A">2. CMP0037 - 警告</a></li>
+<li><a href="#3-lio-sam-gtsam---%E8%AD%A6%E5%91%8A">3. LIO-SAM GTSAM - 警告</a></li>
+<li><a href="#4-neither-qt5_include_dirs-nor-qt5_libraries-is-defined---%E8%AD%A6%E5%91%8A">4. neither ‘Qt5_INCLUDE_DIRS’ nor ‘Qt5_LIBRARIES’ is defined - 警告</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>操作系统：ubuntu 20.04</li>
+<li>修改时间：2023年4月10日</li>
+</ul>
+<hr>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs bash">gmapping<br><span class="hljs-comment"># NO</span><br>hector<br><span class="hljs-comment"># NO</span><br>karto<br><span class="hljs-comment"># sparse_bundle_adjustment</span><br>ALOAM<br><span class="hljs-comment"># Ceres</span><br>Lego-LOAM<br><span class="hljs-comment"># GTSAM</span><br>LIO-SAM<br><span class="hljs-comment"># GTSAM</span><br>cartographer<br><span class="hljs-comment"># absl Ceres Lua python3-sphinx libgmock-dev</span><br>naviation<br><span class="hljs-comment"># libsdl1.2-dev libsdl-image1.2-dev ros-noetic-tf2-sensor-msgs ros-noetic-move-base-msgs</span><br>navigation_experimental<br><span class="hljs-comment"># ros-noetic-sbpl</span><br>tuw_robot<br><span class="hljs-comment"># libdxflib-dev</span><br>hunter<br><span class="hljs-comment"># libasio-dev</span><br>gnss_hc220<br><span class="hljs-comment"># ros-noetic-automotive-autonomy-msgs</span><br>gps_umd<br><span class="hljs-comment"># libgps-dev</span><br>teb<br><span class="hljs-comment"># g2o(源码安装) libsuitesparse-dev</span><br>mpc_local_planner<br><span class="hljs-comment"># teb_local_planner osqp control_box_rst</span><br>ros-noetic-control-box-rst<br>` -- 这个包安装完之后就默认安装了IPOPT，官方MPC包使用的就是这个版本的 IPOPT。<br>  --  当使用 mpc_local_planner_mb 这个包时，需要安装 3.12.8 版本的 IPOPT 包  `<br>velodyne <br><span class="hljs-comment"># libpcap-dev</span><br>realsense<br><span class="hljs-comment"># ros-noetic-realsense2-camera</span><br>urdf 的检查工具<br><span class="hljs-comment"># liburdfdom-tools</span><br>ROS_Pure_Pursuit<br><span class="hljs-comment"># ros-noetic-ackermann-msgs</span><br>cppad<br><span class="hljs-comment"># https://github.com/Hypha-ROS/hypharos_minicar</span><br>libompl-dev<br><span class="hljs-comment"># https://github.com/leggedrobotics/se2_navigation</span><br>cmake_clang_tools(源码安装)<br><span class="hljs-comment"># https://github.com/ANYbotics/cmake_clang_tools</span><br>ros-noetic-ompl<br><span class="hljs-comment"># hybrid_astar_planner  [https://github.com/dengpw/hybrid_astar_planner]</span><br>ros-noetic-ros-control<br><span class="hljs-comment"># hunter</span><br>ros-noetic-ros-controllers<br><span class="hljs-comment"># hunter</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="一-、-注意事项"><a href="#一-、-注意事项" class="headerlink" title="一 、 注意事项"></a>一 <strong>、</strong> 注意事项</h1><p>安装包所在的目录，不能有空格。</p>
+<h1 id="二-、-二进制安装软件包"><a href="#二-、-二进制安装软件包" class="headerlink" title="二 、 二进制安装软件包"></a>二 <strong>、</strong> 二进制安装软件包</h1><ul>
+<li><strong>使用二进制包安装的依赖库</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt update<br><br>sudo add-apt-repository ppa:borglab/gtsam-release-4.0<br><br>sudo apt update<br><br>sudo apt install git gcc g++ clang unzip cmake python3-wstool python3-rosdep ninja-build stow libceres-dev liblua5.2-dev python3-sphinx libgmock-dev  google-mock libboost-all-dev libcairo2-dev libcurl4-openssl-dev libeigen3-dev libgflags-dev libgoogle-glog-dev liblua5.2-dev libsuitesparse-dev lsb-release  libgtsam-dev libgtsam-unstable-dev libsdl1.2-dev libsdl-image1.2-dev libdxflib-dev libasio-dev libgps-dev cppad libompl-dev liburdfdom-tools libpcap-dev<br><br>sudo apt install ros-noetic-sparse-bundle-adjustment ros-noetic-tf2-sensor-msgs ros-noetic-move-base-msgs ros-noetic-sbpl ros-noetic-automotive-autonomy-msgs ros-noetic-realsense2-camera ros-noetic-ackermann-msgs ros-noetic-arbotix  ros-noetic-control-box-rst  ros-noetic-ompl ros-noetic-ros-control<br><br><span class="hljs-comment"># vtk 警告</span><br>sudo <span class="hljs-built_in">ln</span> -s /usr/bin/vtk7 /usr/bin/vtk<br><br><span class="hljs-comment"># 单独编译</span><br>catkin_make -DCATKIN_WHITELIST_PACKAGES=<span class="hljs-string">&quot;cloud_msgs&quot;</span><br>catkin_make -DCATKIN_WHITELIST_PACKAGES=<span class="hljs-string">&quot;hunter_msgs&quot;</span><br>catkin_make -DCATKIN_WHITELIST_PACKAGES=<span class="hljs-string">&quot;gps_common&quot;</span><br>catkin_make -DCATKIN_WHITELIST_PACKAGES=<span class="hljs-string">&quot;tuw_multi_robot_msgs&quot;</span><br><br> sudo apt install   libmatio-dev libatlas-base-dev libmetis-dev  libglfw3-dev libgtk-3-dev <br>ros-noetic-teleop-twist-keyboard  ros-noetic-ros-controllers  ros-noetic-teleop-twist-joy ros-noetic-geographic-msgs ros-noetic-jsk-rviz-plugins ros-noetic-jsk-recognition-msgs<br></code></pre></td></tr></table></figure></li>
+<li>说明-未安装<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c++">ros-noetic-jsk-recognition-msgs  <span class="hljs-comment">// Voronoi Based Hybrid A*</span><br>ros-noetic-jsk-rviz-plugins      <span class="hljs-comment">// Voronoi Based Hybrid A*</span><br>libompl-dev   <span class="hljs-comment">// Voronoi Based Hybrid A*</span><br>gfortran      <span class="hljs-comment">// Ipopt</span><br>cppad <span class="hljs-comment">// IPOPT</span><br>IPOPT <span class="hljs-comment">// mpc_mb</span><br><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="三-、-源码安装软件包"><a href="#三-、-源码安装软件包" class="headerlink" title="三 、 源码安装软件包"></a>三 <strong>、</strong> 源码安装软件包</h1><h2 id="1-g2o安装"><a href="#1-g2o安装" class="headerlink" title="1. g2o安装"></a>1. g2o安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> build<br><span class="hljs-built_in">cd</span> build<br>cmake ..<br>make <br>sudo make install<br></code></pre></td></tr></table></figure>
+
+<h2 id="2-abseil-cpp安装"><a href="#2-abseil-cpp安装" class="headerlink" title="2. abseil-cpp安装"></a>2. abseil-cpp安装</h2><p>使用cartographer包中的安装文件安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cartographer/scripts/install_abseil.sh<br></code></pre></td></tr></table></figure>
+
+<h2 id="3-cartographer"><a href="#3-cartographer" class="headerlink" title="3. cartographer"></a>3. cartographer</h2><p>cartographer的成功安装，主要分为几步：</p>
+<ol>
+<li>安装基础依赖。</li>
+<li>安装abseil-cpp。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 安装 absl</span><br>cartographer/scripts/install_abseil.sh<br></code></pre></td></tr></table></figure></li>
+<li>安装ceres solver。</li>
+<li>确认是否已经安装protobuf。</li>
+<li>通过cmake安装cartographer。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 安装 cartographer</span><br><span class="hljs-built_in">mkdir</span> build<br><span class="hljs-built_in">cd</span> build<br>cmake ..<br>make<br>sudo make install<br></code></pre></td></tr></table></figure></li>
+</ol>
+<p><strong>参考资料</strong></p>
+<p><a target="_blank" rel="noopener" href="https://google-cartographer.readthedocs.io/en/latest/">https://google-cartographer.readthedocs.io/en/latest/</a></p>
+<p><a target="_blank" rel="noopener" href="https://google-cartographer-ros.readthedocs.io/en/latest/compilation.html#building-installation">https://google-cartographer-ros.readthedocs.io/en/latest/compilation.html#building-installation</a></p>
+<h1 id="四、不用安装，仅做记录"><a href="#四、不用安装，仅做记录" class="headerlink" title="四、不用安装，仅做记录"></a>四、不用安装，仅做记录</h1><h2 id="1-IPOPT"><a href="#1-IPOPT" class="headerlink" title="1. IPOPT"></a>1. IPOPT</h2><p>通过ros安装control_box_rst安装时默认已经安装，如果再次安装ipopt，mpc官方包会报错！</p>
+<p>当使用<code>mpc_local_planner_mb</code>这个包时，需要安装3.12.8版本的IPOPT包。</p>
+<h3 id="1）X86正确安装方式"><a href="#1）X86正确安装方式" class="headerlink" title="1）X86正确安装方式"></a>1）X86正确安装方式</h3><p>参考链接，但不按照链接执行，有文件下载困难，已经提前下载</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35632833/article/details/116233665">https://blog.csdn.net/qq_35632833/article/details/116233665</a></p>
+<p><a target="_blank" rel="noopener" href="https://coin-or.github.io/Ipopt/INSTALL.html">https://coin-or.github.io/Ipopt/INSTALL.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/rst-tu-dortmund/control_box_rst/wiki/ipopt">https://github.com/rst-tu-dortmund/control_box_rst/wiki/ipopt</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 最终执行步骤</span><br>sudo apt-get install gcc g++ gfortran cmake liblapack-dev pkg-config unzip git<br>sudo apt-get install cppad<br><br><span class="hljs-built_in">cd</span> Ipopt-3.12.8<br><span class="hljs-built_in">mkdir</span> build<br><span class="hljs-built_in">cd</span> build<br>../configure --prefix=/usr/local<br>make <br>sudo make install<br></code></pre></td></tr></table></figure>
+
+<h3 id="2）X86错误安装方式"><a href="#2）X86错误安装方式" class="headerlink" title="2）X86错误安装方式"></a>2）X86错误安装方式</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_34945803/article/details/118582379">https://blog.csdn.net/weixin_34945803/article/details/118582379</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs batch">sudo apt-get install coinor-libipopt-dev cppad<br></code></pre></td></tr></table></figure>
+
+<p>错误提示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs abap">/usr/include/coin/IpSmartPtr.hpp:18:4: error: #error &quot;don&#x27;t have header file for stddef&quot;<br># error &quot;don&#x27;t have header file for stddef&quot;<br></code></pre></td></tr></table></figure>
+
+<h3 id="3）ARM版本正确"><a href="#3）ARM版本正确" class="headerlink" title="3）ARM版本正确"></a>3）ARM版本正确</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_48199550/article/details/123687236">https://blog.csdn.net/weixin_48199550/article/details/123687236</a></p>
+<h2 id="2-osqp"><a href="#2-osqp" class="headerlink" title="2. osqp"></a>2. osqp</h2><p>mpc_local_planner，暂未在ubuntu 20安装。</p>
+<p><a target="_blank" rel="noopener" href="https://osqp.org/docs/get_started/sources.html#build-the-binaries">https://osqp.org/docs/get_started/sources.html#build-the-binaries</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> osqp<br><span class="hljs-built_in">mkdir</span> build<br><span class="hljs-built_in">cd</span> build<br>cmake -G <span class="hljs-string">&quot;Unix Makefiles&quot;</span> ..<br>cmake --build .<br>sudo cmake --build . --target install<br></code></pre></td></tr></table></figure>
+
+<h2 id="3-control-box-rst"><a href="#3-control-box-rst" class="headerlink" title="3. control_box_rst"></a>3. control_box_rst</h2><ul>
+<li><p>二进制安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install ros-melodic-control-box-rst<br></code></pre></td></tr></table></figure>
+<p>通过这种方式安装后，默认安装了ipopt，官方MPC包需要使用该版本的ipopt。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/21.png" srcset="/img/loading.gif" lazyload></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/rst-tu-dortmund/control_box_rst/wiki/Build-from-Source">https://github.com/rst-tu-dortmund/control_box_rst/wiki/Build-from-Source</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/rst-tu-dortmund/control_box_rst/wiki/Build-ROS-Package">https://github.com/rst-tu-dortmund/control_box_rst/wiki/Build-ROS-Package</a></p>
+</li>
+</ul>
+<h2 id="4-protobuf安装"><a href="#4-protobuf安装" class="headerlink" title="4. protobuf安装"></a>4. protobuf安装</h2><p>ubuntu18.04 &#x2F; ubuntu 20安装完成后已经安装了该依赖库，无需再次安装，如果再安装一次，路径错误，会出现protobuf链接失败的报错。cartographer依赖的protoc版本是3.0以上。</p>
+<p>在安装之前运行指令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">protoc -–version   <span class="hljs-comment"># 查看ubuntu已经安装的protoc版本，安装ubuntu后显示已经安装3.0.0版本</span><br><span class="hljs-comment"># libprotoc 3.0.0</span><br><span class="hljs-built_in">which</span> protoc      <span class="hljs-comment"># 查看protoc安装位置，安装ubuntu后protoc的安装位置为/usr/bin/protoc</span><br><span class="hljs-comment"># /usr/bin/protoc</span><br></code></pre></td></tr></table></figure>
+
+<p>如果重复安装了，则会显示protoc的安装位置为：&#x2F;usr&#x2F;local&#x2F;bin&#x2F;protoc，在此位置基础上安装cartographer会报错。</p>
+<p>因此安装cartographer时本步骤不需要执行。</p>
+<h2 id="5-gtsam"><a href="#5-gtsam" class="headerlink" title="5. gtsam"></a>5. gtsam</h2><p>修改为二进制安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Add PPA</span><br>sudo add-apt-repository ppa:borglab/gtsam-release-4.0<br>sudo apt update  <span class="hljs-comment"># not necessary since Bionic</span><br><span class="hljs-comment"># Install:</span><br>sudo apt install libgtsam-dev libgtsam-unstable-dev<br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://gtsam.org/get_started/">https://gtsam.org/get_started/</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/borglab/gtsam">https://github.com/borglab/gtsam</a></p>
+<h2 id="6-ceres"><a href="#6-ceres" class="headerlink" title="6. ceres"></a>6. ceres</h2><ul>
+<li><p>二进制方式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install libceres-dev<br></code></pre></td></tr></table></figure></li>
+<li><p>源码安装</p>
+<p>cartographer对应版本：1.13.0</p>
+<p><a target="_blank" rel="noopener" href="http://ceres-solver.org/installation.html">http://ceres-solver.org/installation.html</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install cmake libgoogle-glog-dev libgflags-dev libatlas-base-dev libeigen3-dev libsuitesparse-dev<br><br><span class="hljs-built_in">cd</span> ~/Downloads<br>git <span class="hljs-built_in">clone</span> https://github.com/ceres-solver/ceres-solver.git<br><span class="hljs-built_in">cd</span> ceres-solver<br>git checkout 1.13.0<br><span class="hljs-built_in">mkdir</span> build<br><span class="hljs-built_in">cd</span> build<br>cmake ..<br>make -j2<br>sudo make install<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="7-RealSense"><a href="#7-RealSense" class="headerlink" title="7. RealSense"></a>7. RealSense</h2><ul>
+<li><p>ROS驱动版本，二进制安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs batch">sudo apt-get install ros-$ROS_DISTRO-realsense2-camera<br></code></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://github.com/IntelRealSense/realsense-ros">https://github.com/IntelRealSense/realsense-ros</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/chengchang1234/article/details/117603781">https://blog.csdn.net/chengchang1234/article/details/117603781</a></p>
+<p><a target="_blank" rel="noopener" href="https://dev.intelrealsense.com/docs/compiling-librealsense-for-linux-ubuntu-guide">https://dev.intelrealsense.com/docs/compiling-librealsense-for-linux-ubuntu-guide</a></p>
+</li>
+</ul>
+<h1 id="五-、-错误提示与解决方案"><a href="#五-、-错误提示与解决方案" class="headerlink" title="五 、 错误提示与解决方案"></a>五 <strong>、</strong> 错误提示与解决方案</h1><h2 id="1-cartographer-GMOCK-LIBRARY-x20"><a href="#1-cartographer-GMOCK-LIBRARY-x20" class="headerlink" title="1. cartographer - GMOCK_LIBRARY&#x20;"></a>1. cartographer - GMOCK_LIBRARY&#x20;</h2><p><strong>问题：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">Make Error: The following variables are used <span class="hljs-keyword">in</span> this project, but they are <span class="hljs-built_in">set</span> to NOTFOUND.<br>Please <span class="hljs-built_in">set</span> them or make sure they are <span class="hljs-built_in">set</span> and tested correctly <span class="hljs-keyword">in</span> the CMake files:<br>GMOCK_LIBRARY (ADVANCED)<br>    linked by target <span class="hljs-string">&quot;time_conversion_test&quot;</span> <span class="hljs-keyword">in</span> directory /home/slam/Documents/SLAM/ROS-NOETIC/src/ros-perception/cartographer/cartographer_ros/cartographer_ros<br>    linked by target <span class="hljs-string">&quot;time_conversion_test&quot;</span> <span class="hljs-keyword">in</span> directory /home/slam/Documents/SLAM/ROS-NOETIC/src/ros-perception/cartographer/cartographer_ros/cartographer_ros<br>    linked by target <span class="hljs-string">&quot;msg_conversion_test&quot;</span> <span class="hljs-keyword">in</span> directory /home/slam/Documents/SLAM/ROS-NOETIC/src/ros-perception/cartographer/cartographer_ros/cartographer_ros<br>    linked by target <span class="hljs-string">&quot;msg_conversion_test&quot;</span> <span class="hljs-keyword">in</span> directory /home/slam/Documents/SLAM/ROS-NOETIC/src/ros-perception/cartographer/cartographer_ros/cartographer_ros<br>    linked by target <span class="hljs-string">&quot;metrics_test&quot;</span> <span class="hljs-keyword">in</span> directory /home/slam/Documents/SLAM/ROS-NOETIC/src/ros-perception/cartographer/cartographer_ros/cartographer_ros<br>    linked by target <span class="hljs-string">&quot;metrics_test&quot;</span> <span class="hljs-keyword">in</span> directory /home/slam/Documents/SLAM/ROS-NOETIC/src/ros-perception/cartographer/cartographer_ros/cartographer_ros<br>    linked by target <span class="hljs-string">&quot;configuration_files_test&quot;</span> <span class="hljs-keyword">in</span> directory /home/slam/Documents/SLAM/ROS-NOETIC/src/ros-perception/cartographer/cartographer_ros/cartographer_ros<br>    linked by target <span class="hljs-string">&quot;configuration_files_test&quot;</span> <span class="hljs-keyword">in</span> directory /home/slam/Documents/SLAM/ROS-NOETIC/src/ros-perception/cartographer/cartographer_ros/cartographer_ros<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/22.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>原因及解决方案：</strong></p>
+<p>没有找到GMOCK_LIBRARY包，使用 <code>sudo apt install libgmock-dev</code>安装。</p>
+<h2 id="2-官方MPC-teb-local-planner参数不匹配"><a href="#2-官方MPC-teb-local-planner参数不匹配" class="headerlink" title="2. 官方MPC -  teb_local_planner参数不匹配"></a>2. 官方MPC -  teb_local_planner参数不匹配</h2><p><strong>问题：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">/usr/include/boost/smart_ptr/make_shared_object.hpp:256:5: error: no matching <span class="hljs-keyword">function</span> <span class="hljs-keyword">for</span> call to ‘teb_local_planner::LineRobotFootprint::LineRobotFootprint(Eigen::Map&lt;const Eigen::Matrix&lt;double, 2, 1&gt;, 0, Eigen::Stride&lt;0, 0&gt; &gt;, Eigen::Map&lt;const Eigen::Matrix&lt;double, 2, 1&gt;, 0, Eigen::Stride&lt;0, 0&gt; &gt;)’<br>  256 |     ::new( pv ) T( boost::detail::sp_forward&lt;Args&gt;( args )... );<br><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/23.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>原因及解决方案：</strong></p>
+<p>MPC中调用了teb的接口，但函数形参数目没有匹配，TEB中需要三个参数，MPC只提供了两个参数。在MPC的调用接口中添加第三个参数，最小障碍物距离。通过二进制安装的teb不存在这个问题。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/24.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/25.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="3-ALOAM-Lego-LOAM-LIO-SAM-PCL"><a href="#3-ALOAM-Lego-LOAM-LIO-SAM-PCL" class="headerlink" title="3. ALOAM \ Lego-LOAM &#x2F; LIO-SAM - PCL"></a>3. ALOAM \ Lego-LOAM &#x2F; LIO-SAM - PCL</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/abanchao/article/details/127061811?spm=wolai.workspace.0.0.1c4ac81dM2EyiX">https://blog.csdn.net/abanchao/article/details/127061811?spm=wolai.workspace.0.0.1c4ac81dM2EyiX</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/hhz_999/article/details/126767250?spm=wolai.workspace.0.0.1c4ac81dM2EyiX">https://blog.csdn.net/hhz_999/article/details/126767250?spm=wolai.workspace.0.0.1c4ac81dM2EyiX</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wsl_longwudi/article/details/126885601?spm=wolai.workspace.0.0.1c4ac81dM2EyiX">https://blog.csdn.net/wsl_longwudi/article/details/126885601?spm=wolai.workspace.0.0.1c4ac81dM2EyiX</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/TixiaoShan/LIO-SAM/issues/206?spm=wolai.workspace.0.0.42771549I5wIPD">https://github.com/TixiaoShan/LIO-SAM/issues/206?spm=wolai.workspace.0.0.42771549I5wIPD</a></p>
+<p><strong>问题：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">/usr/include/pcl-1.10/pcl/pcl_config.h:7:4: error: <span class="hljs-comment">#error PCL requires C++14 or above</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/26.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>原因及解决方案：</strong></p>
+<p>PCL 1.10 要求使用 c++14 及以上版本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 将 CMakeLists.txt 中的编译选项 </span><br>std=c++11<br><span class="hljs-comment"># 改为 </span><br>std=c++14<br></code></pre></td></tr></table></figure>
+
+<h2 id="4-ALOAM-Lego-LOAM-LIO-SAM-opencv-cv-h"><a href="#4-ALOAM-Lego-LOAM-LIO-SAM-opencv-cv-h" class="headerlink" title="4. ALOAM &#x2F; Lego-LOAM &#x2F; LIO-SAM - opencv&#x2F;cv.h"></a>4. ALOAM &#x2F; Lego-LOAM &#x2F; LIO-SAM - opencv&#x2F;cv.h</h2><p><strong>问题：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++">A-LOAM/src/scanRegistration.cpp:<span class="hljs-number">44</span>:<span class="hljs-number">10</span>: fatal error: opencv/cv.h: No such file <span class="hljs-keyword">or</span> directory<br>LIO-SAM/include/utility.h:<span class="hljs-number">18</span>:<span class="hljs-number">10</span>: fatal error: opencv/cv.h: No such file <span class="hljs-keyword">or</span> directory<br>LeGO-LOAM/include/utility.h:<span class="hljs-number">13</span>:<span class="hljs-number">10</span>: fatal error: opencv/cv.h: No such file <span class="hljs-keyword">or</span> directory<br></code></pre></td></tr></table></figure>
+
+<p><strong>原因及解决方案：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;opencv/cv.h&gt;</span></span><br><span class="hljs-comment">// 替换为</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;opencv2/opencv.hpp&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<h2 id="5-A-LOAM-CV-LOAD-IMAGE-GRAYSCALE"><a href="#5-A-LOAM-CV-LOAD-IMAGE-GRAYSCALE" class="headerlink" title="5. A-LOAM - CV_LOAD_IMAGE_GRAYSCALE"></a>5. A-LOAM - CV_LOAD_IMAGE_GRAYSCALE</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++">A-LOAM/src/kittiHelper.cpp:<span class="hljs-number">91</span>:<span class="hljs-number">64</span>: error: ‘CV_LOAD_IMAGE_GRAYSCALE’ was <span class="hljs-keyword">not</span> declared in <span class="hljs-keyword">this</span> scope<br><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/27.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs batch">CV_LOAD_IMAGE_GRAYSCALE<br># 修改为<br>cv::IMREAD_GRAYSCALE<br></code></pre></td></tr></table></figure>
+
+<h2 id="6-serialization报错"><a href="#6-serialization报错" class="headerlink" title="6. serialization报错"></a>6. serialization报错</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs batch">/usr/include/flann/util/serialization.h:34:14: error: ‘class std::unordered_map&lt;unsigned int, std::vector&lt;unsigned int&gt; &gt;’ has no member named ‘serialize’<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/28.png" srcset="/img/loading.gif" lazyload></p>
+<p>在<code>std≥C++ 11</code>的情况下，似乎<code>opencv</code>头文件泄漏 <code>#define USE_UNORDERED_MAP 1</code>。然后由原始flann库中的<code>lsh_table.h</code>中的#if获取。<br>解决方案是在<code>OpenCV</code>之前包含<code>flann</code>。在<code>utility.h</code>中将 <code>#include &lt;opencv2/opencv.hpp&gt;</code> 头文件放在<code>pcl</code>库头文件之后。</p>
+<h2 id="7-neither-‘Eigen3-INCLUDE-DIRS’-nor-‘Eigen3-LIBRARIES’-is-defined-警告"><a href="#7-neither-‘Eigen3-INCLUDE-DIRS’-nor-‘Eigen3-LIBRARIES’-is-defined-警告" class="headerlink" title="7. neither ‘Eigen3_INCLUDE_DIRS’ nor ‘Eigen3_LIBRARIES’ is defined - 警告"></a>7. neither ‘Eigen3_INCLUDE_DIRS’ nor ‘Eigen3_LIBRARIES’ is defined - 警告</h2><p><strong>问题：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/29.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">CMake Warning at /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:166 (message):<br>  catkin_package() DEPENDS on <span class="hljs-string">&#x27;Eigen3&#x27;</span> but neither <span class="hljs-string">&#x27;Eigen3_INCLUDE_DIRS&#x27;</span> nor<br>  <span class="hljs-string">&#x27;Eigen3_LIBRARIES&#x27;</span> is defined.<br>Call Stack (most recent call first):<br>  /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:102 (_catkin_package)<br>  se2_navigation/se2_planning/CMakeLists.txt:38 (catkin_package)<br><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/30.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">This warning is caused by se2_planning <span class="hljs-string">&#x27;s CMakeLists.txt Line 38:</span><br><span class="hljs-string"></span><br><span class="hljs-string">DEPENDS Eigen3</span><br><span class="hljs-string"># which should be:</span><br><span class="hljs-string">DEPENDS EIGEN3</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/31.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="8-neither-‘ompl-INCLUDE-DIRS’-nor-‘ompl-LIBRARIES’-is-defined-警告"><a href="#8-neither-‘ompl-INCLUDE-DIRS’-nor-‘ompl-LIBRARIES’-is-defined-警告" class="headerlink" title="8. neither ‘ompl_INCLUDE_DIRS’ nor ‘ompl_LIBRARIES’ is defined - 警告"></a>8. neither ‘ompl_INCLUDE_DIRS’ nor ‘ompl_LIBRARIES’ is defined - 警告</h2><p><strong>问题：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/32.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">CMake Warning at /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:166 (message):<br>  catkin_package() DEPENDS on <span class="hljs-string">&#x27;ompl&#x27;</span> but neither <span class="hljs-string">&#x27;ompl_INCLUDE_DIRS&#x27;</span> nor<br>  <span class="hljs-string">&#x27;ompl_LIBRARIES&#x27;</span> is defined.<br>Call Stack (most recent call first):<br>  /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:102 (_catkin_package)<br>  se2_navigation/se2_planning/CMakeLists.txt:38 (catkin_package)<br><br></code></pre></td></tr></table></figure>
+
+<p><strong>解决方案：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/33.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">This warning is caused by se2_planning <span class="hljs-string">&#x27;s CMakeLists.txt Line 38:</span><br><span class="hljs-string"></span><br><span class="hljs-string">DEPENDS ompl</span><br><span class="hljs-string"># which should be:</span><br><span class="hljs-string">DEPENDS OMPL</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="9-cmake-clang-tools-警告"><a href="#9-cmake-clang-tools-警告" class="headerlink" title="9. cmake_clang_tools - 警告"></a>9. cmake_clang_tools - 警告</h2><p><strong>问题：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/34.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">CMake Warning at se2_navigation/se2_planning/CMakeLists.txt:115 (find_package):<br>  By not providing <span class="hljs-string">&quot;Findcmake_clang_tools.cmake&quot;</span> <span class="hljs-keyword">in</span> CMAKE_MODULE_PATH this<br>  project has asked CMake to find a package configuration file provided by<br>  <span class="hljs-string">&quot;cmake_clang_tools&quot;</span>, but CMake did not find one.<br><br>  Could not find a package configuration file provided by <span class="hljs-string">&quot;cmake_clang_tools&quot;</span><br>  with any of the following names:<br><br>    cmake_clang_toolsConfig.cmake<br>    cmake_clang_tools-config.cmake<br><br>  Add the installation prefix of <span class="hljs-string">&quot;cmake_clang_tools&quot;</span> to CMAKE_PREFIX_PATH or<br>  <span class="hljs-built_in">set</span> <span class="hljs-string">&quot;cmake_clang_tools_DIR&quot;</span> to a directory containing one of the above<br>  files.  If <span class="hljs-string">&quot;cmake_clang_tools&quot;</span> provides a separate development package or<br>  SDK, be sure it has been installed.<br><br></code></pre></td></tr></table></figure>
+
+<p><strong>解决方案：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/ANYbotics/cmake_clang_tools">https://github.com/ANYbotics/cmake_clang_tools</a></p>
+<h2 id="10-vtk-警告"><a href="#10-vtk-警告" class="headerlink" title="10. vtk - 警告"></a>10. vtk - 警告</h2><p><strong>问题：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/35.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">ln</span> -s /usr/bin/vtk7 /usr/bin/vtk<br></code></pre></td></tr></table></figure>
+
+<h2 id="11-ompl"><a href="#11-ompl" class="headerlink" title="11. ompl"></a>11. ompl</h2><p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/36.png" srcset="/img/loading.gif" lazyload></p>
+<p>安装<code>libompl-dev</code>后，编译<code>hybrid_astar_planner</code>还是会报错，需要安装<code>ros-noetic-ompl</code>。</p>
+<h1 id="六、未解决"><a href="#六、未解决" class="headerlink" title="六、未解决"></a>六、未解决</h1><h2 id="1-vtk-警告"><a href="#1-vtk-警告" class="headerlink" title="1. vtk - 警告"></a>1. vtk - 警告</h2><p>pvtk</p>
+<p>VTKTargets</p>
+<p>vtkRenderingPythonTkWidgets</p>
+<p>vtkParseOGLExt</p>
+<h2 id="2-CMP0037-警告"><a href="#2-CMP0037-警告" class="headerlink" title="2. CMP0037 - 警告"></a>2. CMP0037 - 警告</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">CMake Warning (dev) at ros-device-drivers/gps_umd/gps_common/CMakeLists.txt:57 (add_executable):<br>  Policy CMP0037 is not <span class="hljs-built_in">set</span>: Target names should not be reserved and should<br>  match a validity pattern.  Run <span class="hljs-string">&quot;cmake --help-policy CMP0037&quot;</span> <span class="hljs-keyword">for</span> policy<br>  details.  Use the cmake_policy <span class="hljs-built_in">command</span> to <span class="hljs-built_in">set</span> the policy and suppress this<br>  warning.<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/37.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="3-LIO-SAM-GTSAM-警告"><a href="#3-LIO-SAM-GTSAM-警告" class="headerlink" title="3. LIO-SAM GTSAM - 警告"></a>3. LIO-SAM GTSAM - 警告</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">CMake Warning at /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:166 (message):<br>  catkin_package() DEPENDS on <span class="hljs-string">&#x27;GTSAM&#x27;</span> but neither <span class="hljs-string">&#x27;GTSAM_INCLUDE_DIRS&#x27;</span> nor<br>  <span class="hljs-string">&#x27;GTSAM_LIBRARIES&#x27;</span> is defined.<br>Call Stack (most recent call first):<br>  /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:102 (_catkin_package)<br>  ros-perception/LIO-SAM/CMakeLists.txt:51 (catkin_package)<br><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/38.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="4-neither-‘Qt5-INCLUDE-DIRS’-nor-‘Qt5-LIBRARIES’-is-defined-警告"><a href="#4-neither-‘Qt5-INCLUDE-DIRS’-nor-‘Qt5-LIBRARIES’-is-defined-警告" class="headerlink" title="4. neither ‘Qt5_INCLUDE_DIRS’ nor ‘Qt5_LIBRARIES’ is defined - 警告"></a>4. neither ‘Qt5_INCLUDE_DIRS’ nor ‘Qt5_LIBRARIES’ is defined - 警告</h2><p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/39.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">CMake Warning at /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:166 (message):<br>  catkin_package() DEPENDS on <span class="hljs-string">&#x27;Qt5&#x27;</span> but neither <span class="hljs-string">&#x27;Qt5_INCLUDE_DIRS&#x27;</span> nor<br>  <span class="hljs-string">&#x27;Qt5_LIBRARIES&#x27;</span> is defined.<br>Call Stack (most recent call first):<br>  /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:102 (_catkin_package)<br>  se2_navigation/se2_planning_rviz/CMakeLists.txt:67 (catkin_package)<br><br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" class="category-chain-item">工具使用</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" class="category-chain-item">软件安装</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/" class="category-chain-item">Linux系统</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/SLAM%E5%9F%BA%E7%A1%80%E5%8C%85%E5%AE%89%E8%A3%85/" class="category-chain-item">SLAM基础包安装</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/SLAM/" class="print-no-link">#SLAM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/09/23/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/Linux%E7%B3%BB%E7%BB%9F/Linux%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4/" title="Linux常用软件版本查看命令">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Linux常用软件版本查看命令</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/09/23/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ROS%E5%AE%89%E8%A3%85/ubuntu%2020.04%2018.04%E5%AE%89%E8%A3%85%20ROS/" title="ubuntu 20.04 / 18.04安装 ROS">
+                        <span class="hidden-mobile">ubuntu 20.04 / 18.04安装 ROS</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
