@@ -4,6 +4,122 @@
   
   
   <entry>
+    <title>gazebo Error in REST request 错误处理</title>
+    <link href="/2023/09/24/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ROS%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/gazebo%20Error%20in%20REST%20request%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/"/>
+    <url>/2023/09/24/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ROS%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/gazebo%20Error%20in%20REST%20request%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1-错误"><a href="#1-错误" class="headerlink" title="1. 错误"></a>1. 错误</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">Gazebo [Err] [REST.cc:20 5 ] Error <span class="hljs-keyword">in</span> REST request<br></code></pre></td></tr></table></figure><h2 id="2-解决方案"><a href="#2-解决方案" class="headerlink" title="2. 解决方案"></a>2. 解决方案</h2><ul><li>打开文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo gedit ~/.ignition/fuel/config.yaml<br></code></pre></td></tr></table></figure></li><li>释掉内容<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">url： https://api.ignitionfuel.org<br></code></pre></td></tr></table></figure></li><li>替换内容<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">url: https://api.ignitionrobotics.org<br></code></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>基础技术栈</category>
+      
+      <category>错误处理</category>
+      
+      <category>ROS错误处理</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ROS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>tab键补全指令.gvfs错误</title>
+    <link href="/2023/09/24/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ubuntu%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/tab%E9%94%AE%E8%A1%A5%E5%85%A8%E6%8C%87%E4%BB%A4.gvfs%E9%94%99%E8%AF%AF/"/>
+    <url>/2023/09/24/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ubuntu%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/tab%E9%94%AE%E8%A1%A5%E5%85%A8%E6%8C%87%E4%BB%A4.gvfs%E9%94%99%E8%AF%AF/</url>
+    
+    <content type="html"><![CDATA[<hr><ul><li>操作系统：ubuntu 18.04</li><li>修改时间：2021年12月21日</li></ul><hr><p><strong>问题描述：</strong></p><p>tab键补全操作出现错误，显示：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">Warning: error <span class="hljs-keyword">while</span> crawling /home/robot:boost::filesystem::status: Permission denied:“/home/robot/.gvfs”<br></code></pre></td></tr></table></figure><p><strong>解决方案：</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo umount /home/root/.gvfs      <span class="hljs-comment"># 即是错误显示中的路径/home/robot/.gvfs</span><br><span class="hljs-built_in">rm</span> -rf /home/root/.gvfs<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>基础技术栈</category>
+      
+      <category>错误处理</category>
+      
+      <category>ROS错误处理</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ROS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>ubuntu软件启动，不显示软件界面</title>
+    <link href="/2023/09/24/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ubuntu%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ubuntu%E8%BD%AF%E4%BB%B6%E5%90%AF%E5%8A%A8%EF%BC%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E8%BD%AF%E4%BB%B6%E7%95%8C%E9%9D%A2/"/>
+    <url>/2023/09/24/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ubuntu%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ubuntu%E8%BD%AF%E4%BB%B6%E5%90%AF%E5%8A%A8%EF%BC%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E8%BD%AF%E4%BB%B6%E7%95%8C%E9%9D%A2/</url>
+    
+    <content type="html"><![CDATA[<hr><ul><li>操作系统：ubuntu 18.04</li><li>修改时间：2021年12月21日</li></ul><hr><p><strong>问题描述：</strong> 打开一个软件，窗口上部能看到软件已经打开，但是看不到软件界面。</p><p><strong>问题原因：</strong> ubuntu 会启动几个终端窗口，软件就显示在实际不存在的终端上。</p><p><strong>解决方案：</strong></p><p>① 命令 xrandr 查看当前启动的输出终端口。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">xrandr <br></code></pre></td></tr></table></figure><p>② 关掉没有使用的终端</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">xrandr --output  [没有使用的终端]  --off<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>基础技术栈</category>
+      
+      <category>错误处理</category>
+      
+      <category>ROS错误处理</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ROS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Linux常用软件版本查看命令</title>
+    <link href="/2023/09/23/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/Linux%E7%B3%BB%E7%BB%9F/Linux%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4/"/>
+    <url>/2023/09/23/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/Linux%E7%B3%BB%E7%BB%9F/Linux%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Apt-命令列出已安装软件"><a href="#Apt-命令列出已安装软件" class="headerlink" title="Apt 命令列出已安装软件"></a>Apt 命令列出已安装软件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs batch">apt list --installed<br>apt list --installed | less<br>// 或者<br>dpkg -l<br><br></code></pre></td></tr></table></figure><h2 id="opencv版本"><a href="#opencv版本" class="headerlink" title="opencv版本"></a>opencv版本</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs batch">pkg-config --modversion opencv<br></code></pre></td></tr></table></figure><p>或者python查找</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">python3<br><span class="hljs-keyword">import</span> cv2<br>cv2.__version__<br><br></code></pre></td></tr></table></figure><h2 id="python版本"><a href="#python版本" class="headerlink" title="python版本"></a>python版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">python2 --version   <span class="hljs-comment"># 查看 python2 安装版本</span><br><br>python3 --version   <span class="hljs-comment"># 查看 python3 安装版本</span><br><br>python --version    <span class="hljs-comment"># 查看默认 python 版本</span><br><br><span class="hljs-comment"># 修改默认版本</span><br><span class="hljs-built_in">echo</span> <span class="hljs-built_in">alias</span> python=python3 &gt;&gt; ~/.bashrc<br><span class="hljs-built_in">source</span> ~/.bashrc<br><br></code></pre></td></tr></table></figure><h1 id="eigen版本"><a href="#eigen版本" class="headerlink" title="eigen版本"></a>eigen版本</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo gedit /usr/include/eigen3/Eigen/src/Core/util/Macros.h<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#define EIGEN_WORLD_VERSION 3</span><br><span class="hljs-comment">#define EIGEN_MAJOR_VERSION 3</span><br><span class="hljs-comment">#define EIGEN_MINOR_VERSION 7</span><br></code></pre></td></tr></table></figure><p>版本为3.3.7</p><h2 id="CUDA版本"><a href="#CUDA版本" class="headerlink" title="CUDA版本"></a>CUDA版本</h2><h2 id="CUDNN版本"><a href="#CUDNN版本" class="headerlink" title="CUDNN版本"></a>CUDNN版本</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>基础技术栈</category>
+      
+      <category>软件使用</category>
+      
+      <category>Linux系统</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>SLAM基础包安装 - ROS Noetic</title>
     <link href="/2023/09/23/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/SLAM%E5%9F%BA%E7%A1%80%E5%8C%85%E5%AE%89%E8%A3%85/SLAM%E5%9F%BA%E7%A1%80%E5%8C%85%E5%AE%89%E8%A3%85-ROS-Noetic/"/>
     <url>/2023/09/23/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/SLAM%E5%9F%BA%E7%A1%80%E5%8C%85%E5%AE%89%E8%A3%85/SLAM%E5%9F%BA%E7%A1%80%E5%8C%85%E5%AE%89%E8%A3%85-ROS-Noetic/</url>
@@ -119,9 +235,9 @@
     
     <tags>
       
-      <tag>系统安装</tag>
-      
       <tag>Linux</tag>
+      
+      <tag>系统安装</tag>
       
     </tags>
     
@@ -152,9 +268,9 @@
     
     <tags>
       
-      <tag>系统安装</tag>
-      
       <tag>Linux</tag>
+      
+      <tag>系统安装</tag>
       
     </tags>
     
@@ -185,9 +301,9 @@
     
     <tags>
       
-      <tag>系统安装</tag>
-      
       <tag>Linux</tag>
+      
+      <tag>系统安装</tag>
       
     </tags>
     
@@ -218,9 +334,9 @@
     
     <tags>
       
-      <tag>系统安装</tag>
-      
       <tag>Linux</tag>
+      
+      <tag>系统安装</tag>
       
     </tags>
     
@@ -251,9 +367,9 @@
     
     <tags>
       
-      <tag>系统安装</tag>
-      
       <tag>Linux</tag>
+      
+      <tag>系统安装</tag>
       
     </tags>
     

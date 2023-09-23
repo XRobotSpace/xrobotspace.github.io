@@ -16,31 +16,22 @@
   <meta name="author" content="SLAM">
   <meta name="keywords" content="keywords">
   
-    <meta name="description" content="操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 + win10 &#x2F; win11 双系统 修改时间：2021年12月21日   目录 1. 下载安装UltraISO软件 2. 下载Ubuntu系统镜像 3. UltraISO软件制作U盘启动盘 4. 可能遇到的问题  1. 下载安装UltraISO软件  https:&#x2F;&#x2F;cn.ultraiso.n">
+    <meta name="description" content="操作系统：ubuntu 18.04 修改时间：2021年12月21日   问题描述： 打开一个软件，窗口上部能看到软件已经打开，但是看不到软件界面。 问题原因： ubuntu 会启动几个终端窗口，软件就显示在实际不存在的终端上。 解决方案： ① 命令 xrandr 查看当前启动的输出终端口。 1xrandr   ② 关掉没有使用的终端 1xrandr --output  [没有使用的终端]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu系统U盘启动盘制作">
-<meta property="og:url" content="https://xrobotspace.github.io/2023/09/16/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ubuntu-windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/ubuntu%E7%B3%BB%E7%BB%9FU%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%E5%88%B6%E4%BD%9C/index.html">
+<meta property="og:title" content="ubuntu软件启动，不显示软件界面">
+<meta property="og:url" content="https://xrobotspace.github.io/2023/09/24/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ubuntu%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ubuntu%E8%BD%AF%E4%BB%B6%E5%90%AF%E5%8A%A8%EF%BC%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E8%BD%AF%E4%BB%B6%E7%95%8C%E9%9D%A2/index.html">
 <meta property="og:site_name" content="title">
-<meta property="og:description" content="操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 + win10 &#x2F; win11 双系统 修改时间：2021年12月21日   目录 1. 下载安装UltraISO软件 2. 下载Ubuntu系统镜像 3. UltraISO软件制作U盘启动盘 4. 可能遇到的问题  1. 下载安装UltraISO软件  https:&#x2F;&#x2F;cn.ultraiso.n">
+<meta property="og:description" content="操作系统：ubuntu 18.04 修改时间：2021年12月21日   问题描述： 打开一个软件，窗口上部能看到软件已经打开，但是看不到软件界面。 问题原因： ubuntu 会启动几个终端窗口，软件就显示在实际不存在的终端上。 解决方案： ① 命令 xrandr 查看当前启动的输出终端口。 1xrandr   ② 关掉没有使用的终端 1xrandr --output  [没有使用的终端]">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_OZ7Js49hJl.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_mgC5eTuF2P.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_j-RDPEA2M1.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_xGr4g5ZTug.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_umq4wKHiJ7.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_2z1Mb58z37.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_lEUq-oDAJO.png">
-<meta property="article:published_time" content="2023-09-16T13:40:30.640Z">
-<meta property="article:modified_time" content="2023-09-20T07:24:29.519Z">
+<meta property="article:published_time" content="2023-09-23T16:01:16.207Z">
+<meta property="article:modified_time" content="2023-09-23T16:07:34.001Z">
 <meta property="article:author" content="SLAM">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="系统安装">
+<meta property="article:tag" content="ROS">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_OZ7Js49hJl.png">
   
   
   
-  <title>ubuntu系统U盘启动盘制作 - title</title>
+  <title>ubuntu软件启动，不显示软件界面 - title</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -206,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="ubuntu系统U盘启动盘制作"></span>
+            <span id="subtitle" data-typed-text="ubuntu软件启动，不显示软件界面"></span>
           
         </div>
 
@@ -217,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-16 21:40" pubdate>
-          September 16, 2023 pm
+        <time datetime="2023-09-24 00:01" pubdate>
+          September 24, 2023 am
         </time>
       </span>
     
@@ -229,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          572 words
+          178 words
         
       </span>
     
@@ -240,7 +231,7 @@
         
         
         
-          5 mins
+          2 mins
         
       </span>
     
@@ -277,58 +268,25 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">ubuntu系统U盘启动盘制作</h1>
+            <h1 id="seo-header">ubuntu软件启动，不显示软件界面</h1>
             
             
               <div class="markdown-body">
                 
                 <hr>
 <ul>
-<li>操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 + win10 &#x2F; win11 双系统</li>
+<li>操作系统：ubuntu 18.04</li>
 <li>修改时间：2021年12月21日</li>
 </ul>
 <hr>
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
-<li><a href="#1-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85ultraiso%E8%BD%AF%E4%BB%B6">1. 下载安装UltraISO软件</a></li>
-<li><a href="#2-%E4%B8%8B%E8%BD%BDubuntu%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F">2. 下载Ubuntu系统镜像</a></li>
-<li><a href="#3-ultraiso%E8%BD%AF%E4%BB%B6%E5%88%B6%E4%BD%9Cu%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98">3. UltraISO软件制作U盘启动盘</a></li>
-<li><a href="#4-%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98">4. 可能遇到的问题</a></li>
-</ul>
-<h2 id="1-下载安装UltraISO软件"><a href="#1-下载安装UltraISO软件" class="headerlink" title="1. 下载安装UltraISO软件"></a>1. 下载安装UltraISO软件</h2><p>  <a target="_blank" rel="noopener" href="https://cn.ultraiso.net/xiazai.html">https://cn.ultraiso.net/xiazai.html</a></p>
-<h2 id="2-下载Ubuntu系统镜像"><a href="#2-下载Ubuntu系统镜像" class="headerlink" title="2. 下载Ubuntu系统镜像"></a>2. 下载Ubuntu系统镜像</h2><p>  <a target="_blank" rel="noopener" href="https://releases.ubuntu.com/focal/">https://releases.ubuntu.com/focal/</a></p>
-<h2 id="3-UltraISO软件制作U盘启动盘"><a href="#3-UltraISO软件制作U盘启动盘" class="headerlink" title="3. UltraISO软件制作U盘启动盘"></a>3. UltraISO软件制作U盘启动盘</h2><ol>
-<li><p>选择【继续试用】</p>
-<p> <img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_OZ7Js49hJl.png" srcset="/img/loading.gif" lazyload> </p>
-</li>
-<li><p>点击【文件】菜单选择【打开】按钮或直接点击【打开】菜单，选择要安装的 .iso 系统镜像文件</p>
-<p> <img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_mgC5eTuF2P.png" srcset="/img/loading.gif" lazyload> </p>
-</li>
-<li><p>点击【启动】菜单，选择【写入硬盘映像…】</p>
-<p> <img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_j-RDPEA2M1.png" srcset="/img/loading.gif" lazyload> </p>
-</li>
-<li><p>确认安装</p>
-<ul>
-<li>确认磁盘驱动器为要安装系统的U盘；</li>
-<li>确认映像文件为要安装的.iso系统文件；</li>
-<li>隐藏启动分区设置为【隐藏】，隐藏分区专门放置Ubuntu系统（打开U盘看不到），另外一个分区空置，可以放其他东西，这样增删东西不会感觉的很乱。</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_xGr4g5ZTug.png" srcset="/img/loading.gif" lazyload></p>
-<p>最后点击【写入】开始制作U盘启动盘：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_umq4wKHiJ7.png" srcset="/img/loading.gif" lazyload></p>
-<p>写入完成，点击【返回】即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_2z1Mb58z37.png" srcset="/img/loading.gif" lazyload></p>
-<p>至此，UltraISO制作Ubuntu系统U盘启动盘步骤完成。</p>
-</li>
-</ol>
-<h2 id="4-可能遇到的问题"><a href="#4-可能遇到的问题" class="headerlink" title="4. 可能遇到的问题"></a>4. 可能遇到的问题</h2><ol>
-<li><p>制作完U盘后，总是提示需要格式化</p>
-<p> 解决方案：使用管理员身份启动UltraISO。</p>
-</li>
-<li><p>将系统U盘变为普通盘</p>
-<p> 解决方案：将空白系统写入U盘。</p>
-<p> <img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/image_lEUq-oDAJO.png" srcset="/img/loading.gif" lazyload></p>
-</li>
-</ol>
+<p><strong>问题描述：</strong> 打开一个软件，窗口上部能看到软件已经打开，但是看不到软件界面。</p>
+<p><strong>问题原因：</strong> ubuntu 会启动几个终端窗口，软件就显示在实际不存在的终端上。</p>
+<p><strong>解决方案：</strong></p>
+<p>① 命令 xrandr 查看当前启动的输出终端口。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">xrandr <br></code></pre></td></tr></table></figure>
+
+<p>② 关掉没有使用的终端</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">xrandr --output  [没有使用的终端]  --off<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -352,20 +310,13 @@
   
     <span>></span>
     
-  <a href="/categories/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" class="category-chain-item">软件安装</a>
+  <a href="/categories/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" class="category-chain-item">错误处理</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/" class="category-chain-item">Linux系统</a>
+  <a href="/categories/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ROS%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" class="category-chain-item">ROS错误处理</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ubuntu-windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" class="category-chain-item">ubuntu/windows双系统安装</a>
-  
-  
-
   
 
   
@@ -383,9 +334,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
-      
-        <a href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" class="print-no-link">#系统安装</a>
+        <a href="/tags/ROS/" class="print-no-link">#ROS</a>
       
     </div>
   
@@ -399,15 +348,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/09/20/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ubuntu-windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%AD%A3%E7%A1%AE%E5%8D%B8%E8%BD%BDUbuntu%E7%B3%BB%E7%BB%9F/" title="双系统正确卸载Ubuntu系统">
+                      <a href="/2023/09/24/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ubuntu%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/tab%E9%94%AE%E8%A1%A5%E5%85%A8%E6%8C%87%E4%BB%A4.gvfs%E9%94%99%E8%AF%AF/" title="tab键补全指令.gvfs错误">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">双系统正确卸载Ubuntu系统</span>
+                        <span class="hidden-mobile">tab键补全指令.gvfs错误</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/09/23/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/Linux%E7%B3%BB%E7%BB%9F/Linux%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4/" title="Linux常用软件版本查看命令">
+                        <span class="hidden-mobile">Linux常用软件版本查看命令</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
