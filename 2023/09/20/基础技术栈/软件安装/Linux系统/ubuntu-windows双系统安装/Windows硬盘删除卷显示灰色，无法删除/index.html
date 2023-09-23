@@ -16,25 +16,25 @@
   <meta name="author" content="SLAM">
   <meta name="keywords" content="keywords">
   
-    <meta name="description" content="操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 + win10 &#x2F; win11双系统 修改时间：2021年12月21日    📌卸载ubuntu时要慎重，不是直接删除ubuntu所在分区这么简单，否则你会发现你的windows系统也进不去了 （因电脑而异）。  正确卸载步骤  windows中打开软件EasyUEFI，进入【管理EFI启动项】">
+    <meta name="description" content="操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 + win10 &#x2F; win11 双系统 修改时间：2021年12月21日    📌请务必谨慎操作，删错了，就没了！   1. cmd 打开命令提示符窗口，输入指令   1diskpart    # 打卡一个新的窗口  2. 新窗口输入指令   123456789list diskselect d">
 <meta property="og:type" content="article">
-<meta property="og:title" content="双系统正确卸载Ubuntu系统">
-<meta property="og:url" content="https://xrobotspace.github.io/2023/09/20/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%AD%A3%E7%A1%AE%E5%8D%B8%E8%BD%BDUbuntu%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:title" content="Windows硬盘删除卷显示灰色，无法删除">
+<meta property="og:url" content="https://xrobotspace.github.io/2023/09/20/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ubuntu-windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/Windows%E7%A1%AC%E7%9B%98%E5%88%A0%E9%99%A4%E5%8D%B7%E6%98%BE%E7%A4%BA%E7%81%B0%E8%89%B2%EF%BC%8C%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4/index.html">
 <meta property="og:site_name" content="title">
-<meta property="og:description" content="操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 + win10 &#x2F; win11双系统 修改时间：2021年12月21日    📌卸载ubuntu时要慎重，不是直接删除ubuntu所在分区这么简单，否则你会发现你的windows系统也进不去了 （因电脑而异）。  正确卸载步骤  windows中打开软件EasyUEFI，进入【管理EFI启动项】">
+<meta property="og:description" content="操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 + win10 &#x2F; win11 双系统 修改时间：2021年12月21日    📌请务必谨慎操作，删错了，就没了！   1. cmd 打开命令提示符窗口，输入指令   1diskpart    # 打卡一个新的窗口  2. 新窗口输入指令   123456789list diskselect d">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/8.png">
-<meta property="article:published_time" content="2023-09-20T04:20:51.938Z">
-<meta property="article:modified_time" content="2023-09-20T07:23:59.932Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/9.png">
+<meta property="article:published_time" content="2023-09-20T04:21:40.368Z">
+<meta property="article:modified_time" content="2023-09-20T07:08:34.300Z">
 <meta property="article:author" content="SLAM">
 <meta property="article:tag" content="系统安装">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/8.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/9.png">
   
   
   
-  <title>双系统正确卸载Ubuntu系统 - title</title>
+  <title>Windows硬盘删除卷显示灰色，无法删除 - title</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="双系统正确卸载Ubuntu系统"></span>
+            <span id="subtitle" data-typed-text="Windows硬盘删除卷显示灰色，无法删除"></span>
           
         </div>
 
@@ -211,7 +211,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-20 12:20" pubdate>
+        <time datetime="2023-09-20 12:21" pubdate>
           September 20, 2023 pm
         </time>
       </span>
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          278 words
+          282 words
         
       </span>
     
@@ -271,30 +271,26 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">双系统正确卸载Ubuntu系统</h1>
+            <h1 id="seo-header">Windows硬盘删除卷显示灰色，无法删除</h1>
             
             
               <div class="markdown-body">
                 
                 <hr>
 <ul>
-<li>操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 + win10 &#x2F; win11双系统</li>
+<li>操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 + win10 &#x2F; win11 双系统</li>
 <li>修改时间：2021年12月21日</li>
 </ul>
 <hr>
 <blockquote>
-<p>📌卸载ubuntu时要慎重，不是直接删除ubuntu所在分区这么简单，否则你会发现你的windows系统也进不去了 <strong>（因电脑而异）</strong>。</p>
+<p>📌<strong>请务必谨慎操作，删错了，就没了！</strong></p>
 </blockquote>
-<p><strong>正确卸载步骤</strong></p>
-<ol>
-<li><p>windows中打开软件EasyUEFI，进入【管理EFI启动项】。</p>
-</li>
-<li><p>【启动序列】中选择ubuntu系统，点击菜单【删除选中项】，删除ubuntu系统的启动项。</p>
-<p> <img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/8.png" srcset="/img/loading.gif" lazyload></p>
-</li>
-<li><p>删除磁盘管理中的ubuntu系统有关分区。（删除系统分区时，有可能出现删除选项是灰色，无法点击，<a href="https://xrobotspace.github.io/2023/09/20/Windows%E7%A1%AC%E7%9B%98%E5%88%A0%E9%99%A4%E5%8D%B7%E6%98%BE%E7%A4%BA%E7%81%B0%E8%89%B2%EF%BC%8C%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4/" title="解决方案">解决方案</a>）</p>
-</li>
-</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/9.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>1. cmd 打开命令提示符窗口，输入指令</strong></p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">diskpart    <span class="hljs-comment"># 打卡一个新的窗口</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>2. 新窗口输入指令</strong></p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">list disk<br><br><span class="hljs-keyword">select</span> disk  [number]     <span class="hljs-comment"># 选择删除卷所在的硬盘号，根据实际情况选择</span><br><br>list partition<br><br><span class="hljs-keyword">select</span> partition  [number]     <span class="hljs-comment"># 选择具体要删除的卷号，根据实际情况选择</span><br><br>delete partition override    <span class="hljs-comment"># 删除，谨慎操作！</span><br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -365,9 +361,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/09/20/Windows%E7%A1%AC%E7%9B%98%E5%88%A0%E9%99%A4%E5%8D%B7%E6%98%BE%E7%A4%BA%E7%81%B0%E8%89%B2%EF%BC%8C%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4/" title="Windows硬盘删除卷显示灰色，无法删除">
+                      <a href="/2023/09/20/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ubuntu-windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/windows-ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9FU%E7%9B%98%E5%AE%89%E8%A3%85/" title="windows-ubuntu双系统U盘安装">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Windows硬盘删除卷显示灰色，无法删除</span>
+                        <span class="hidden-mobile">windows-ubuntu双系统U盘安装</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -375,8 +371,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/16/ubuntu%E7%B3%BB%E7%BB%9FU%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%E5%88%B6%E4%BD%9C/" title="ubuntu系统U盘启动盘制作">
-                        <span class="hidden-mobile">ubuntu系统U盘启动盘制作</span>
+                      <a href="/2023/09/20/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ubuntu-windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%AD%A3%E7%A1%AE%E5%8D%B8%E8%BD%BDUbuntu%E7%B3%BB%E7%BB%9F/" title="双系统正确卸载Ubuntu系统">
+                        <span class="hidden-mobile">双系统正确卸载Ubuntu系统</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
