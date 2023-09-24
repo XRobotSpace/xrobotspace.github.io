@@ -7,7 +7,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/browser_icon.png">
   <link rel="icon" href="/img/browser_icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -40,6 +40,8 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
@@ -301,37 +303,51 @@
 <p>未特别注明安装版本的步骤，表示该步骤对于不同ubuntu版本没有区别。</p>
 </blockquote>
 <h1 id="一、软件源配置"><a href="#一、软件源配置" class="headerlink" title="一、软件源配置"></a><strong>一、软件源配置</strong></h1><h2 id="1-配置ROS软件源"><a href="#1-配置ROS软件源" class="headerlink" title="1. 配置ROS软件源"></a><strong>1. 配置ROS软件源</strong></h2><p>（本文使用清华源）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo sh -c <span class="hljs-string">&#x27;. /etc/lsb-release &amp;&amp; echo &quot;deb http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#x27;</span><br><br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">sh</span> <span class="token parameter variable">-c</span> <span class="token string">'. /etc/lsb-release &amp;&amp; echo "deb http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ `lsb_release -cs` main" > /etc/apt/sources.list.d/ros-latest.list'</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
-<h2 id="2-配置密钥"><a href="#2-配置密钥" class="headerlink" title="2. 配置密钥"></a><strong>2. 配置密钥</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-key adv --keyserver <span class="hljs-string">&#x27;hkp://keyserver.ubuntu.com:80&#x27;</span> --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654<br><br></code></pre></td></tr></table></figure>
+<h2 id="2-配置密钥"><a href="#2-配置密钥" class="headerlink" title="2. 配置密钥"></a><strong>2. 配置密钥</strong></h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> apt-key adv <span class="token parameter variable">--keyserver</span> <span class="token string">'hkp://keyserver.ubuntu.com:80'</span> --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
-<h1 id="二、安装-ROS"><a href="#二、安装-ROS" class="headerlink" title="二、安装 ROS"></a><strong>二、安装 ROS</strong></h1><h2 id="1-更新系统软件包列表"><a href="#1-更新系统软件包列表" class="headerlink" title="1. 更新系统软件包列表"></a><strong>1. 更新系统软件包列表</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt update<br></code></pre></td></tr></table></figure>
+<h1 id="二、安装-ROS"><a href="#二、安装-ROS" class="headerlink" title="二、安装 ROS"></a><strong>二、安装 ROS</strong></h1><h2 id="1-更新系统软件包列表"><a href="#1-更新系统软件包列表" class="headerlink" title="1. 更新系统软件包列表"></a><strong>1. 更新系统软件包列表</strong></h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
 <h2 id="2-安装桌面完整版-ROS"><a href="#2-安装桌面完整版-ROS" class="headerlink" title="2. 安装桌面完整版 ROS"></a><strong>2. 安装桌面完整版 ROS</strong></h2><ul>
-<li><strong>ROS Noetic</strong> - ubuntu 20.04<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install ros-noetic-desktop-full<br><br></code></pre></td></tr></table></figure></li>
-<li><strong>ROS Melodic</strong> - ubuntu 18.04<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install ros-melodic-desktop-full<br></code></pre></td></tr></table></figure></li>
+<li><strong>ROS Noetic</strong> - ubuntu 20.04<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> ros-noetic-desktop-full
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure></li>
+<li><strong>ROS Melodic</strong> - ubuntu 18.04<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> ros-melodic-desktop-full<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure></li>
 </ul>
 <h2 id="3-rosinstall-安装"><a href="#3-rosinstall-安装" class="headerlink" title="3. rosinstall 安装"></a><strong>3. rosinstall 安装</strong></h2><ul>
-<li><strong>ROS Noetic</strong> - ubuntu 20.04<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install python3-rosdep python3-rosinstall-generator python3-wstool<br></code></pre></td></tr></table></figure></li>
-<li>ROS Melodic - ubuntu 18.04<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential<br></code></pre></td></tr></table></figure></li>
+<li><strong>ROS Noetic</strong> - ubuntu 20.04<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> python3-rosdep python3-rosinstall-generator python3-wstool<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure></li>
+<li>ROS Melodic - ubuntu 18.04<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure></li>
 </ul>
-<h2 id="4-初始化-rosdep"><a href="#4-初始化-rosdep" class="headerlink" title="4. 初始化 rosdep"></a><strong>4. 初始化 rosdep</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo rosdep init<br>rosdep update<br></code></pre></td></tr></table></figure>
+<h2 id="4-初始化-rosdep"><a href="#4-初始化-rosdep" class="headerlink" title="4. 初始化 rosdep"></a><strong>4. 初始化 rosdep</strong></h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> rosdep init
+rosdep update<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
 
 <blockquote>
 <p>该步骤因网络问题出错较多，两种解决方案：<a href="https://xrobotspace.github.io/2023/09/20/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ubuntu-windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/ubuntu%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE/">1-ubuntu命令行添加代理（推荐）</a>，<a href="https://xrobotspace.github.io/2023/09/23/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ROS%E5%AE%89%E8%A3%85/sudo-rosdep-init%EF%BC%8Crosdep-update%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">2-解决方案</a>。</p>
 </blockquote>
 <h2 id="5-配置ROS环境变量"><a href="#5-配置ROS环境变量" class="headerlink" title="5. 配置ROS环境变量"></a><strong>5. 配置ROS环境变量</strong></h2><ul>
-<li><strong>ROS Noetic</strong> - ubuntu 20.04<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;source /opt/ros/noetic/setup.bash&quot;</span> &gt;&gt; ~/.bashrc<br><span class="hljs-comment"># 如果使用turtlebot</span><br><span class="hljs-built_in">export</span> TURTLEBOT3_MODEL=burger<br><span class="hljs-built_in">source</span> ~/.bashrc<br></code></pre></td></tr></table></figure></li>
-<li>ROS Melodic - ubuntu 18.04<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;source /opt/ros/melodic/setup.bash&quot;</span> &gt;&gt; ~/.bashrc<br><span class="hljs-comment"># 如果使用turtlebot</span><br><span class="hljs-built_in">export</span> TURTLEBOT3_MODEL=burger<br><span class="hljs-built_in">source</span> ~/.bashrc<br></code></pre></td></tr></table></figure></li>
+<li><strong>ROS Noetic</strong> - ubuntu 20.04<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"source /opt/ros/noetic/setup.bash"</span> <span class="token operator">>></span> ~/.bashrc
+<span class="token comment"># 如果使用turtlebot</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">TURTLEBOT3_MODEL</span><span class="token operator">=</span>burger
+<span class="token builtin class-name">source</span> ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure></li>
+<li>ROS Melodic - ubuntu 18.04<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"source /opt/ros/melodic/setup.bash"</span> <span class="token operator">>></span> ~/.bashrc
+<span class="token comment"># 如果使用turtlebot</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">TURTLEBOT3_MODEL</span><span class="token operator">=</span>burger
+<span class="token builtin class-name">source</span> ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure></li>
 </ul>
 <h1 id="三、测试-ROS"><a href="#三、测试-ROS" class="headerlink" title="三、测试 ROS"></a><strong>三、测试 ROS</strong></h1><p><strong>依次打开三个终端，运行指令：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">roscore<br>rosrun turtlesim turtlesim_node<br>rosrun turtlesim turtle_teleop_key<br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">roscore
+rosrun turtlesim turtlesim_node
+rosrun turtlesim turtle_teleop_key<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
 
 <h1 id="四、卸载-ROS"><a href="#四、卸载-ROS" class="headerlink" title="四、卸载 ROS"></a><strong>四、卸载 ROS</strong></h1><p>第一步：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get purge ros-*<br>sudo <span class="hljs-built_in">rm</span> -rf /etc/ros<br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> purge ros-*
+<span class="token function">sudo</span> <span class="token function">rm</span> <span class="token parameter variable">-rf</span> /etc/ros<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
 
 <p>第二步：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo gedit ~/.bashrc    <span class="hljs-comment"># 删除其中关于ros的环境变量</span><br><span class="hljs-built_in">source</span> ~/.bashrc<br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> gedit ~/.bashrc    <span class="token comment"># 删除其中关于ros的环境变量</span>
+<span class="token builtin class-name">source</span> ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
 
 <h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a target="_blank" rel="noopener" href="http://wiki.ros.org/cn/ROS/Installation">http://wiki.ros.org/cn/ROS/Installation</a></p>
 
@@ -606,6 +622,8 @@
   });
 </script>
 
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 

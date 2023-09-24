@@ -7,7 +7,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/browser_icon.png">
   <link rel="icon" href="/img/browser_icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -16,12 +16,12 @@
   <meta name="author" content="SLAM">
   <meta name="keywords" content="keywords">
   
-    <meta name="description" content="操作系统：ubuntu18.04 修改时间：2021年12月21日 说明： ubuntu20.04基本步骤类似，存在一些文件的路径有区别。 本方案仅供记录，这个问题通过ubuntu命令行添加代理方式能更好解决。     一、问题描述在Ubuntu 18.04 LTS 64bit 安装 ROS Melodic中，步骤初始化rosdep时需要执行指令： 12sudo rosdep initrosd">
+    <meta name="description" content="操作系统：ubuntu18.04 修改时间：2021年12月21日 说明： ubuntu20.04基本步骤类似，存在一些文件的路径有区别。 本方案仅供记录，这个问题通过ubuntu命令行添加代理方式能更好解决。     一、问题描述在Ubuntu 18.04 LTS 64bit 安装 ROS Melodic中，步骤初始化rosdep时需要执行指令： sudo rosdep init rosde">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sudo rosdep init，rosdep update失败解决方案">
 <meta property="og:url" content="https://xrobotspace.github.io/2023/09/23/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ROS%E5%AE%89%E8%A3%85/sudo-rosdep-init%EF%BC%8Crosdep-update%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html">
 <meta property="og:site_name" content="title">
-<meta property="og:description" content="操作系统：ubuntu18.04 修改时间：2021年12月21日 说明： ubuntu20.04基本步骤类似，存在一些文件的路径有区别。 本方案仅供记录，这个问题通过ubuntu命令行添加代理方式能更好解决。     一、问题描述在Ubuntu 18.04 LTS 64bit 安装 ROS Melodic中，步骤初始化rosdep时需要执行指令： 12sudo rosdep initrosd">
+<meta property="og:description" content="操作系统：ubuntu18.04 修改时间：2021年12月21日 说明： ubuntu20.04基本步骤类似，存在一些文件的路径有区别。 本方案仅供记录，这个问题通过ubuntu命令行添加代理方式能更好解决。     一、问题描述在Ubuntu 18.04 LTS 64bit 安装 ROS Melodic中，步骤初始化rosdep时需要执行指令： sudo rosdep init rosde">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-09-23T13:55:55.349Z">
 <meta property="article:modified_time" content="2023-09-23T16:42:23.463Z">
@@ -40,6 +40,8 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
@@ -220,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4k words
+          3.9k words
         
       </span>
     
@@ -231,7 +233,7 @@
         
         
         
-          34 mins
+          33 mins
         
       </span>
     
@@ -285,54 +287,89 @@
 </ul>
 <hr>
 <h1 id="一、问题描述"><a href="#一、问题描述" class="headerlink" title="一、问题描述"></a><strong>一、问题描述</strong></h1><p>在Ubuntu 18.04 LTS 64bit 安装 ROS Melodic中，步骤初始化rosdep时需要执行指令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo rosdep init<br>rosdep update<br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> rosdep init
+rosdep update<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
 
 <p>但在执行时会因为网络问题出现错误提示。</p>
-<h2 id="1-错误-1"><a href="#1-错误-1" class="headerlink" title="1 错误-1"></a><strong>1 错误-1</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo: rosdep：找不到命令<br></code></pre></td></tr></table></figure>
+<h2 id="1-错误-1"><a href="#1-错误-1" class="headerlink" title="1 错误-1"></a><strong>1 错误-1</strong></h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo: rosdep：找不到命令<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
 <p><strong>解决办法</strong>：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install python-rosdep<br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> python-rosdep<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
-<h2 id="2-错误-2"><a href="#2-错误-2" class="headerlink" title="2 错误-2"></a><strong>2 错误-2</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ERROR: default sources list file already exists: /etc/ros/rosdep/sources.list.d/20-default.list Please delete <span class="hljs-keyword">if</span> you wish to re-initialize<br></code></pre></td></tr></table></figure>
+<h2 id="2-错误-2"><a href="#2-错误-2" class="headerlink" title="2 错误-2"></a><strong>2 错误-2</strong></h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ERROR: default sources list <span class="token function">file</span> already exists: /etc/ros/rosdep/sources.list.d/20-default.list Please delete <span class="token keyword">if</span> you wish to re-initialize<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
 <p><strong>解决办法</strong>：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">rm</span> /etc/ros/rosdep/sources.list.d/20-default.list<br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">rm</span> /etc/ros/rosdep/sources.list.d/20-default.list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
 <p>路径需根据具体位置修改正确。</p>
-<h2 id="3-错误-3"><a href="#3-错误-3" class="headerlink" title="3 错误-3"></a>3 错误-3</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ERROR: cannot download default sources list from: https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/sources.list.d/20-default.list Website may be down.<br></code></pre></td></tr></table></figure>
+<h2 id="3-错误-3"><a href="#3-错误-3" class="headerlink" title="3 错误-3"></a>3 错误-3</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ERROR: cannot download default sources list from: https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/sources.list.d/20-default.list Website may be down.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
-<h2 id="4-错误-4"><a href="#4-错误-4" class="headerlink" title="4 错误-4"></a>4 错误-4</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">reading <span class="hljs-keyword">in</span> sources list data from /etc/ros/rosdep/sources.list.d<br>ERROR: unable to process <span class="hljs-built_in">source</span> [https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/osx-homebrew.yaml]:<br>&lt;urlopen error timed out&gt; (https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/osx-homebrew.yaml)<br>ERROR: unable to process <span class="hljs-built_in">source</span> [https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/base.yaml]:<br>&lt;urlopen error timed out&gt; (https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/base.yaml)<br>ERROR: unable to process <span class="hljs-built_in">source</span><br>[https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/python.yaml]:<br>&lt;urlopen error timed out&gt; (https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/python.yaml)<br>ERROR: unable to process <span class="hljs-built_in">source</span> [https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/ruby.yaml]:<br>&lt;urlopen error timed out&gt; (https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/ruby.yaml)<br>ERROR: unable to process <span class="hljs-built_in">source</span> [https://raw.githubusercontent.com/ros/rosdistro/master/releases/fuerte.yaml]:Failed to download target platform data <span class="hljs-keyword">for</span> gbpdistro:&lt;urlopen error timed out&gt;<br>Query rosdistro index https://raw.githubusercontent.com/ros/rosdistro/master/index-v4.yaml <br>ERROR: error loading sources list:<br>&lt;urlopen error &lt;urlopen error timed out&gt; (https://raw.githubusercontent.com/ros/rosdistro/master/index-v4.yaml)&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="4-错误-4"><a href="#4-错误-4" class="headerlink" title="4 错误-4"></a>4 错误-4</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">reading <span class="token keyword">in</span> sources list data from /etc/ros/rosdep/sources.list.d
+ERROR: unable to process <span class="token builtin class-name">source</span> <span class="token punctuation">[</span>https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/osx-homebrew.yaml<span class="token punctuation">]</span>:
+<span class="token operator">&lt;</span>urlopen error timed out<span class="token operator">></span> <span class="token punctuation">(</span>https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/osx-homebrew.yaml<span class="token punctuation">)</span>
+ERROR: unable to process <span class="token builtin class-name">source</span> <span class="token punctuation">[</span>https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/base.yaml<span class="token punctuation">]</span>:
+<span class="token operator">&lt;</span>urlopen error timed out<span class="token operator">></span> <span class="token punctuation">(</span>https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/base.yaml<span class="token punctuation">)</span>
+ERROR: unable to process <span class="token builtin class-name">source</span>
+<span class="token punctuation">[</span>https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/python.yaml<span class="token punctuation">]</span>:
+<span class="token operator">&lt;</span>urlopen error timed out<span class="token operator">></span> <span class="token punctuation">(</span>https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/python.yaml<span class="token punctuation">)</span>
+ERROR: unable to process <span class="token builtin class-name">source</span> <span class="token punctuation">[</span>https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/ruby.yaml<span class="token punctuation">]</span>:
+<span class="token operator">&lt;</span>urlopen error timed out<span class="token operator">></span> <span class="token punctuation">(</span>https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/ruby.yaml<span class="token punctuation">)</span>
+ERROR: unable to process <span class="token builtin class-name">source</span> <span class="token punctuation">[</span>https://raw.githubusercontent.com/ros/rosdistro/master/releases/fuerte.yaml<span class="token punctuation">]</span>:Failed to download target platform data <span class="token keyword">for</span> gbpdistro:<span class="token operator">&lt;</span>urlopen error timed out<span class="token operator">></span>
+Query rosdistro index https://raw.githubusercontent.com/ros/rosdistro/master/index-v4.yaml 
+ERROR: error loading sources list:
+<span class="token operator">&lt;</span>urlopen error <span class="token operator">&lt;</span>urlopen error timed out<span class="token operator">></span> <span class="token punctuation">(</span>https://raw.githubusercontent.com/ros/rosdistro/master/index-v4.yaml<span class="token punctuation">)</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
-<h1 id="二、解决方案"><a href="#二、解决方案" class="headerlink" title="二、解决方案"></a>二、解决方案</h1><h3 id="0-将rosdistro-clone到本地"><a href="#0-将rosdistro-clone到本地" class="headerlink" title="0. 将rosdistro clone到本地"></a>0. 将rosdistro clone到本地</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/ros/rosdistro.git<br></code></pre></td></tr></table></figure>
+<h1 id="二、解决方案"><a href="#二、解决方案" class="headerlink" title="二、解决方案"></a>二、解决方案</h1><h3 id="0-将rosdistro-clone到本地"><a href="#0-将rosdistro-clone到本地" class="headerlink" title="0. 将rosdistro clone到本地"></a>0. 将rosdistro clone到本地</h3><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/ros/rosdistro.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
 <p>默认会在<code>home/yourname/</code>下出现一个rosdistro文件夹，我习惯将文件夹复制到&#x2F;opt目录下，根据实际情况修改。</p>
-<h3 id="1-修改第一个文件"><a href="#1-修改第一个文件" class="headerlink" title="1. 修改第一个文件"></a>1. 修改第一个文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo gedit /opt/rosdistro/rosdep/sources.list.d/20-default.list <br></code></pre></td></tr></table></figure>
+<h3 id="1-修改第一个文件"><a href="#1-修改第一个文件" class="headerlink" title="1. 修改第一个文件"></a>1. 修改第一个文件</h3><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> gedit /opt/rosdistro/rosdep/sources.list.d/20-default.list <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
 <p>修改全部内容为(<strong>注意修改</strong>&#x2F;opt为你自己的rosdistro文件夹目录 <strong>，下同</strong>)：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># os-specific listings first</span><br>yaml file:///opt/rosdistro/rosdep/osx-homebrew.yaml osx<br> <br><span class="hljs-comment"># generic</span><br>yaml file:///opt/rosdistro/rosdep/base.yaml<br>yaml file:///opt/rosdistro/rosdep/python.yaml<br>yaml file:///opt/rosdistro/rosdep/ruby.yaml<br>gbpdistro file:///opt/rosdistro/releases/fuerte.yaml fuerte <br><br><span class="hljs-comment"># newer distributions (Groovy, Hydro, ...) must not be listed anymore, they are being fetched from the rosdi</span><br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># os-specific listings first</span>
+yaml file:///opt/rosdistro/rosdep/osx-homebrew.yaml osx
+ 
+<span class="token comment"># generic</span>
+yaml file:///opt/rosdistro/rosdep/base.yaml
+yaml file:///opt/rosdistro/rosdep/python.yaml
+yaml file:///opt/rosdistro/rosdep/ruby.yaml
+gbpdistro file:///opt/rosdistro/releases/fuerte.yaml fuerte 
 
-<h3 id="2-修改第二个文件"><a href="#2-修改第二个文件" class="headerlink" title="2. 修改第二个文件"></a>2. 修改第二个文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo gedit /usr/lib/python2.7/dist-packages/rosdep2/gbpdistro_support.py<br></code></pre></td></tr></table></figure>
+<span class="token comment"># newer distributions (Groovy, Hydro, ...) must not be listed anymore, they are being fetched from the rosdi</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+
+<h3 id="2-修改第二个文件"><a href="#2-修改第二个文件" class="headerlink" title="2. 修改第二个文件"></a>2. 修改第二个文件</h3><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> gedit /usr/lib/python2.7/dist-packages/rosdep2/gbpdistro_support.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
 <p>修改部分内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">FUERTE_GBPDISTRO_URL = <span class="hljs-string">&#x27;file:///opt/rosdistro/releases/fuerte.yaml&#x27;</span><br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">FUERTE_GBPDISTRO_URL <span class="token operator">=</span> <span class="token string">'file:///opt/rosdistro/releases/fuerte.yaml'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
-<h3 id="3-修改第三个文件"><a href="#3-修改第三个文件" class="headerlink" title="3. 修改第三个文件"></a>3. 修改第三个文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo gedit /usr/lib/python2.7/dist-packages/rosdep2/rep3.py<br></code></pre></td></tr></table></figure>
-
-<p>修改部分内容为：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">REP3_TARGETS_URL = <span class="hljs-string">&#x27;file:///opt/rosdistro/releases/targets.yaml&#x27;</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="4-修改第四个文件"><a href="#4-修改第四个文件" class="headerlink" title="4. 修改第四个文件"></a>4. 修改第四个文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo gedit /usr/lib/python2.7/dist-packages/rosdistro/__init__.py<br></code></pre></td></tr></table></figure>
+<h3 id="3-修改第三个文件"><a href="#3-修改第三个文件" class="headerlink" title="3. 修改第三个文件"></a>3. 修改第三个文件</h3><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> gedit /usr/lib/python2.7/dist-packages/rosdep2/rep3.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
 <p>修改部分内容为：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">DEFAULT_INDEX_URL = <span class="hljs-string">&#x27;file:///opt/rosdistro/index-v4.yaml&#x27;</span><br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">REP3_TARGETS_URL <span class="token operator">=</span> <span class="token string">'file:///opt/rosdistro/releases/targets.yaml'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
-<h3 id="5-修改第五个文件"><a href="#5-修改第五个文件" class="headerlink" title="5. 修改第五个文件"></a>5. 修改第五个文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo gedit /etc/ros/rosdep/sources.list.d/20-default.list<br></code></pre></td></tr></table></figure>
+<h3 id="4-修改第四个文件"><a href="#4-修改第四个文件" class="headerlink" title="4. 修改第四个文件"></a>4. 修改第四个文件</h3><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> gedit /usr/lib/python2.7/dist-packages/rosdistro/__init__.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+
+<p>修改部分内容为：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">DEFAULT_INDEX_URL <span class="token operator">=</span> <span class="token string">'file:///opt/rosdistro/index-v4.yaml'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+
+<h3 id="5-修改第五个文件"><a href="#5-修改第五个文件" class="headerlink" title="5. 修改第五个文件"></a>5. 修改第五个文件</h3><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> gedit /etc/ros/rosdep/sources.list.d/20-default.list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
 <p>说明：如果指令<code>sudo rosdep init</code>没有执行，则不存在目录<code>/etc/ros/rosdep/sources.list.d</code>，需要自己创建后再修改。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># sudo rosdep init没有执行成功才需要自己创建</span><br>sudo <span class="hljs-built_in">mkdir</span> -p /etc/ros/rosdep/sources.list.d<br><span class="hljs-built_in">cd</span> /etc/ros/rosdep/sources.list.d<br>sudo <span class="hljs-built_in">touch</span> 20-default.list<br>sudo gedit 20-default.list<br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># sudo rosdep init没有执行成功才需要自己创建</span>
+<span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /etc/ros/rosdep/sources.list.d
+<span class="token builtin class-name">cd</span> /etc/ros/rosdep/sources.list.d
+<span class="token function">sudo</span> <span class="token function">touch</span> <span class="token number">20</span>-default.list
+<span class="token function">sudo</span> gedit <span class="token number">20</span>-default.list<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
 <p>如果指令<code>sudo rosdep init</code>执行成功了，则存在目录<code>/etc/ros/rosdep/sources.list.d</code>，可直接修改部分内容。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#os-specific listings first</span><br>yaml file:///opt/rosdistro/rosdep/osx-homebrew.yaml osx<br><span class="hljs-comment">#generic</span><br>yaml file:///opt/rosdistro/rosdep/base.yaml<br>yaml file:///opt/rosdistro/rosdep/python.yaml<br>yaml file:///opt/rosdistro/rosdep/ruby.yaml<br>gbpdistro file:///opt/rosdistro/releases/fuerte.yaml fuerte<br><br><span class="hljs-comment">#newer distributions (Groovy, Hydro, ...) must not be listed anymore, they are being fetched from the </span><br></code></pre></td></tr></table></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#os-specific listings first</span>
+yaml file:///opt/rosdistro/rosdep/osx-homebrew.yaml osx
+<span class="token comment">#generic</span>
+yaml file:///opt/rosdistro/rosdep/base.yaml
+yaml file:///opt/rosdistro/rosdep/python.yaml
+yaml file:///opt/rosdistro/rosdep/ruby.yaml
+gbpdistro file:///opt/rosdistro/releases/fuerte.yaml fuerte
+
+<span class="token comment">#newer distributions (Groovy, Hydro, ...) must not be listed anymore, they are being fetched from the </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
 <h3 id="6-执行指令rosdep-update，运行通过"><a href="#6-执行指令rosdep-update，运行通过" class="headerlink" title="6. 执行指令rosdep update，运行通过"></a>6. 执行指令<code>rosdep update</code>，运行通过</h3><hr>
 <h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42584917/article/details/114448355">https://blog.csdn.net/weixin_42584917/article/details/114448355</a></p>
@@ -610,6 +647,8 @@
   });
 </script>
 
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
