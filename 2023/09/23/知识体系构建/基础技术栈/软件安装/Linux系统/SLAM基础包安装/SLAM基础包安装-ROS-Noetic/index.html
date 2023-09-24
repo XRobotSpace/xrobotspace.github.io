@@ -20,7 +20,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="SLAM基础包安装 - ROS Noetic">
 <meta property="og:url" content="https://xrobotspace.github.io/2023/09/23/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/SLAM%E5%9F%BA%E7%A1%80%E5%8C%85%E5%AE%89%E8%A3%85/SLAM%E5%9F%BA%E7%A1%80%E5%8C%85%E5%AE%89%E8%A3%85-ROS-Noetic/index.html">
-<meta property="og:site_name" content="title">
+<meta property="og:site_name" content="XRobotSpace">
 <meta property="og:description" content="目录 一 、 注意事项 二 、 二进制安装软件包 三 、 源码安装软件包 1. g2o安装 2. abseil-cpp安装 3. cartographer   四、不用安装，仅做记录 1. IPOPT 1）X86正确安装方式 2）X86错误安装方式 3）ARM版本正确   2. osqp 3. control_box_rst 4. protobuf安装 5. gtsam 6. ceres 7. R">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/21.png">
@@ -51,7 +51,7 @@
   
   
   
-  <title>SLAM基础包安装 - ROS Noetic - title</title>
+  <title>SLAM基础包安装 - ROS Noetic - XRobotSpace</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          13k words
+          14k words
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          106 mins
+          118 mins
         
       </span>
     
@@ -348,112 +348,112 @@
 </ul>
 <hr>
 <figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gmapping
-<span class="token comment"># NO</span>
+# NO
 hector
-<span class="token comment"># NO</span>
+# NO
 karto
-<span class="token comment"># sparse_bundle_adjustment</span>
+# sparse_bundle_adjustment
 ALOAM
-<span class="token comment"># Ceres</span>
+# Ceres
 Lego-LOAM
-<span class="token comment"># GTSAM</span>
+# GTSAM
 LIO-SAM
-<span class="token comment"># GTSAM</span>
+# GTSAM
 cartographer
-<span class="token comment"># absl Ceres Lua python3-sphinx libgmock-dev</span>
+# absl Ceres Lua python3-sphinx libgmock-dev
 naviation
-<span class="token comment"># libsdl1.2-dev libsdl-image1.2-dev ros-noetic-tf2-sensor-msgs ros-noetic-move-base-msgs</span>
+# libsdl1.2-dev libsdl-image1.2-dev ros-noetic-tf2-sensor-msgs ros-noetic-move-base-msgs
 navigation_experimental
-<span class="token comment"># ros-noetic-sbpl</span>
+# ros-noetic-sbpl
 tuw_robot
-<span class="token comment"># libdxflib-dev</span>
+# libdxflib-dev
 hunter
-<span class="token comment"># libasio-dev</span>
+# libasio-dev
 gnss_hc220
-<span class="token comment"># ros-noetic-automotive-autonomy-msgs</span>
+# ros-noetic-automotive-autonomy-msgs
 gps_umd
-<span class="token comment"># libgps-dev</span>
+# libgps-dev
 teb
-<span class="token comment"># g2o(源码安装) libsuitesparse-dev</span>
+# g2o(源码安装) libsuitesparse-dev
 mpc_local_planner
-<span class="token comment"># teb_local_planner osqp control_box_rst</span>
+# teb_local_planner osqp control_box_rst
 ros-noetic-control-box-rst
-<span class="token variable"><span class="token variable">`</span> -- 这个包安装完之后就默认安装了IPOPT，官方MPC包使用的就是这个版本的 IPOPT。
-  --  当使用 mpc_local_planner_mb 这个包时，需要安装 <span class="token number">3.12</span>.8 版本的 IPOPT 包  <span class="token variable">`</span></span>
+&#96; -- 这个包安装完之后就默认安装了IPOPT，官方MPC包使用的就是这个版本的 IPOPT。
+  --  当使用 mpc_local_planner_mb 这个包时，需要安装 3.12.8 版本的 IPOPT 包  &#96;
 velodyne 
-<span class="token comment"># libpcap-dev</span>
+# libpcap-dev
 realsense
-<span class="token comment"># ros-noetic-realsense2-camera</span>
+# ros-noetic-realsense2-camera
 urdf 的检查工具
-<span class="token comment"># liburdfdom-tools</span>
+# liburdfdom-tools
 ROS_Pure_Pursuit
-<span class="token comment"># ros-noetic-ackermann-msgs</span>
+# ros-noetic-ackermann-msgs
 cppad
-<span class="token comment"># https://github.com/Hypha-ROS/hypharos_minicar</span>
+# https:&#x2F;&#x2F;github.com&#x2F;Hypha-ROS&#x2F;hypharos_minicar
 libompl-dev
-<span class="token comment"># https://github.com/leggedrobotics/se2_navigation</span>
-cmake_clang_tools<span class="token punctuation">(</span>源码安装<span class="token punctuation">)</span>
-<span class="token comment"># https://github.com/ANYbotics/cmake_clang_tools</span>
+# https:&#x2F;&#x2F;github.com&#x2F;leggedrobotics&#x2F;se2_navigation
+cmake_clang_tools(源码安装)
+# https:&#x2F;&#x2F;github.com&#x2F;ANYbotics&#x2F;cmake_clang_tools
 ros-noetic-ompl
-<span class="token comment"># hybrid_astar_planner  [https://github.com/dengpw/hybrid_astar_planner]</span>
+# hybrid_astar_planner  [https:&#x2F;&#x2F;github.com&#x2F;dengpw&#x2F;hybrid_astar_planner]
 ros-noetic-ros-control
-<span class="token comment"># hunter</span>
+# hunter
 ros-noetic-ros-controllers
-<span class="token comment"># hunter</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+# hunter</code></pre></div></figure>
 
 <h1 id="一-、-注意事项"><a href="#一-、-注意事项" class="headerlink" title="一 、 注意事项"></a>一 <strong>、</strong> 注意事项</h1><p>安装包所在的目录，不能有空格。</p>
 <h1 id="二-、-二进制安装软件包"><a href="#二-、-二进制安装软件包" class="headerlink" title="二 、 二进制安装软件包"></a>二 <strong>、</strong> 二进制安装软件包</h1><ul>
-<li><strong>使用二进制包安装的依赖库</strong><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update
+<li><strong>使用二进制包安装的依赖库</strong><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo apt update
 
-<span class="token function">sudo</span> add-apt-repository ppa:borglab/gtsam-release-4.0
+sudo add-apt-repository ppa:borglab&#x2F;gtsam-release-4.0
 
-<span class="token function">sudo</span> <span class="token function">apt</span> update
+sudo apt update
 
-<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">git</span> gcc g++ clang <span class="token function">unzip</span> cmake python3-wstool python3-rosdep ninja-build stow libceres-dev liblua5.2-dev python3-sphinx libgmock-dev  google-mock libboost-all-dev libcairo2-dev libcurl4-openssl-dev libeigen3-dev libgflags-dev libgoogle-glog-dev liblua5.2-dev libsuitesparse-dev lsb-release  libgtsam-dev libgtsam-unstable-dev libsdl1.2-dev libsdl-image1.2-dev libdxflib-dev libasio-dev libgps-dev cppad libompl-dev liburdfdom-tools libpcap-dev
+sudo apt install git gcc g++ clang unzip cmake python3-wstool python3-rosdep ninja-build stow libceres-dev liblua5.2-dev python3-sphinx libgmock-dev  google-mock libboost-all-dev libcairo2-dev libcurl4-openssl-dev libeigen3-dev libgflags-dev libgoogle-glog-dev liblua5.2-dev libsuitesparse-dev lsb-release  libgtsam-dev libgtsam-unstable-dev libsdl1.2-dev libsdl-image1.2-dev libdxflib-dev libasio-dev libgps-dev cppad libompl-dev liburdfdom-tools libpcap-dev
 
-<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> ros-noetic-sparse-bundle-adjustment ros-noetic-tf2-sensor-msgs ros-noetic-move-base-msgs ros-noetic-sbpl ros-noetic-automotive-autonomy-msgs ros-noetic-realsense2-camera ros-noetic-ackermann-msgs ros-noetic-arbotix  ros-noetic-control-box-rst  ros-noetic-ompl ros-noetic-ros-control
+sudo apt install ros-noetic-sparse-bundle-adjustment ros-noetic-tf2-sensor-msgs ros-noetic-move-base-msgs ros-noetic-sbpl ros-noetic-automotive-autonomy-msgs ros-noetic-realsense2-camera ros-noetic-ackermann-msgs ros-noetic-arbotix  ros-noetic-control-box-rst  ros-noetic-ompl ros-noetic-ros-control
 
-<span class="token comment"># vtk 警告</span>
-<span class="token function">sudo</span> <span class="token function">ln</span> <span class="token parameter variable">-s</span> /usr/bin/vtk7 /usr/bin/vtk
+# vtk 警告
+sudo ln -s &#x2F;usr&#x2F;bin&#x2F;vtk7 &#x2F;usr&#x2F;bin&#x2F;vtk
 
-<span class="token comment"># 单独编译</span>
-catkin_make <span class="token parameter variable">-DCATKIN_WHITELIST_PACKAGES</span><span class="token operator">=</span><span class="token string">"cloud_msgs"</span>
-catkin_make <span class="token parameter variable">-DCATKIN_WHITELIST_PACKAGES</span><span class="token operator">=</span><span class="token string">"hunter_msgs"</span>
-catkin_make <span class="token parameter variable">-DCATKIN_WHITELIST_PACKAGES</span><span class="token operator">=</span><span class="token string">"gps_common"</span>
-catkin_make <span class="token parameter variable">-DCATKIN_WHITELIST_PACKAGES</span><span class="token operator">=</span><span class="token string">"tuw_multi_robot_msgs"</span>
+# 单独编译
+catkin_make -DCATKIN_WHITELIST_PACKAGES&#x3D;&quot;cloud_msgs&quot;
+catkin_make -DCATKIN_WHITELIST_PACKAGES&#x3D;&quot;hunter_msgs&quot;
+catkin_make -DCATKIN_WHITELIST_PACKAGES&#x3D;&quot;gps_common&quot;
+catkin_make -DCATKIN_WHITELIST_PACKAGES&#x3D;&quot;tuw_multi_robot_msgs&quot;
 
- <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span>   libmatio-dev libatlas-base-dev libmetis-dev  libglfw3-dev libgtk-3-dev 
-ros-noetic-teleop-twist-keyboard  ros-noetic-ros-controllers  ros-noetic-teleop-twist-joy ros-noetic-geographic-msgs ros-noetic-jsk-rviz-plugins ros-noetic-jsk-recognition-msgs<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></li>
+ sudo apt install   libmatio-dev libatlas-base-dev libmetis-dev  libglfw3-dev libgtk-3-dev 
+ros-noetic-teleop-twist-keyboard  ros-noetic-ros-controllers  ros-noetic-teleop-twist-joy ros-noetic-geographic-msgs ros-noetic-jsk-rviz-plugins ros-noetic-jsk-recognition-msgs</code></pre></div></figure></li>
 <li>说明-未安装<figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">ros-noetic-jsk-recognition-msgs  &#x2F;&#x2F; Voronoi Based Hybrid A*
 ros-noetic-jsk-rviz-plugins      &#x2F;&#x2F; Voronoi Based Hybrid A*
 libompl-dev   &#x2F;&#x2F; Voronoi Based Hybrid A*
 gfortran      &#x2F;&#x2F; Ipopt
 cppad &#x2F;&#x2F; IPOPT
 IPOPT &#x2F;&#x2F; mpc_mb
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></li>
+</code></pre></div></figure></li>
 </ul>
-<h1 id="三-、-源码安装软件包"><a href="#三-、-源码安装软件包" class="headerlink" title="三 、 源码安装软件包"></a>三 <strong>、</strong> 源码安装软件包</h1><h2 id="1-g2o安装"><a href="#1-g2o安装" class="headerlink" title="1. g2o安装"></a>1. g2o安装</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> build
-<span class="token builtin class-name">cd</span> build
-cmake <span class="token punctuation">..</span>
-<span class="token function">make</span> 
-<span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h1 id="三-、-源码安装软件包"><a href="#三-、-源码安装软件包" class="headerlink" title="三 、 源码安装软件包"></a>三 <strong>、</strong> 源码安装软件包</h1><h2 id="1-g2o安装"><a href="#1-g2o安装" class="headerlink" title="1. g2o安装"></a>1. g2o安装</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mkdir build
+cd build
+cmake ..
+make 
+sudo make install</code></pre></div></figure>
 
 <h2 id="2-abseil-cpp安装"><a href="#2-abseil-cpp安装" class="headerlink" title="2. abseil-cpp安装"></a>2. abseil-cpp安装</h2><p>使用cartographer包中的安装文件安装。</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cartographer/scripts/install_abseil.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cartographer&#x2F;scripts&#x2F;install_abseil.sh</code></pre></div></figure>
 
 <h2 id="3-cartographer"><a href="#3-cartographer" class="headerlink" title="3. cartographer"></a>3. cartographer</h2><p>cartographer的成功安装，主要分为几步：</p>
 <ol>
 <li>安装基础依赖。</li>
-<li>安装abseil-cpp。<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装 absl</span>
-cartographer/scripts/install_abseil.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure></li>
+<li>安装abseil-cpp。<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 安装 absl
+cartographer&#x2F;scripts&#x2F;install_abseil.sh</code></pre></div></figure></li>
 <li>安装ceres solver。</li>
 <li>确认是否已经安装protobuf。</li>
-<li>通过cmake安装cartographer。<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装 cartographer</span>
-<span class="token function">mkdir</span> build
-<span class="token builtin class-name">cd</span> build
-cmake <span class="token punctuation">..</span>
-<span class="token function">make</span>
-<span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></li>
+<li>通过cmake安装cartographer。<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 安装 cartographer
+mkdir build
+cd build
+cmake ..
+make
+sudo make install</code></pre></div></figure></li>
 </ol>
 <p><strong>参考资料</strong></p>
 <p><a target="_blank" rel="noopener" href="https://google-cartographer.readthedocs.io/en/latest/">https://google-cartographer.readthedocs.io/en/latest/</a></p>
@@ -464,37 +464,37 @@ cmake <span class="token punctuation">..</span>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35632833/article/details/116233665">https://blog.csdn.net/qq_35632833/article/details/116233665</a></p>
 <p><a target="_blank" rel="noopener" href="https://coin-or.github.io/Ipopt/INSTALL.html">https://coin-or.github.io/Ipopt/INSTALL.html</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/rst-tu-dortmund/control_box_rst/wiki/ipopt">https://github.com/rst-tu-dortmund/control_box_rst/wiki/ipopt</a></p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 最终执行步骤</span>
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> gcc g++ gfortran cmake liblapack-dev pkg-config <span class="token function">unzip</span> <span class="token function">git</span>
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> cppad
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 最终执行步骤
+sudo apt-get install gcc g++ gfortran cmake liblapack-dev pkg-config unzip git
+sudo apt-get install cppad
 
-<span class="token builtin class-name">cd</span> Ipopt-3.12.8
-<span class="token function">mkdir</span> build
-<span class="token builtin class-name">cd</span> build
-<span class="token punctuation">..</span>/configure <span class="token parameter variable">--prefix</span><span class="token operator">=</span>/usr/local
-<span class="token function">make</span> 
-<span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+cd Ipopt-3.12.8
+mkdir build
+cd build
+..&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local
+make 
+sudo make install</code></pre></div></figure>
 
 <h3 id="2）X86错误安装方式"><a href="#2）X86错误安装方式" class="headerlink" title="2）X86错误安装方式"></a>2）X86错误安装方式</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_34945803/article/details/118582379">https://blog.csdn.net/weixin_34945803/article/details/118582379</a></p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-batch" data-language="batch"><code class="language-batch"><span class="token command"><span class="token keyword">sudo</span> apt-get install coinor-libipopt-dev cppad</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-batch" data-language="batch"><code class="language-batch">sudo apt-get install coinor-libipopt-dev cppad</code></pre></div></figure>
 
 <p>错误提示：</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-abap" data-language="abap"><code class="language-abap">/usr/include/coin/IpSmartPtr<span class="token punctuation">.</span>hpp<span class="token punctuation">:</span><span class="token number">18</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">:</span> error<span class="token punctuation">:</span> #error <span class="token eol-comment comment">"don't have header file for stddef"</span>
-# error <span class="token eol-comment comment">"don't have header file for stddef"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-abap" data-language="abap"><code class="language-abap">&#x2F;usr&#x2F;include&#x2F;coin&#x2F;IpSmartPtr.hpp:18:4: error: #error &quot;don&#39;t have header file for stddef&quot;
+# error &quot;don&#39;t have header file for stddef&quot;</code></pre></div></figure>
 
 <h3 id="3）ARM版本正确"><a href="#3）ARM版本正确" class="headerlink" title="3）ARM版本正确"></a>3）ARM版本正确</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_48199550/article/details/123687236">https://blog.csdn.net/weixin_48199550/article/details/123687236</a></p>
 <h2 id="2-osqp"><a href="#2-osqp" class="headerlink" title="2. osqp"></a>2. osqp</h2><p>mpc_local_planner，暂未在ubuntu 20安装。</p>
 <p><a target="_blank" rel="noopener" href="https://osqp.org/docs/get_started/sources.html#build-the-binaries">https://osqp.org/docs/get_started/sources.html#build-the-binaries</a></p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> osqp
-<span class="token function">mkdir</span> build
-<span class="token builtin class-name">cd</span> build
-cmake <span class="token parameter variable">-G</span> <span class="token string">"Unix Makefiles"</span> <span class="token punctuation">..</span>
-cmake <span class="token parameter variable">--build</span> <span class="token builtin class-name">.</span>
-<span class="token function">sudo</span> cmake <span class="token parameter variable">--build</span> <span class="token builtin class-name">.</span> <span class="token parameter variable">--target</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cd osqp
+mkdir build
+cd build
+cmake -G &quot;Unix Makefiles&quot; ..
+cmake --build .
+sudo cmake --build . --target install</code></pre></div></figure>
 
 <h2 id="3-control-box-rst"><a href="#3-control-box-rst" class="headerlink" title="3. control_box_rst"></a>3. control_box_rst</h2><ul>
 <li><p>二进制安装</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> ros-melodic-control-box-rst<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo apt install ros-melodic-control-box-rst</code></pre></div></figure>
 <p>通过这种方式安装后，默认安装了ipopt，官方MPC包需要使用该版本的ipopt。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/21.png" srcset="/img/loading.gif" lazyload></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/rst-tu-dortmund/control_box_rst/wiki/Build-from-Source">https://github.com/rst-tu-dortmund/control_box_rst/wiki/Build-from-Source</a></p>
@@ -503,68 +503,68 @@ cmake <span class="token parameter variable">--build</span> <span class="token b
 </ul>
 <h2 id="4-protobuf安装"><a href="#4-protobuf安装" class="headerlink" title="4. protobuf安装"></a>4. protobuf安装</h2><p>ubuntu18.04 &#x2F; ubuntu 20安装完成后已经安装了该依赖库，无需再次安装，如果再安装一次，路径错误，会出现protobuf链接失败的报错。cartographer依赖的protoc版本是3.0以上。</p>
 <p>在安装之前运行指令：</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">protoc -–version   <span class="token comment"># 查看ubuntu已经安装的protoc版本，安装ubuntu后显示已经安装3.0.0版本</span>
-<span class="token comment"># libprotoc 3.0.0</span>
-<span class="token function">which</span> protoc      <span class="token comment"># 查看protoc安装位置，安装ubuntu后protoc的安装位置为/usr/bin/protoc</span>
-<span class="token comment"># /usr/bin/protoc</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">protoc -–version   # 查看ubuntu已经安装的protoc版本，安装ubuntu后显示已经安装3.0.0版本
+# libprotoc 3.0.0
+which protoc      # 查看protoc安装位置，安装ubuntu后protoc的安装位置为&#x2F;usr&#x2F;bin&#x2F;protoc
+# &#x2F;usr&#x2F;bin&#x2F;protoc</code></pre></div></figure>
 
 <p>如果重复安装了，则会显示protoc的安装位置为：&#x2F;usr&#x2F;local&#x2F;bin&#x2F;protoc，在此位置基础上安装cartographer会报错。</p>
 <p>因此安装cartographer时本步骤不需要执行。</p>
 <h2 id="5-gtsam"><a href="#5-gtsam" class="headerlink" title="5. gtsam"></a>5. gtsam</h2><p>修改为二进制安装。</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Add PPA</span>
-<span class="token function">sudo</span> add-apt-repository ppa:borglab/gtsam-release-4.0
-<span class="token function">sudo</span> <span class="token function">apt</span> update  <span class="token comment"># not necessary since Bionic</span>
-<span class="token comment"># Install:</span>
-<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> libgtsam-dev libgtsam-unstable-dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># Add PPA
+sudo add-apt-repository ppa:borglab&#x2F;gtsam-release-4.0
+sudo apt update  # not necessary since Bionic
+# Install:
+sudo apt install libgtsam-dev libgtsam-unstable-dev</code></pre></div></figure>
 
 <p><a target="_blank" rel="noopener" href="https://gtsam.org/get_started/">https://gtsam.org/get_started/</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/borglab/gtsam">https://github.com/borglab/gtsam</a></p>
 <h2 id="6-ceres"><a href="#6-ceres" class="headerlink" title="6. ceres"></a>6. ceres</h2><ul>
 <li><p>二进制方式</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> libceres-dev<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure></li>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo apt install libceres-dev</code></pre></div></figure></li>
 <li><p>源码安装</p>
 <p>cartographer对应版本：1.13.0</p>
 <p><a target="_blank" rel="noopener" href="http://ceres-solver.org/installation.html">http://ceres-solver.org/installation.html</a></p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> cmake libgoogle-glog-dev libgflags-dev libatlas-base-dev libeigen3-dev libsuitesparse-dev
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo apt-get install cmake libgoogle-glog-dev libgflags-dev libatlas-base-dev libeigen3-dev libsuitesparse-dev
 
-<span class="token builtin class-name">cd</span> ~/Downloads
-<span class="token function">git</span> clone https://github.com/ceres-solver/ceres-solver.git
-<span class="token builtin class-name">cd</span> ceres-solver
-<span class="token function">git</span> checkout <span class="token number">1.13</span>.0
-<span class="token function">mkdir</span> build
-<span class="token builtin class-name">cd</span> build
-cmake <span class="token punctuation">..</span>
-<span class="token function">make</span> <span class="token parameter variable">-j2</span>
-<span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure></li>
+cd ~&#x2F;Downloads
+git clone https:&#x2F;&#x2F;github.com&#x2F;ceres-solver&#x2F;ceres-solver.git
+cd ceres-solver
+git checkout 1.13.0
+mkdir build
+cd build
+cmake ..
+make -j2
+sudo make install</code></pre></div></figure></li>
 </ul>
 <h2 id="7-RealSense"><a href="#7-RealSense" class="headerlink" title="7. RealSense"></a>7. RealSense</h2><ul>
 <li><p>ROS驱动版本，二进制安装</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-batch" data-language="batch"><code class="language-batch"><span class="token command"><span class="token keyword">sudo</span> apt-get install ros-$ROS_DISTRO-realsense2-camera</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-batch" data-language="batch"><code class="language-batch">sudo apt-get install ros-$ROS_DISTRO-realsense2-camera</code></pre></div></figure>
 <p><a target="_blank" rel="noopener" href="https://github.com/IntelRealSense/realsense-ros">https://github.com/IntelRealSense/realsense-ros</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/chengchang1234/article/details/117603781">https://blog.csdn.net/chengchang1234/article/details/117603781</a></p>
 <p><a target="_blank" rel="noopener" href="https://dev.intelrealsense.com/docs/compiling-librealsense-for-linux-ubuntu-guide">https://dev.intelrealsense.com/docs/compiling-librealsense-for-linux-ubuntu-guide</a></p>
 </li>
 </ul>
 <h1 id="五-、-错误提示与解决方案"><a href="#五-、-错误提示与解决方案" class="headerlink" title="五 、 错误提示与解决方案"></a>五 <strong>、</strong> 错误提示与解决方案</h1><h2 id="1-cartographer-GMOCK-LIBRARY-x20"><a href="#1-cartographer-GMOCK-LIBRARY-x20" class="headerlink" title="1. cartographer - GMOCK_LIBRARY&#x20;"></a>1. cartographer - GMOCK_LIBRARY&#x20;</h2><p><strong>问题：</strong></p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Make Error: The following variables are used <span class="token keyword">in</span> this project, but they are <span class="token builtin class-name">set</span> to NOTFOUND.
-Please <span class="token builtin class-name">set</span> them or <span class="token function">make</span> sure they are <span class="token builtin class-name">set</span> and tested correctly <span class="token keyword">in</span> the CMake files:
-GMOCK_LIBRARY <span class="token punctuation">(</span>ADVANCED<span class="token punctuation">)</span>
-    linked by target <span class="token string">"time_conversion_test"</span> <span class="token keyword">in</span> directory /home/slam/Documents/SLAM/ROS-NOETIC/src/ros-perception/cartographer/cartographer_ros/cartographer_ros
-    linked by target <span class="token string">"time_conversion_test"</span> <span class="token keyword">in</span> directory /home/slam/Documents/SLAM/ROS-NOETIC/src/ros-perception/cartographer/cartographer_ros/cartographer_ros
-    linked by target <span class="token string">"msg_conversion_test"</span> <span class="token keyword">in</span> directory /home/slam/Documents/SLAM/ROS-NOETIC/src/ros-perception/cartographer/cartographer_ros/cartographer_ros
-    linked by target <span class="token string">"msg_conversion_test"</span> <span class="token keyword">in</span> directory /home/slam/Documents/SLAM/ROS-NOETIC/src/ros-perception/cartographer/cartographer_ros/cartographer_ros
-    linked by target <span class="token string">"metrics_test"</span> <span class="token keyword">in</span> directory /home/slam/Documents/SLAM/ROS-NOETIC/src/ros-perception/cartographer/cartographer_ros/cartographer_ros
-    linked by target <span class="token string">"metrics_test"</span> <span class="token keyword">in</span> directory /home/slam/Documents/SLAM/ROS-NOETIC/src/ros-perception/cartographer/cartographer_ros/cartographer_ros
-    linked by target <span class="token string">"configuration_files_test"</span> <span class="token keyword">in</span> directory /home/slam/Documents/SLAM/ROS-NOETIC/src/ros-perception/cartographer/cartographer_ros/cartographer_ros
-    linked by target <span class="token string">"configuration_files_test"</span> <span class="token keyword">in</span> directory /home/slam/Documents/SLAM/ROS-NOETIC/src/ros-perception/cartographer/cartographer_ros/cartographer_ros<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Make Error: The following variables are used in this project, but they are set to NOTFOUND.
+Please set them or make sure they are set and tested correctly in the CMake files:
+GMOCK_LIBRARY (ADVANCED)
+    linked by target &quot;time_conversion_test&quot; in directory &#x2F;home&#x2F;slam&#x2F;Documents&#x2F;SLAM&#x2F;ROS-NOETIC&#x2F;src&#x2F;ros-perception&#x2F;cartographer&#x2F;cartographer_ros&#x2F;cartographer_ros
+    linked by target &quot;time_conversion_test&quot; in directory &#x2F;home&#x2F;slam&#x2F;Documents&#x2F;SLAM&#x2F;ROS-NOETIC&#x2F;src&#x2F;ros-perception&#x2F;cartographer&#x2F;cartographer_ros&#x2F;cartographer_ros
+    linked by target &quot;msg_conversion_test&quot; in directory &#x2F;home&#x2F;slam&#x2F;Documents&#x2F;SLAM&#x2F;ROS-NOETIC&#x2F;src&#x2F;ros-perception&#x2F;cartographer&#x2F;cartographer_ros&#x2F;cartographer_ros
+    linked by target &quot;msg_conversion_test&quot; in directory &#x2F;home&#x2F;slam&#x2F;Documents&#x2F;SLAM&#x2F;ROS-NOETIC&#x2F;src&#x2F;ros-perception&#x2F;cartographer&#x2F;cartographer_ros&#x2F;cartographer_ros
+    linked by target &quot;metrics_test&quot; in directory &#x2F;home&#x2F;slam&#x2F;Documents&#x2F;SLAM&#x2F;ROS-NOETIC&#x2F;src&#x2F;ros-perception&#x2F;cartographer&#x2F;cartographer_ros&#x2F;cartographer_ros
+    linked by target &quot;metrics_test&quot; in directory &#x2F;home&#x2F;slam&#x2F;Documents&#x2F;SLAM&#x2F;ROS-NOETIC&#x2F;src&#x2F;ros-perception&#x2F;cartographer&#x2F;cartographer_ros&#x2F;cartographer_ros
+    linked by target &quot;configuration_files_test&quot; in directory &#x2F;home&#x2F;slam&#x2F;Documents&#x2F;SLAM&#x2F;ROS-NOETIC&#x2F;src&#x2F;ros-perception&#x2F;cartographer&#x2F;cartographer_ros&#x2F;cartographer_ros
+    linked by target &quot;configuration_files_test&quot; in directory &#x2F;home&#x2F;slam&#x2F;Documents&#x2F;SLAM&#x2F;ROS-NOETIC&#x2F;src&#x2F;ros-perception&#x2F;cartographer&#x2F;cartographer_ros&#x2F;cartographer_ros</code></pre></div></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/22.png" srcset="/img/loading.gif" lazyload></p>
 <p><strong>原因及解决方案：</strong></p>
 <p>没有找到GMOCK_LIBRARY包，使用 <code>sudo apt install libgmock-dev</code>安装。</p>
 <h2 id="2-官方MPC-teb-local-planner参数不匹配"><a href="#2-官方MPC-teb-local-planner参数不匹配" class="headerlink" title="2. 官方MPC -  teb_local_planner参数不匹配"></a>2. 官方MPC -  teb_local_planner参数不匹配</h2><p><strong>问题：</strong></p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/usr/include/boost/smart_ptr/make_shared_object.hpp:256:5: error: no matching <span class="token keyword">function</span> <span class="token keyword">for</span> call to ‘teb_local_planner::LineRobotFootprint::LineRobotFootprint<span class="token punctuation">(</span>Eigen::Map<span class="token operator">&lt;</span>const Eigen::Matrix<span class="token operator">&lt;</span>double, <span class="token number">2</span>, <span class="token operator"><span class="token file-descriptor important">1</span>></span>, <span class="token number">0</span>, Eigen::Stride<span class="token operator">&lt;</span><span class="token number">0</span>, <span class="token operator"><span class="token file-descriptor important">0</span>></span> <span class="token operator">></span>, Eigen::Map<span class="token operator">&lt;</span>const Eigen::Matrix<span class="token operator">&lt;</span>double, <span class="token number">2</span>, <span class="token operator"><span class="token file-descriptor important">1</span>></span>, <span class="token number">0</span>, Eigen::Stride<span class="token operator">&lt;</span><span class="token number">0</span>, <span class="token operator"><span class="token file-descriptor important">0</span>></span> <span class="token operator">></span><span class="token punctuation">)</span>’
-  <span class="token number">256</span> <span class="token operator">|</span>     ::new<span class="token punctuation">(</span> <span class="token function">pv</span> <span class="token punctuation">)</span> T<span class="token punctuation">(</span> boost::detail::sp_forward<span class="token operator">&lt;</span>Args<span class="token operator">></span><span class="token punctuation">(</span> args <span class="token punctuation">)</span><span class="token punctuation">..</span>. <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">&#x2F;usr&#x2F;include&#x2F;boost&#x2F;smart_ptr&#x2F;make_shared_object.hpp:256:5: error: no matching function for call to ‘teb_local_planner::LineRobotFootprint::LineRobotFootprint(Eigen::Map&lt;const Eigen::Matrix&lt;double, 2, 1&gt;, 0, Eigen::Stride&lt;0, 0&gt; &gt;, Eigen::Map&lt;const Eigen::Matrix&lt;double, 2, 1&gt;, 0, Eigen::Stride&lt;0, 0&gt; &gt;)’
+  256 |     ::new( pv ) T( boost::detail::sp_forward&lt;Args&gt;( args )... );
+</code></pre></div></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/23.png" srcset="/img/loading.gif" lazyload></p>
 <p><strong>原因及解决方案：</strong></p>
@@ -576,100 +576,100 @@ GMOCK_LIBRARY <span class="token punctuation">(</span>ADVANCED<span class="token
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wsl_longwudi/article/details/126885601?spm=wolai.workspace.0.0.1c4ac81dM2EyiX">https://blog.csdn.net/wsl_longwudi/article/details/126885601?spm=wolai.workspace.0.0.1c4ac81dM2EyiX</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/TixiaoShan/LIO-SAM/issues/206?spm=wolai.workspace.0.0.42771549I5wIPD">https://github.com/TixiaoShan/LIO-SAM/issues/206?spm=wolai.workspace.0.0.42771549I5wIPD</a></p>
 <p><strong>问题：</strong></p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/usr/include/pcl-1.10/pcl/pcl_config.h:7:4: error: <span class="token comment">#error PCL requires C++14 or above</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">&#x2F;usr&#x2F;include&#x2F;pcl-1.10&#x2F;pcl&#x2F;pcl_config.h:7:4: error: #error PCL requires C++14 or above</code></pre></div></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/26.png" srcset="/img/loading.gif" lazyload></p>
 <p><strong>原因及解决方案：</strong></p>
 <p>PCL 1.10 要求使用 c++14 及以上版本。</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 将 CMakeLists.txt 中的编译选项 </span>
-<span class="token assign-left variable">std</span><span class="token operator">=</span>c++11
-<span class="token comment"># 改为 </span>
-<span class="token assign-left variable">std</span><span class="token operator">=</span>c++14<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 将 CMakeLists.txt 中的编译选项 
+std&#x3D;c++11
+# 改为 
+std&#x3D;c++14</code></pre></div></figure>
 
 <h2 id="4-ALOAM-Lego-LOAM-LIO-SAM-opencv-cv-h"><a href="#4-ALOAM-Lego-LOAM-LIO-SAM-opencv-cv-h" class="headerlink" title="4. ALOAM &#x2F; Lego-LOAM &#x2F; LIO-SAM - opencv&#x2F;cv.h"></a>4. ALOAM &#x2F; Lego-LOAM &#x2F; LIO-SAM - opencv&#x2F;cv.h</h2><p><strong>问题：</strong></p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">A-LOAM&#x2F;src&#x2F;scanRegistration.cpp:44:10: fatal error: opencv&#x2F;cv.h: No such file or directory
 LIO-SAM&#x2F;include&#x2F;utility.h:18:10: fatal error: opencv&#x2F;cv.h: No such file or directory
-LeGO-LOAM&#x2F;include&#x2F;utility.h:13:10: fatal error: opencv&#x2F;cv.h: No such file or directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
+LeGO-LOAM&#x2F;include&#x2F;utility.h:13:10: fatal error: opencv&#x2F;cv.h: No such file or directory</code></pre></div></figure>
 
 <p><strong>原因及解决方案：</strong></p>
 <figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;opencv&#x2F;cv.h&gt;
 &#x2F;&#x2F; 替换为
-#include &lt;opencv2&#x2F;opencv.hpp&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
+#include &lt;opencv2&#x2F;opencv.hpp&gt;</code></pre></div></figure>
 
 <h2 id="5-A-LOAM-CV-LOAD-IMAGE-GRAYSCALE"><a href="#5-A-LOAM-CV-LOAD-IMAGE-GRAYSCALE" class="headerlink" title="5. A-LOAM - CV_LOAD_IMAGE_GRAYSCALE"></a>5. A-LOAM - CV_LOAD_IMAGE_GRAYSCALE</h2><figure><div class="code-wrapper"><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">A-LOAM&#x2F;src&#x2F;kittiHelper.cpp:91:64: error: ‘CV_LOAD_IMAGE_GRAYSCALE’ was not declared in this scope
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+</code></pre></div></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/27.png" srcset="/img/loading.gif" lazyload></p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-batch" data-language="batch"><code class="language-batch"><span class="token command"><span class="token keyword">CV_LOAD_IMAGE_GRAYSCALE</span></span>
+<figure><div class="code-wrapper"><pre class="line-numbers language-batch" data-language="batch"><code class="language-batch">CV_LOAD_IMAGE_GRAYSCALE
 # 修改为
-<span class="token command"><span class="token keyword">cv</span><span class="token label property">::IMREAD_GRAYSCALE</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
+cv::IMREAD_GRAYSCALE</code></pre></div></figure>
 
-<h2 id="6-serialization报错"><a href="#6-serialization报错" class="headerlink" title="6. serialization报错"></a>6. serialization报错</h2><figure><div class="code-wrapper"><pre class="line-numbers language-batch" data-language="batch"><code class="language-batch">/usr/include/flann/util/serialization.h:34:14: error: ‘class std::unordered_map&lt;unsigned int, std::vector&lt;unsigned int> >’ has no member named ‘serialize’<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<h2 id="6-serialization报错"><a href="#6-serialization报错" class="headerlink" title="6. serialization报错"></a>6. serialization报错</h2><figure><div class="code-wrapper"><pre class="line-numbers language-batch" data-language="batch"><code class="language-batch">&#x2F;usr&#x2F;include&#x2F;flann&#x2F;util&#x2F;serialization.h:34:14: error: ‘class std::unordered_map&lt;unsigned int, std::vector&lt;unsigned int&gt; &gt;’ has no member named ‘serialize’</code></pre></div></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/28.png" srcset="/img/loading.gif" lazyload></p>
 <p>在<code>std≥C++ 11</code>的情况下，似乎<code>opencv</code>头文件泄漏 <code>#define USE_UNORDERED_MAP 1</code>。然后由原始flann库中的<code>lsh_table.h</code>中的#if获取。<br>解决方案是在<code>OpenCV</code>之前包含<code>flann</code>。在<code>utility.h</code>中将 <code>#include &lt;opencv2/opencv.hpp&gt;</code> 头文件放在<code>pcl</code>库头文件之后。</p>
 <h2 id="7-neither-‘Eigen3-INCLUDE-DIRS’-nor-‘Eigen3-LIBRARIES’-is-defined-警告"><a href="#7-neither-‘Eigen3-INCLUDE-DIRS’-nor-‘Eigen3-LIBRARIES’-is-defined-警告" class="headerlink" title="7. neither ‘Eigen3_INCLUDE_DIRS’ nor ‘Eigen3_LIBRARIES’ is defined - 警告"></a>7. neither ‘Eigen3_INCLUDE_DIRS’ nor ‘Eigen3_LIBRARIES’ is defined - 警告</h2><p><strong>问题：</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/29.png" srcset="/img/loading.gif" lazyload></p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">CMake Warning at /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:166 <span class="token punctuation">(</span>message<span class="token punctuation">)</span>:
-  catkin_package<span class="token punctuation">(</span><span class="token punctuation">)</span> DEPENDS on <span class="token string">'Eigen3'</span> but neither <span class="token string">'Eigen3_INCLUDE_DIRS'</span> nor
-  <span class="token string">'Eigen3_LIBRARIES'</span> is defined.
-Call Stack <span class="token punctuation">(</span>most recent call first<span class="token punctuation">)</span>:
-  /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:102 <span class="token punctuation">(</span>_catkin_package<span class="token punctuation">)</span>
-  se2_navigation/se2_planning/CMakeLists.txt:38 <span class="token punctuation">(</span>catkin_package<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">CMake Warning at &#x2F;opt&#x2F;ros&#x2F;noetic&#x2F;share&#x2F;catkin&#x2F;cmake&#x2F;catkin_package.cmake:166 (message):
+  catkin_package() DEPENDS on &#39;Eigen3&#39; but neither &#39;Eigen3_INCLUDE_DIRS&#39; nor
+  &#39;Eigen3_LIBRARIES&#39; is defined.
+Call Stack (most recent call first):
+  &#x2F;opt&#x2F;ros&#x2F;noetic&#x2F;share&#x2F;catkin&#x2F;cmake&#x2F;catkin_package.cmake:102 (_catkin_package)
+  se2_navigation&#x2F;se2_planning&#x2F;CMakeLists.txt:38 (catkin_package)
+</code></pre></div></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/30.png" srcset="/img/loading.gif" lazyload></p>
 <p><strong>解决方案：</strong></p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">This warning is caused by se2_planning 's CMakeLists.txt Line <span class="token number">38</span>:
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">This warning is caused by se2_planning &#39;s CMakeLists.txt Line 38:
 
 DEPENDS Eigen3
-<span class="token comment"># which should be:</span>
-DEPENDS EIGEN3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+# which should be:
+DEPENDS EIGEN3</code></pre></div></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/31.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="8-neither-‘ompl-INCLUDE-DIRS’-nor-‘ompl-LIBRARIES’-is-defined-警告"><a href="#8-neither-‘ompl-INCLUDE-DIRS’-nor-‘ompl-LIBRARIES’-is-defined-警告" class="headerlink" title="8. neither ‘ompl_INCLUDE_DIRS’ nor ‘ompl_LIBRARIES’ is defined - 警告"></a>8. neither ‘ompl_INCLUDE_DIRS’ nor ‘ompl_LIBRARIES’ is defined - 警告</h2><p><strong>问题：</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/32.png" srcset="/img/loading.gif" lazyload></p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">CMake Warning at /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:166 <span class="token punctuation">(</span>message<span class="token punctuation">)</span>:
-  catkin_package<span class="token punctuation">(</span><span class="token punctuation">)</span> DEPENDS on <span class="token string">'ompl'</span> but neither <span class="token string">'ompl_INCLUDE_DIRS'</span> nor
-  <span class="token string">'ompl_LIBRARIES'</span> is defined.
-Call Stack <span class="token punctuation">(</span>most recent call first<span class="token punctuation">)</span>:
-  /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:102 <span class="token punctuation">(</span>_catkin_package<span class="token punctuation">)</span>
-  se2_navigation/se2_planning/CMakeLists.txt:38 <span class="token punctuation">(</span>catkin_package<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">CMake Warning at &#x2F;opt&#x2F;ros&#x2F;noetic&#x2F;share&#x2F;catkin&#x2F;cmake&#x2F;catkin_package.cmake:166 (message):
+  catkin_package() DEPENDS on &#39;ompl&#39; but neither &#39;ompl_INCLUDE_DIRS&#39; nor
+  &#39;ompl_LIBRARIES&#39; is defined.
+Call Stack (most recent call first):
+  &#x2F;opt&#x2F;ros&#x2F;noetic&#x2F;share&#x2F;catkin&#x2F;cmake&#x2F;catkin_package.cmake:102 (_catkin_package)
+  se2_navigation&#x2F;se2_planning&#x2F;CMakeLists.txt:38 (catkin_package)
+</code></pre></div></figure>
 
 <p><strong>解决方案：</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/33.png" srcset="/img/loading.gif" lazyload></p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">This warning is caused by se2_planning 's CMakeLists.txt Line <span class="token number">38</span>:
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">This warning is caused by se2_planning &#39;s CMakeLists.txt Line 38:
 
 DEPENDS ompl
-<span class="token comment"># which should be:</span>
-DEPENDS OMPL<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+# which should be:
+DEPENDS OMPL</code></pre></div></figure>
 
 <h2 id="9-cmake-clang-tools-警告"><a href="#9-cmake-clang-tools-警告" class="headerlink" title="9. cmake_clang_tools - 警告"></a>9. cmake_clang_tools - 警告</h2><p><strong>问题：</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/34.png" srcset="/img/loading.gif" lazyload></p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">CMake Warning at se2_navigation/se2_planning/CMakeLists.txt:115 <span class="token punctuation">(</span>find_package<span class="token punctuation">)</span>:
-  By not providing <span class="token string">"Findcmake_clang_tools.cmake"</span> <span class="token keyword">in</span> CMAKE_MODULE_PATH this
-  project has asked CMake to <span class="token function">find</span> a package configuration <span class="token function">file</span> provided by
-  <span class="token string">"cmake_clang_tools"</span>, but CMake did not <span class="token function">find</span> one.
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">CMake Warning at se2_navigation&#x2F;se2_planning&#x2F;CMakeLists.txt:115 (find_package):
+  By not providing &quot;Findcmake_clang_tools.cmake&quot; in CMAKE_MODULE_PATH this
+  project has asked CMake to find a package configuration file provided by
+  &quot;cmake_clang_tools&quot;, but CMake did not find one.
 
-  Could not <span class="token function">find</span> a package configuration <span class="token function">file</span> provided by <span class="token string">"cmake_clang_tools"</span>
+  Could not find a package configuration file provided by &quot;cmake_clang_tools&quot;
   with any of the following names:
 
     cmake_clang_toolsConfig.cmake
     cmake_clang_tools-config.cmake
 
-  Add the installation prefix of <span class="token string">"cmake_clang_tools"</span> to CMAKE_PREFIX_PATH or
-  <span class="token builtin class-name">set</span> <span class="token string">"cmake_clang_tools_DIR"</span> to a directory containing one of the above
-  files.  If <span class="token string">"cmake_clang_tools"</span> provides a separate development package or
+  Add the installation prefix of &quot;cmake_clang_tools&quot; to CMAKE_PREFIX_PATH or
+  set &quot;cmake_clang_tools_DIR&quot; to a directory containing one of the above
+  files.  If &quot;cmake_clang_tools&quot; provides a separate development package or
   SDK, be sure it has been installed.
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+</code></pre></div></figure>
 
 <p><strong>解决方案：</strong></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/ANYbotics/cmake_clang_tools">https://github.com/ANYbotics/cmake_clang_tools</a></p>
 <h2 id="10-vtk-警告"><a href="#10-vtk-警告" class="headerlink" title="10. vtk - 警告"></a>10. vtk - 警告</h2><p><strong>问题：</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/35.png" srcset="/img/loading.gif" lazyload></p>
 <p><strong>解决方案：</strong></p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">ln</span> <span class="token parameter variable">-s</span> /usr/bin/vtk7 /usr/bin/vtk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo ln -s &#x2F;usr&#x2F;bin&#x2F;vtk7 &#x2F;usr&#x2F;bin&#x2F;vtk</code></pre></div></figure>
 
 <h2 id="11-ompl"><a href="#11-ompl" class="headerlink" title="11. ompl"></a>11. ompl</h2><p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/36.png" srcset="/img/loading.gif" lazyload></p>
 <p>安装<code>libompl-dev</code>后，编译<code>hybrid_astar_planner</code>还是会报错，需要安装<code>ros-noetic-ompl</code>。</p>
@@ -677,30 +677,30 @@ DEPENDS OMPL<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
 <p>VTKTargets</p>
 <p>vtkRenderingPythonTkWidgets</p>
 <p>vtkParseOGLExt</p>
-<h2 id="2-CMP0037-警告"><a href="#2-CMP0037-警告" class="headerlink" title="2. CMP0037 - 警告"></a>2. CMP0037 - 警告</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">CMake Warning <span class="token punctuation">(</span>dev<span class="token punctuation">)</span> at ros-device-drivers/gps_umd/gps_common/CMakeLists.txt:57 <span class="token punctuation">(</span>add_executable<span class="token punctuation">)</span>:
+<h2 id="2-CMP0037-警告"><a href="#2-CMP0037-警告" class="headerlink" title="2. CMP0037 - 警告"></a>2. CMP0037 - 警告</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">CMake Warning (dev) at ros-device-drivers&#x2F;gps_umd&#x2F;gps_common&#x2F;CMakeLists.txt:57 (add_executable):
   Policy CMP0037 is not set: Target names should not be reserved and should
-  match a validity pattern.  Run <span class="token string">"cmake --help-policy CMP0037"</span> <span class="token keyword">for</span> policy
-  details.  Use the cmake_policy <span class="token builtin class-name">command</span> to <span class="token builtin class-name">set</span> the policy and suppress this
-  warning.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+  match a validity pattern.  Run &quot;cmake --help-policy CMP0037&quot; for policy
+  details.  Use the cmake_policy command to set the policy and suppress this
+  warning.</code></pre></div></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/37.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="3-LIO-SAM-GTSAM-警告"><a href="#3-LIO-SAM-GTSAM-警告" class="headerlink" title="3. LIO-SAM GTSAM - 警告"></a>3. LIO-SAM GTSAM - 警告</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">CMake Warning at /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:166 <span class="token punctuation">(</span>message<span class="token punctuation">)</span>:
-  catkin_package<span class="token punctuation">(</span><span class="token punctuation">)</span> DEPENDS on <span class="token string">'GTSAM'</span> but neither <span class="token string">'GTSAM_INCLUDE_DIRS'</span> nor
-  <span class="token string">'GTSAM_LIBRARIES'</span> is defined.
-Call Stack <span class="token punctuation">(</span>most recent call first<span class="token punctuation">)</span>:
-  /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:102 <span class="token punctuation">(</span>_catkin_package<span class="token punctuation">)</span>
-  ros-perception/LIO-SAM/CMakeLists.txt:51 <span class="token punctuation">(</span>catkin_package<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<h2 id="3-LIO-SAM-GTSAM-警告"><a href="#3-LIO-SAM-GTSAM-警告" class="headerlink" title="3. LIO-SAM GTSAM - 警告"></a>3. LIO-SAM GTSAM - 警告</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">CMake Warning at &#x2F;opt&#x2F;ros&#x2F;noetic&#x2F;share&#x2F;catkin&#x2F;cmake&#x2F;catkin_package.cmake:166 (message):
+  catkin_package() DEPENDS on &#39;GTSAM&#39; but neither &#39;GTSAM_INCLUDE_DIRS&#39; nor
+  &#39;GTSAM_LIBRARIES&#39; is defined.
+Call Stack (most recent call first):
+  &#x2F;opt&#x2F;ros&#x2F;noetic&#x2F;share&#x2F;catkin&#x2F;cmake&#x2F;catkin_package.cmake:102 (_catkin_package)
+  ros-perception&#x2F;LIO-SAM&#x2F;CMakeLists.txt:51 (catkin_package)
+</code></pre></div></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/38.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="4-neither-‘Qt5-INCLUDE-DIRS’-nor-‘Qt5-LIBRARIES’-is-defined-警告"><a href="#4-neither-‘Qt5-INCLUDE-DIRS’-nor-‘Qt5-LIBRARIES’-is-defined-警告" class="headerlink" title="4. neither ‘Qt5_INCLUDE_DIRS’ nor ‘Qt5_LIBRARIES’ is defined - 警告"></a>4. neither ‘Qt5_INCLUDE_DIRS’ nor ‘Qt5_LIBRARIES’ is defined - 警告</h2><p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/39.png" srcset="/img/loading.gif" lazyload></p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">CMake Warning at /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:166 <span class="token punctuation">(</span>message<span class="token punctuation">)</span>:
-  catkin_package<span class="token punctuation">(</span><span class="token punctuation">)</span> DEPENDS on <span class="token string">'Qt5'</span> but neither <span class="token string">'Qt5_INCLUDE_DIRS'</span> nor
-  <span class="token string">'Qt5_LIBRARIES'</span> is defined.
-Call Stack <span class="token punctuation">(</span>most recent call first<span class="token punctuation">)</span>:
-  /opt/ros/noetic/share/catkin/cmake/catkin_package.cmake:102 <span class="token punctuation">(</span>_catkin_package<span class="token punctuation">)</span>
-  se2_navigation/se2_planning_rviz/CMakeLists.txt:67 <span class="token punctuation">(</span>catkin_package<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">CMake Warning at &#x2F;opt&#x2F;ros&#x2F;noetic&#x2F;share&#x2F;catkin&#x2F;cmake&#x2F;catkin_package.cmake:166 (message):
+  catkin_package() DEPENDS on &#39;Qt5&#39; but neither &#39;Qt5_INCLUDE_DIRS&#39; nor
+  &#39;Qt5_LIBRARIES&#39; is defined.
+Call Stack (most recent call first):
+  &#x2F;opt&#x2F;ros&#x2F;noetic&#x2F;share&#x2F;catkin&#x2F;cmake&#x2F;catkin_package.cmake:102 (_catkin_package)
+  se2_navigation&#x2F;se2_planning_rviz&#x2F;CMakeLists.txt:67 (catkin_package)
+</code></pre></div></figure>
 
                 
               </div>
@@ -973,6 +973,10 @@ Call Stack <span class="token punctuation">(</span>most recent call first<span c
   });
 </script>
 
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/components/prism-core.min.js" ></script>
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" ></script>
 
   <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
 
