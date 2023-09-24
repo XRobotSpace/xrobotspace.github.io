@@ -16,12 +16,12 @@
   <meta name="author" content="SLAM">
   <meta name="keywords" content="keywords">
   
-    <meta name="description" content="操作系统：ubuntu 18.04 修改时间：2021年12月21日   问题描述： 打开一个软件，窗口上部能看到软件已经打开，但是看不到软件界面。 问题原因： ubuntu 会启动几个终端窗口，软件就显示在实际不存在的终端上。 解决方案： ① 命令 xrandr 查看当前启动的输出终端口。 xrandr   ② 关掉没有使用的终端 xrandr --output  [没有使用的终端]  --">
+    <meta name="description" content="操作系统：ubuntu 18.04 修改时间：2021年12月21日   问题描述： 打开一个软件，窗口上部能看到软件已经打开，但是看不到软件界面。 问题原因： ubuntu 会启动几个终端窗口，软件就显示在实际不存在的终端上。 解决方案： ① 命令 xrandr 查看当前启动的输出终端口。 1xrandr   ② 关掉没有使用的终端 1xrandr --output  [没有使用的终端]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu软件启动，不显示软件界面">
 <meta property="og:url" content="https://xrobotspace.github.io/2023/09/24/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ubuntu%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ubuntu%E8%BD%AF%E4%BB%B6%E5%90%AF%E5%8A%A8%EF%BC%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E8%BD%AF%E4%BB%B6%E7%95%8C%E9%9D%A2/index.html">
 <meta property="og:site_name" content="XRobotSpace">
-<meta property="og:description" content="操作系统：ubuntu 18.04 修改时间：2021年12月21日   问题描述： 打开一个软件，窗口上部能看到软件已经打开，但是看不到软件界面。 问题原因： ubuntu 会启动几个终端窗口，软件就显示在实际不存在的终端上。 解决方案： ① 命令 xrandr 查看当前启动的输出终端口。 xrandr   ② 关掉没有使用的终端 xrandr --output  [没有使用的终端]  --">
+<meta property="og:description" content="操作系统：ubuntu 18.04 修改时间：2021年12月21日   问题描述： 打开一个软件，窗口上部能看到软件已经打开，但是看不到软件界面。 问题原因： ubuntu 会启动几个终端窗口，软件就显示在实际不存在的终端上。 解决方案： ① 命令 xrandr 查看当前启动的输出终端口。 1xrandr   ② 关掉没有使用的终端 1xrandr --output  [没有使用的终端]">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-09-23T16:01:16.207Z">
 <meta property="article:modified_time" content="2023-09-23T16:43:05.130Z">
@@ -40,8 +40,6 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
@@ -222,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          176 words
+          178 words
         
       </span>
     
@@ -285,10 +283,10 @@
 <p><strong>问题原因：</strong> ubuntu 会启动几个终端窗口，软件就显示在实际不存在的终端上。</p>
 <p><strong>解决方案：</strong></p>
 <p>① 命令 xrandr 查看当前启动的输出终端口。</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">xrandr </code></pre></div></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">xrandr <br></code></pre></td></tr></table></figure>
 
 <p>② 关掉没有使用的终端</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">xrandr --output  [没有使用的终端]  --off</code></pre></div></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">xrandr --output  [没有使用的终端]  --off<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -554,12 +552,6 @@
   });
 </script>
 
-
-  <script  src="https://lib.baomitu.com/prism/1.29.0/components/prism-core.min.js" ></script>
-
-  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" ></script>
-
-  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 

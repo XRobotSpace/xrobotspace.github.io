@@ -16,12 +16,12 @@
   <meta name="author" content="SLAM">
   <meta name="keywords" content="keywords">
   
-    <meta name="description" content="操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 修改时间：2023年07月04日   一、系统软件源设置 # 更新源 sudo apt-get update  二、开机配置设置1. 打开开机引导文件sudo gedit &#x2F;etc&#x2F;default&#x2F;grub  2. 修改默认启动项GRUB_DEFAULT&#x3D;2  # 属">
+    <meta name="description" content="操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 修改时间：2023年07月04日   一、系统软件源设置 12# 更新源sudo apt-get update  二、开机配置设置1. 打开开机引导文件1sudo gedit &#x2F;etc&#x2F;default&#x2F;grub  2. 修改默认启动项123GRUB_DEFAULT&#x3D;2 # 属性名：开机默认启动系统# 值说明">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu初始配置">
 <meta property="og:url" content="https://xrobotspace.github.io/2023/09/20/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ubuntu-windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/ubuntu%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="XRobotSpace">
-<meta property="og:description" content="操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 修改时间：2023年07月04日   一、系统软件源设置 # 更新源 sudo apt-get update  二、开机配置设置1. 打开开机引导文件sudo gedit &#x2F;etc&#x2F;default&#x2F;grub  2. 修改默认启动项GRUB_DEFAULT&#x3D;2  # 属">
+<meta property="og:description" content="操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 修改时间：2023年07月04日   一、系统软件源设置 12# 更新源sudo apt-get update  二、开机配置设置1. 打开开机引导文件1sudo gedit &#x2F;etc&#x2F;default&#x2F;grub  2. 修改默认启动项123GRUB_DEFAULT&#x3D;2 # 属性名：开机默认启动系统# 值说明">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/18.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/19.png">
@@ -45,8 +45,6 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
@@ -227,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.3k words
+          3.8k words
         
       </span>
     
@@ -238,7 +236,7 @@
         
         
         
-          36 mins
+          32 mins
         
       </span>
     
@@ -287,122 +285,72 @@
 </ul>
 <hr>
 <h1 id="一、系统软件源设置"><a href="#一、系统软件源设置" class="headerlink" title="一、系统软件源设置"></a>一、系统软件源设置</h1><p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/18.png" srcset="/img/loading.gif" lazyload></p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 更新源
-sudo apt-get update</code></pre></div></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 更新源</span><br>sudo apt-get update<br></code></pre></td></tr></table></figure>
 
-<h1 id="二、开机配置设置"><a href="#二、开机配置设置" class="headerlink" title="二、开机配置设置"></a>二、开机配置设置</h1><h2 id="1-打开开机引导文件"><a href="#1-打开开机引导文件" class="headerlink" title="1. 打开开机引导文件"></a>1. <strong>打开开机引导文件</strong></h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo gedit &#x2F;etc&#x2F;default&#x2F;grub</code></pre></div></figure>
+<h1 id="二、开机配置设置"><a href="#二、开机配置设置" class="headerlink" title="二、开机配置设置"></a>二、开机配置设置</h1><h2 id="1-打开开机引导文件"><a href="#1-打开开机引导文件" class="headerlink" title="1. 打开开机引导文件"></a>1. <strong>打开开机引导文件</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo gedit /etc/default/grub<br></code></pre></td></tr></table></figure>
 
-<h2 id="2-修改默认启动项"><a href="#2-修改默认启动项" class="headerlink" title="2. 修改默认启动项"></a><strong>2. 修改默认启动项</strong></h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">GRUB_DEFAULT&#x3D;2 
-# 属性名：开机默认启动系统
-# 值说明：从0开始（按照开机选择界面的顺序对应）</code></pre></div></figure>
+<h2 id="2-修改默认启动项"><a href="#2-修改默认启动项" class="headerlink" title="2. 修改默认启动项"></a><strong>2. 修改默认启动项</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">GRUB_DEFAULT=2 <br><span class="hljs-comment"># 属性名：开机默认启动系统</span><br><span class="hljs-comment"># 值说明：从0开始（按照开机选择界面的顺序对应）</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="3-修改等待时间"><a href="#3-修改等待时间" class="headerlink" title="3. 修改等待时间"></a><strong>3. 修改等待时间</strong></h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">GRUB_TIMEOUT&#x3D;5 
-# 属性名：进入默认启动项的等候时间
-# 值说明：单位：秒，默认10秒</code></pre></div></figure>
+<h2 id="3-修改等待时间"><a href="#3-修改等待时间" class="headerlink" title="3. 修改等待时间"></a><strong>3. 修改等待时间</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">GRUB_TIMEOUT=5 <br><span class="hljs-comment"># 属性名：进入默认启动项的等候时间</span><br><span class="hljs-comment"># 值说明：单位：秒，默认10秒</span><br></code></pre></td></tr></table></figure>
 
 <h2 id="4-调整-GRUB-启动菜单字号"><a href="#4-调整-GRUB-启动菜单字号" class="headerlink" title="4. 调整 GRUB 启动菜单字号"></a>4. 调整 GRUB 启动菜单字号</h2><blockquote>
 <p>📌<strong>屏幕是4K屏时，启动菜单字体较小可以进行设置。</strong></p>
 </blockquote>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">GRUB_GFXMODE&#x3D;1280x1024x32,1280x1024x24,1024x768x32,1024x768x24,&quot;auto&quot;
-</code></pre></div></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">GRUB_GFXMODE=1280x1024x32,1280x1024x24,1024x768x32,1024x768x24,<span class="hljs-string">&quot;auto&quot;</span><br><br></code></pre></td></tr></table></figure>
 
-<h2 id="5-修改生效"><a href="#5-修改生效" class="headerlink" title="5. 修改生效"></a><strong>5. 修改生效</strong></h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo update-grub</code></pre></div></figure>
+<h2 id="5-修改生效"><a href="#5-修改生效" class="headerlink" title="5. 修改生效"></a><strong>5. 修改生效</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo update-grub<br></code></pre></td></tr></table></figure>
 
-<h1 id="三、显卡驱动安装"><a href="#三、显卡驱动安装" class="headerlink" title="三、显卡驱动安装"></a>三、显卡驱动安装</h1><h2 id="1-查看支持的显卡驱动"><a href="#1-查看支持的显卡驱动" class="headerlink" title="1. 查看支持的显卡驱动"></a>1. 查看支持的显卡驱动</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># sudo add-apt-repository ppa:graphics-drivers&#x2F;ppa 
-sudo apt update
-
-ubuntu-drivers devices</code></pre></div></figure>
+<h1 id="三、显卡驱动安装"><a href="#三、显卡驱动安装" class="headerlink" title="三、显卡驱动安装"></a>三、显卡驱动安装</h1><h2 id="1-查看支持的显卡驱动"><a href="#1-查看支持的显卡驱动" class="headerlink" title="1. 查看支持的显卡驱动"></a>1. 查看支持的显卡驱动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># sudo add-apt-repository ppa:graphics-drivers/ppa </span><br>sudo apt update<br><br>ubuntu-drivers devices<br></code></pre></td></tr></table></figure>
 
 <h2 id="2-安装合适的驱动"><a href="#2-安装合适的驱动" class="headerlink" title="2. 安装合适的驱动"></a>2. 安装合适的驱动</h2><p>一般选择尾缀为 recommended的驱动版本，我的电脑使用GTX1650显卡，示例：</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo apt-get install nvidia-driver-470
-sudo apt update</code></pre></div></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install nvidia-driver-470<br>sudo apt update<br></code></pre></td></tr></table></figure>
 
-<h2 id="3-等待安装完成后，重启系统，检查安装效果"><a href="#3-等待安装完成后，重启系统，检查安装效果" class="headerlink" title="3. 等待安装完成后，重启系统，检查安装效果"></a>3. 等待安装完成后，重启系统，检查安装效果</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvidia-smi</code></pre></div></figure>
+<h2 id="3-等待安装完成后，重启系统，检查安装效果"><a href="#3-等待安装完成后，重启系统，检查安装效果" class="headerlink" title="3. 等待安装完成后，重启系统，检查安装效果"></a>3. 等待安装完成后，重启系统，检查安装效果</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nvidia-smi<br></code></pre></td></tr></table></figure>
 
 <p>有显卡相关信息显示时，驱动安装成功。</p>
-<h1 id="四、ubuntu命令行添加代理"><a href="#四、ubuntu命令行添加代理" class="headerlink" title="四、ubuntu命令行添加代理"></a>四、ubuntu命令行添加代理</h1><h2 id="1-安装proxychains4"><a href="#1-安装proxychains4" class="headerlink" title="1. 安装proxychains4"></a>1. 安装proxychains4</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo apt-get install proxychains4</code></pre></div></figure>
+<h1 id="四、ubuntu命令行添加代理"><a href="#四、ubuntu命令行添加代理" class="headerlink" title="四、ubuntu命令行添加代理"></a>四、ubuntu命令行添加代理</h1><h2 id="1-安装proxychains4"><a href="#1-安装proxychains4" class="headerlink" title="1. 安装proxychains4"></a>1. 安装proxychains4</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install proxychains4<br></code></pre></td></tr></table></figure>
 
-<h2 id="2-更改choxychains4-的配置文件"><a href="#2-更改choxychains4-的配置文件" class="headerlink" title="2. 更改choxychains4 的配置文件"></a>2. 更改choxychains4 的配置文件</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo gedit &#x2F;etc&#x2F;proxychains4.conf
-# 最后一行修改为
-socks5  127.0.0.1  7890</code></pre></div></figure>
+<h2 id="2-更改choxychains4-的配置文件"><a href="#2-更改choxychains4-的配置文件" class="headerlink" title="2. 更改choxychains4 的配置文件"></a>2. 更改choxychains4 的配置文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo gedit /etc/proxychains4.conf<br><span class="hljs-comment"># 最后一行修改为</span><br>socks5  127.0.0.1  7890<br></code></pre></td></tr></table></figure>
 
-<h2 id="3-更新及安装"><a href="#3-更新及安装" class="headerlink" title="3. 更新及安装"></a>3. 更新及安装</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo proxychains4 rosdep init
-
-proxychains4 rosdep update</code></pre></div></figure>
+<h2 id="3-更新及安装"><a href="#3-更新及安装" class="headerlink" title="3. 更新及安装"></a>3. 更新及安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo proxychains4 rosdep init<br><br>proxychains4 rosdep update<br></code></pre></td></tr></table></figure>
 
 <h2 id="4-说明-x20"><a href="#4-说明-x20" class="headerlink" title="4. 说明&#x20;"></a>4. 说明&#x20;</h2><p>浏览器自带TCP和DNS解析，如果安装了VPN软件，浏览器会自动识别；但是linux客户端中没有相关的功能，如果需要VPN，则需要专门的解析器。</p>
-<h1 id="五、常用软件安装"><a href="#五、常用软件安装" class="headerlink" title="五、常用软件安装"></a>五、常用软件安装</h1><h2 id="1-浏览器安装"><a href="#1-浏览器安装" class="headerlink" title="1. 浏览器安装"></a>1. 浏览器安装</h2><h3 id="1-安装谷歌浏览器"><a href="#1-安装谷歌浏览器" class="headerlink" title="1. 安装谷歌浏览器"></a><strong>1</strong>. <strong>安装谷歌浏览器</strong></h3><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wget  https:&#x2F;&#x2F;dl.google.com&#x2F;linux&#x2F;direct&#x2F;google-chrome-stable_current_amd64.deb  </code></pre></div></figure>
+<h1 id="五、常用软件安装"><a href="#五、常用软件安装" class="headerlink" title="五、常用软件安装"></a>五、常用软件安装</h1><h2 id="1-浏览器安装"><a href="#1-浏览器安装" class="headerlink" title="1. 浏览器安装"></a>1. 浏览器安装</h2><h3 id="1-安装谷歌浏览器"><a href="#1-安装谷歌浏览器" class="headerlink" title="1. 安装谷歌浏览器"></a><strong>1</strong>. <strong>安装谷歌浏览器</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb  <br></code></pre></td></tr></table></figure>
 
 <h3 id="2-卸载火狐浏览器"><a href="#2-卸载火狐浏览器" class="headerlink" title="2. 卸载火狐浏览器"></a>2. <strong>卸载火狐浏览器</strong></h3><p>① 查看火狐浏览器安装内容</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dpkg --get-selections |grep firefox</code></pre></div></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">dpkg --get-selections |grep firefox<br></code></pre></td></tr></table></figure>
 
 <p>② 将带有firefox内容的卸载</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo apt-get purge [带有firefox的内容]</code></pre></div></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get purge [带有firefox的内容]<br></code></pre></td></tr></table></figure>
 
 <p>例：</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo apt-get purge firefox firefox-locale-zh-hans firefox-locale-en</code></pre></div></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get purge firefox firefox-locale-zh-hans firefox-locale-en<br></code></pre></td></tr></table></figure>
 
-<h2 id="2-安装terminator"><a href="#2-安装terminator" class="headerlink" title="2. 安装terminator"></a>2. 安装terminator</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo apt-get install terminator</code></pre></div></figure>
+<h2 id="2-安装terminator"><a href="#2-安装terminator" class="headerlink" title="2. 安装terminator"></a>2. 安装terminator</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install terminator<br></code></pre></td></tr></table></figure>
 
-<h2 id="3-录屏软件kazam"><a href="#3-录屏软件kazam" class="headerlink" title="3. 录屏软件kazam"></a>3. 录屏软件<strong>kazam</strong></h2><figure><div class="code-wrapper"><pre class="line-numbers language-纯文本" data-language="纯文本"><code class="language-纯文本">sudo apt-get install kazam</code></pre></div></figure>
+<h2 id="3-录屏软件kazam"><a href="#3-录屏软件kazam" class="headerlink" title="3. 录屏软件kazam"></a>3. 录屏软件<strong>kazam</strong></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 纯文本">sudo apt-get install kazam<br></code></pre></td></tr></table></figure>
 
-<h2 id="4-编辑pgm图片GIMP"><a href="#4-编辑pgm图片GIMP" class="headerlink" title="4. 编辑pgm图片GIMP"></a>4. 编辑pgm图片GIMP</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 安装软件
-sudo apt update
-sudo apt install gimp
-# 安装相关软件，方便以后安装插件
-sudo apt install gimp-plugin-registry</code></pre></div></figure>
+<h2 id="4-编辑pgm图片GIMP"><a href="#4-编辑pgm图片GIMP" class="headerlink" title="4. 编辑pgm图片GIMP"></a>4. 编辑pgm图片GIMP</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 安装软件</span><br>sudo apt update<br>sudo apt install gimp<br><span class="hljs-comment"># 安装相关软件，方便以后安装插件</span><br>sudo apt install gimp-plugin-registry<br></code></pre></td></tr></table></figure>
 
-<h2 id="5-截图工具"><a href="#5-截图工具" class="headerlink" title="5. 截图工具"></a>5. 截图工具</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 安装
-sudo apt install flameshot
-# 启动
-flameshot gui
-</code></pre></div></figure>
+<h2 id="5-截图工具"><a href="#5-截图工具" class="headerlink" title="5. 截图工具"></a>5. 截图工具</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 安装</span><br>sudo apt install flameshot<br><span class="hljs-comment"># 启动</span><br>flameshot gui<br><br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>设置快捷键</li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/19.png" srcset="/img/loading.gif" lazyload></p>
 <p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/20.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="6-微信安装"><a href="#6-微信安装" class="headerlink" title="6. 微信安装"></a>6. 微信安装</h2><h3 id="1-下载安装deepin-wine用于启动微信"><a href="#1-下载安装deepin-wine用于启动微信" class="headerlink" title="1. 下载安装deepin-wine用于启动微信"></a>1. 下载安装deepin-wine用于启动微信</h3><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mkdir deepintemp
-cd deepintemp
-sudo wget http:&#x2F;&#x2F;packages.deepin.com&#x2F;deepin&#x2F;pool&#x2F;non-free&#x2F;d&#x2F;deepin-wine&#x2F;deepin-wine_2.18-22~rc0_all.deb
-sudo wget http:&#x2F;&#x2F;packages.deepin.com&#x2F;deepin&#x2F;pool&#x2F;non-free&#x2F;d&#x2F;deepin-wine&#x2F;deepin-wine32_2.18-22~rc0_i386.deb
-sudo wget http:&#x2F;&#x2F;packages.deepin.com&#x2F;deepin&#x2F;pool&#x2F;non-free&#x2F;d&#x2F;deepin-wine&#x2F;deepin-wine32-preloader_2.18-22~rc0_i386.deb
-sudo wget http:&#x2F;&#x2F;packages.deepin.com&#x2F;deepin&#x2F;pool&#x2F;non-free&#x2F;d&#x2F;deepin-wine-helper&#x2F;deepin-wine-helper_1.2deepin8_i386.deb
-sudo wget http:&#x2F;&#x2F;packages.deepin.com&#x2F;deepin&#x2F;pool&#x2F;non-free&#x2F;d&#x2F;deepin-wine-plugin&#x2F;deepin-wine-plugin_1.0deepin2_amd64.deb
-sudo wget http:&#x2F;&#x2F;packages.deepin.com&#x2F;deepin&#x2F;pool&#x2F;non-free&#x2F;d&#x2F;deepin-wine-plugin-virtual&#x2F;deepin-wine-plugin-virtual_1.0deepin3_all.deb
-sudo wget http:&#x2F;&#x2F;packages.deepin.com&#x2F;deepin&#x2F;pool&#x2F;non-free&#x2F;d&#x2F;deepin-wine-uninstaller&#x2F;deepin-wine-uninstaller_0.1deepin2_i386.deb
-sudo wget http:&#x2F;&#x2F;packages.deepin.com&#x2F;deepin&#x2F;pool&#x2F;non-free&#x2F;u&#x2F;udis86&#x2F;udis86_1.72-2_i386.deb
-sudo wget http:&#x2F;&#x2F;packages.deepin.com&#x2F;deepin&#x2F;pool&#x2F;non-free&#x2F;d&#x2F;deepin-wine&#x2F;deepin-fonts-wine_2.18-22~rc0_all.deb
-sudo wget http:&#x2F;&#x2F;packages.deepin.com&#x2F;deepin&#x2F;pool&#x2F;non-free&#x2F;d&#x2F;deepin-wine&#x2F;deepin-libwine_2.18-22~rc0_i386.deb
-sudo wget https:&#x2F;&#x2F;packages.deepin.com&#x2F;deepin&#x2F;pool&#x2F;main&#x2F;libj&#x2F;libjpeg-turbo&#x2F;libjpeg62-turbo_1.5.1-2_amd64.deb --no-check-certificate
-sudo wget https:&#x2F;&#x2F;packages.deepin.com&#x2F;deepin&#x2F;pool&#x2F;main&#x2F;libj&#x2F;libjpeg-turbo&#x2F;libjpeg62-turbo_1.5.1-2_i386.deb --no-check-certificate
- 
-echo &#39;准备添加32位支持&#39;
-sudo dpkg --add-architecture i386
-echo &#39;添加成功，准备刷新apt缓存信息...&#39;
-sudo apt update
-echo &#39;即将开始安装...&#39;
-sudo dpkg -i *.deb
-echo &#39;安装完成，正在自动安装依赖...&#39;
-sudo apt install -fy
-echo &#39;删除上面已经安装的deb文件&#39;
-rm -vfr .&#x2F;deepintemp</code></pre></div></figure>
+<h2 id="6-微信安装"><a href="#6-微信安装" class="headerlink" title="6. 微信安装"></a>6. 微信安装</h2><h3 id="1-下载安装deepin-wine用于启动微信"><a href="#1-下载安装deepin-wine用于启动微信" class="headerlink" title="1. 下载安装deepin-wine用于启动微信"></a>1. 下载安装deepin-wine用于启动微信</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> deepintemp<br><span class="hljs-built_in">cd</span> deepintemp<br>sudo wget http://packages.deepin.com/deepin/pool/non-free/d/deepin-wine/deepin-wine_2.18-22~rc0_all.deb<br>sudo wget http://packages.deepin.com/deepin/pool/non-free/d/deepin-wine/deepin-wine32_2.18-22~rc0_i386.deb<br>sudo wget http://packages.deepin.com/deepin/pool/non-free/d/deepin-wine/deepin-wine32-preloader_2.18-22~rc0_i386.deb<br>sudo wget http://packages.deepin.com/deepin/pool/non-free/d/deepin-wine-helper/deepin-wine-helper_1.2deepin8_i386.deb<br>sudo wget http://packages.deepin.com/deepin/pool/non-free/d/deepin-wine-plugin/deepin-wine-plugin_1.0deepin2_amd64.deb<br>sudo wget http://packages.deepin.com/deepin/pool/non-free/d/deepin-wine-plugin-virtual/deepin-wine-plugin-virtual_1.0deepin3_all.deb<br>sudo wget http://packages.deepin.com/deepin/pool/non-free/d/deepin-wine-uninstaller/deepin-wine-uninstaller_0.1deepin2_i386.deb<br>sudo wget http://packages.deepin.com/deepin/pool/non-free/u/udis86/udis86_1.72-2_i386.deb<br>sudo wget http://packages.deepin.com/deepin/pool/non-free/d/deepin-wine/deepin-fonts-wine_2.18-22~rc0_all.deb<br>sudo wget http://packages.deepin.com/deepin/pool/non-free/d/deepin-wine/deepin-libwine_2.18-22~rc0_i386.deb<br>sudo wget https://packages.deepin.com/deepin/pool/main/libj/libjpeg-turbo/libjpeg62-turbo_1.5.1-2_amd64.deb --no-check-certificate<br>sudo wget https://packages.deepin.com/deepin/pool/main/libj/libjpeg-turbo/libjpeg62-turbo_1.5.1-2_i386.deb --no-check-certificate<br> <br><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;准备添加32位支持&#x27;</span><br>sudo dpkg --add-architecture i386<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;添加成功，准备刷新apt缓存信息...&#x27;</span><br>sudo apt update<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;即将开始安装...&#x27;</span><br>sudo dpkg -i *.deb<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;安装完成，正在自动安装依赖...&#x27;</span><br>sudo apt install -fy<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;删除上面已经安装的deb文件&#x27;</span><br><span class="hljs-built_in">rm</span> -vfr ./deepintemp<br></code></pre></td></tr></table></figure>
 
 <h3 id="2-下载安装微信deb"><a href="#2-下载安装微信deb" class="headerlink" title="2. 下载安装微信deb"></a>2. 下载安装微信deb</h3><p>下载地址：</p>
 <p><a target="_blank" rel="noopener" href="http://packages.deepin.com/deepin/pool/non-free/d/deepin.com.wechat/">http://packages.deepin.com/deepin/pool/non-free/d/deepin.com.wechat/</a></p>
 <p>我下载的版本是：<code>deepin.com.wechat_2.6.8.65deepin0_i386.deb </code>最新版本</p>
 <p>确保上面的deepin-wine安装正常之后，就可以执行微信的安装：</p>
-<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo dpkg -i deepin.com.wechat_2.6.8.65deepin0_i386.deb</code></pre></div></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo dpkg -i deepin.com.wechat_2.6.8.65deepin0_i386.deb<br></code></pre></td></tr></table></figure>
 
 <p>至此，ubuntu 20.04 下的微信安装就完成。</p>
-<h3 id="3-中文字符一条黑杠的乱码现象"><a href="#3-中文字符一条黑杠的乱码现象" class="headerlink" title="3. 中文字符一条黑杠的乱码现象"></a>3. 中文字符一条黑杠的乱码现象</h3><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 字体大小，因为wine对HiDPI不会默认适配dpi值。解决方案:
-WINEPREFIX&#x3D;~&#x2F;.deepinwine&#x2F;Deepin-WeChat deepin-wine winecfg
-# 打开wine设置页面，在显示选项卡中调整屏幕分辨率的dpi值即可。比如想实现win 10的150% DPI只需要将96改到144即可，125%放大则对应120。手工调整下合适的DPI就可以了
-</code></pre></div></figure>
+<h3 id="3-中文字符一条黑杠的乱码现象"><a href="#3-中文字符一条黑杠的乱码现象" class="headerlink" title="3. 中文字符一条黑杠的乱码现象"></a>3. 中文字符一条黑杠的乱码现象</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 字体大小，因为wine对HiDPI不会默认适配dpi值。解决方案:</span><br>WINEPREFIX=~/.deepinwine/Deepin-WeChat deepin-wine winecfg<br><span class="hljs-comment"># 打开wine设置页面，在显示选项卡中调整屏幕分辨率的dpi值即可。比如想实现win 10的150% DPI只需要将96改到144即可，125%放大则对应120。手工调整下合适的DPI就可以了</span><br><br></code></pre></td></tr></table></figure>
 
-<h3 id="4-中文乱码"><a href="#4-中文乱码" class="headerlink" title="4. 中文乱码"></a>4. 中文乱码</h3><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 对于中文乱码是空格的情况，安装中文字体解决
-sudo apt-get install fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming</code></pre></div></figure>
+<h3 id="4-中文乱码"><a href="#4-中文乱码" class="headerlink" title="4. 中文乱码"></a>4. 中文乱码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 对于中文乱码是空格的情况，安装中文字体解决</span><br>sudo apt-get install fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming<br></code></pre></td></tr></table></figure>
 
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010381752/article/details/114012432">https://blog.csdn.net/u010381752/article/details/114012432</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/impw/p/13734169.html">https://www.cnblogs.com/impw/p/13734169.html</a></p>
@@ -680,12 +628,6 @@ sudo apt-get install fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-
   });
 </script>
 
-
-  <script  src="https://lib.baomitu.com/prism/1.29.0/components/prism-core.min.js" ></script>
-
-  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" ></script>
-
-  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
