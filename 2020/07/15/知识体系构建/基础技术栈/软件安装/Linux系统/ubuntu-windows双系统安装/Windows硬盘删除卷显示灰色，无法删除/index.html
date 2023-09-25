@@ -16,16 +16,16 @@
   <meta name="author" content="SLAM">
   <meta name="keywords" content="机器人, robot, SLAM">
   
-    <meta name="description" content="操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 + win10 &#x2F; win11 双系统 修改时间：2021年12月21日   一、windows下切割一个未分配分区给ubuntu右键【计算机】选择【管理】。  此处我的Linux分区我已经清空了，记得备份资料。网上有教程需要【压缩卷】，这是因为他们这块分区太大，需要分出一块来，你如果这块分区已经">
+    <meta name="description" content="操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 + win10 &#x2F; win11 双系统 修改时间：2021年12月21日    📌请务必谨慎操作，删错了，就没了！   1. cmd 打开命令提示符窗口，输入指令   1diskpart    # 打卡一个新的窗口  2. 新窗口输入指令   123456789list diskselect d">
 <meta property="og:type" content="article">
-<meta property="og:title" content="windows&#x2F;ubuntu双系统U盘安装">
-<meta property="og:url" content="https://xrobotspace.github.io/2023/09/20/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ubuntu-windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/windows-ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9FU%E7%9B%98%E5%AE%89%E8%A3%85/index.html">
+<meta property="og:title" content="Windows硬盘删除卷显示灰色，无法删除">
+<meta property="og:url" content="https://xrobotspace.github.io/2020/07/15/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ubuntu-windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/Windows%E7%A1%AC%E7%9B%98%E5%88%A0%E9%99%A4%E5%8D%B7%E6%98%BE%E7%A4%BA%E7%81%B0%E8%89%B2%EF%BC%8C%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4/index.html">
 <meta property="og:site_name" content="XRobotSpace">
-<meta property="og:description" content="操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 + win10 &#x2F; win11 双系统 修改时间：2021年12月21日   一、windows下切割一个未分配分区给ubuntu右键【计算机】选择【管理】。  此处我的Linux分区我已经清空了，记得备份资料。网上有教程需要【压缩卷】，这是因为他们这块分区太大，需要分出一块来，你如果这块分区已经">
+<meta property="og:description" content="操作系统：ubuntu 18.04 &#x2F; 20.04 &#x2F; 22.04 + win10 &#x2F; win11 双系统 修改时间：2021年12月21日    📌请务必谨慎操作，删错了，就没了！   1. cmd 打开命令提示符窗口，输入指令   1diskpart    # 打卡一个新的窗口  2. 新窗口输入指令   123456789list diskselect d">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://xrobotspace.github.io/img/index_img/ubuntu.jpg">
-<meta property="article:published_time" content="2023-09-20T04:44:45.366Z">
-<meta property="article:modified_time" content="2023-09-25T09:30:10.756Z">
+<meta property="article:published_time" content="2020-07-15T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-25T09:40:19.140Z">
 <meta property="article:author" content="SLAM">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="系统安装">
@@ -36,7 +36,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>windows/ubuntu双系统U盘安装 - XRobotSpace</title>
+  <title>Windows硬盘删除卷显示灰色，无法删除 - XRobotSpace</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">windows/ubuntu双系统U盘安装</span>
+            <span id="subtitle">Windows硬盘删除卷显示灰色，无法删除</span>
           
         </div>
 
@@ -218,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          683 words
+          282 words
         
       </span>
     
@@ -229,7 +229,7 @@
         
         
         
-          6 mins
+          3 mins
         
       </span>
     
@@ -266,7 +266,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">windows/ubuntu双系统U盘安装</h1>
+            <h1 id="seo-header">Windows硬盘删除卷显示灰色，无法删除</h1>
             
             
               <div class="markdown-body">
@@ -277,44 +277,15 @@
 <li>修改时间：2021年12月21日</li>
 </ul>
 <hr>
-<h1 id="一、windows下切割一个未分配分区给ubuntu"><a href="#一、windows下切割一个未分配分区给ubuntu" class="headerlink" title="一、windows下切割一个未分配分区给ubuntu"></a><strong>一、windows</strong>下切割一个未分配分区给ubuntu</h1><p>右键【计算机】选择【管理】。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/10.png" srcset="/img/loading.gif" lazyload></p>
-<p>此处我的Linux分区我已经清空了，记得备份资料。网上有教程需要【压缩卷】，这是因为他们这块分区太大，需要分出一块来，你如果这块分区已经可以用于安装ubuntu了，那就没必要再压缩了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/11.png" srcset="/img/loading.gif" lazyload></p>
-<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/12.png" srcset="/img/loading.gif" lazyload></p>
-<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/13.png" srcset="/img/loading.gif" lazyload></p>
-<p>被删除卷的分区在windows设备和驱动器下已经看不到了。</p>
-<p>至此，windows<strong>系统下需要做的准备完成。</strong></p>
-<h1 id="二、ubuntu系统安装"><a href="#二、ubuntu系统安装" class="headerlink" title="二、ubuntu系统安装"></a>二、ubuntu系统安装</h1><p>选择使用U盘启动，进入ubuntu安装界面。</p>
-<ol>
-<li><p>语言选择。</p>
-</li>
-<li><p>输入法选择。</p>
-</li>
-<li><p>wifi连接选择：不连接wifi，在装完系统后再联网更新。</p>
-</li>
-<li><p>更新和其他软件选择【正常安装】。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/14.png" srcset="/img/loading.gif" lazyload></p>
-</li>
-<li><p>安装类型选择【其他选项】，为Ubuntu自定义分区。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/15.png" srcset="/img/loading.gif" lazyload></p>
-</li>
-<li><p>进入自定义ubuntu分区界面，此处可以看到之前在windows中删除的卷，就在这个被删除的卷中安装Ubuntu系统，因为之前删除了卷，因此此处显示空闲。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/16.png" srcset="/img/loading.gif" lazyload></p>
-</li>
-<li><p>选中【空闲】的这个卷，点击下方的“+”号，对这个卷进行分区，具体分区大小可根据自身硬盘大小调整。</p>
-<p>1) 第一步：win10系统，创建【EFI系统分区】，大小为2G。</p>
-<p>2) 第二步：创建【交换空间】，大小为16G。</p>
-<p>3) 第三步：创建挂载点【&#x2F;】，大小为20G。</p>
-<p>4) 第四步：创建挂载点【&#x2F;home】，大小为剩下的所有空间。</p>
-</li>
-<li><p>安装启动引导器的设备。</p>
-<p>上面可以看到设置完成【EFI系统分区】后，系统分区为p7 efi，即为启动引导器所在的分区。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/17.png" srcset="/img/loading.gif" lazyload></p>
-</li>
-<li><p>对分区进行确认后完成安装。</p>
-</li>
-</ol>
+<blockquote>
+<p>📌<strong>请务必谨慎操作，删错了，就没了！</strong></p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/9.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>1. cmd 打开命令提示符窗口，输入指令</strong></p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">diskpart    <span class="hljs-comment"># 打卡一个新的窗口</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>2. 新窗口输入指令</strong></p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">list disk<br><br><span class="hljs-keyword">select</span> disk  [number]     <span class="hljs-comment"># 选择删除卷所在的硬盘号，根据实际情况选择</span><br><br>list partition<br><br><span class="hljs-keyword">select</span> partition  [number]     <span class="hljs-comment"># 选择具体要删除的卷号，根据实际情况选择</span><br><br>delete partition override    <span class="hljs-comment"># 删除，谨慎操作！</span><br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -383,8 +354,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>windows/ubuntu双系统U盘安装</div>
-      <div>https://xrobotspace.github.io/2023/09/20/知识体系构建/基础技术栈/软件安装/Linux系统/ubuntu-windows双系统安装/windows-ubuntu双系统U盘安装/</div>
+      <div>Windows硬盘删除卷显示灰色，无法删除</div>
+      <div>https://xrobotspace.github.io/2020/07/15/知识体系构建/基础技术栈/软件安装/Linux系统/ubuntu-windows双系统安装/Windows硬盘删除卷显示灰色，无法删除/</div>
     </div>
     <div class="license-meta">
       
@@ -396,7 +367,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>September 20, 2023</div>
+          <div>July 15, 2020</div>
         </div>
       
       
@@ -428,9 +399,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/09/20/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ubuntu-windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/ubuntu%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE/" title="ubuntu初始配置">
+                      <a href="/2023/09/23/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ROS%E5%AE%89%E8%A3%85/sudo-rosdep-init%EF%BC%8Crosdep-update%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="sudo rosdep init，rosdep update失败解决方案">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ubuntu初始配置</span>
+                        <span class="hidden-mobile">sudo rosdep init，rosdep update失败解决方案</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -438,8 +409,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/20/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ubuntu-windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/Windows%E7%A1%AC%E7%9B%98%E5%88%A0%E9%99%A4%E5%8D%B7%E6%98%BE%E7%A4%BA%E7%81%B0%E8%89%B2%EF%BC%8C%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4/" title="Windows硬盘删除卷显示灰色，无法删除">
-                        <span class="hidden-mobile">Windows硬盘删除卷显示灰色，无法删除</span>
+                      <a href="/2020/07/15/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Linux%E7%B3%BB%E7%BB%9F/ubuntu-windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/ubuntu%E7%B3%BB%E7%BB%9FU%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%E5%88%B6%E4%BD%9C/" title="ubuntu系统U盘启动盘制作">
+                        <span class="hidden-mobile">ubuntu系统U盘启动盘制作</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
