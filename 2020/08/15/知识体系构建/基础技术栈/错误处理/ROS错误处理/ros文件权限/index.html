@@ -16,16 +16,16 @@
   <meta name="author" content="SLAM">
   <meta name="keywords" content="机器人, robot, SLAM">
   
-    <meta name="description" content="操作系统：ubuntu 18.04 修改时间：2021年12月21日   问题描述： 打开一个软件，窗口上部能看到软件已经打开，但是看不到软件界面。 问题原因： ubuntu 会启动几个终端窗口，软件就显示在实际不存在的终端上。 解决方案： ① 命令 xrandr 查看当前启动的输出终端口。 1xrandr   ② 关掉没有使用的终端 1xrandr --output  [没有使用的终端]">
+    <meta name="description" content="1. 错误 2. 解决方案这个问题是由于该路径下ros文件权限造成的。输入以下命令修改权限： 1sudo chmod 777 -R ~&#x2F;.ros&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu软件启动，不显示软件界面">
-<meta property="og:url" content="https://xrobotspace.github.io/2023/09/24/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ubuntu%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ubuntu%E8%BD%AF%E4%BB%B6%E5%90%AF%E5%8A%A8%EF%BC%8C%E4%B8%8D%E6%98%BE%E7%A4%BA%E8%BD%AF%E4%BB%B6%E7%95%8C%E9%9D%A2/index.html">
+<meta property="og:title" content="ros文件权限">
+<meta property="og:url" content="https://xrobotspace.github.io/2020/08/15/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ROS%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ros%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/index.html">
 <meta property="og:site_name" content="XRobotSpace">
-<meta property="og:description" content="操作系统：ubuntu 18.04 修改时间：2021年12月21日   问题描述： 打开一个软件，窗口上部能看到软件已经打开，但是看不到软件界面。 问题原因： ubuntu 会启动几个终端窗口，软件就显示在实际不存在的终端上。 解决方案： ① 命令 xrandr 查看当前启动的输出终端口。 1xrandr   ② 关掉没有使用的终端 1xrandr --output  [没有使用的终端]">
+<meta property="og:description" content="1. 错误 2. 解决方案这个问题是由于该路径下ros文件权限造成的。输入以下命令修改权限： 1sudo chmod 777 -R ~&#x2F;.ros&#x2F;">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://xrobotspace.github.io/img/index_img/error.jpg">
-<meta property="article:published_time" content="2023-09-23T16:01:16.207Z">
-<meta property="article:modified_time" content="2023-09-25T09:30:47.862Z">
+<meta property="article:published_time" content="2020-08-15T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-25T09:43:14.730Z">
 <meta property="article:author" content="SLAM">
 <meta property="article:tag" content="ROS">
 <meta name="twitter:card" content="summary_large_image">
@@ -35,7 +35,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>ubuntu软件启动，不显示软件界面 - XRobotSpace</title>
+  <title>ros文件权限 - XRobotSpace</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -201,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">ubuntu软件启动，不显示软件界面</span>
+            <span id="subtitle">ros文件权限</span>
           
         </div>
 
@@ -217,7 +217,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          178 words
+          65 words
         
       </span>
     
@@ -228,7 +228,7 @@
         
         
         
-          2 mins
+          1 mins
         
       </span>
     
@@ -265,25 +265,14 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">ubuntu软件启动，不显示软件界面</h1>
+            <h1 id="seo-header">ros文件权限</h1>
             
             
               <div class="markdown-body">
                 
-                <hr>
-<ul>
-<li>操作系统：ubuntu 18.04</li>
-<li>修改时间：2021年12月21日</li>
-</ul>
-<hr>
-<p><strong>问题描述：</strong> 打开一个软件，窗口上部能看到软件已经打开，但是看不到软件界面。</p>
-<p><strong>问题原因：</strong> ubuntu 会启动几个终端窗口，软件就显示在实际不存在的终端上。</p>
-<p><strong>解决方案：</strong></p>
-<p>① 命令 xrandr 查看当前启动的输出终端口。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">xrandr <br></code></pre></td></tr></table></figure>
-
-<p>② 关掉没有使用的终端</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">xrandr --output  [没有使用的终端]  --off<br></code></pre></td></tr></table></figure>
+                <h2 id="1-错误"><a href="#1-错误" class="headerlink" title="1. 错误"></a>1. 错误</h2><p><img src="https://cdn.jsdelivr.net/gh/XRobotSpace/resources/images/40.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="2-解决方案"><a href="#2-解决方案" class="headerlink" title="2. 解决方案"></a>2. 解决方案</h2><p>这个问题是由于该路径下ros文件权限造成的。输入以下命令修改权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">chmod</span> 777 -R ~/.ros/<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -312,7 +301,7 @@
   
     <span>></span>
     
-  <a href="/categories/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ubuntu%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" class="category-chain-item">ubuntu错误处理</a>
+  <a href="/categories/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ROS%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" class="category-chain-item">ROS错误处理</a>
   
   
 
@@ -343,8 +332,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>ubuntu软件启动，不显示软件界面</div>
-      <div>https://xrobotspace.github.io/2023/09/24/知识体系构建/基础技术栈/错误处理/ubuntu错误处理/ubuntu软件启动，不显示软件界面/</div>
+      <div>ros文件权限</div>
+      <div>https://xrobotspace.github.io/2020/08/15/知识体系构建/基础技术栈/错误处理/ROS错误处理/ros文件权限/</div>
     </div>
     <div class="license-meta">
       
@@ -356,7 +345,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>September 24, 2023</div>
+          <div>August 15, 2020</div>
         </div>
       
       
@@ -388,9 +377,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/09/24/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ubuntu%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/tab%E9%94%AE%E8%A1%A5%E5%85%A8%E6%8C%87%E4%BB%A4.gvfs%E9%94%99%E8%AF%AF/" title="tab键补全指令.gvfs错误">
+                      <a href="/2020/08/15/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ROS%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/gazebo%20Error%20in%20REST%20request%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" title="gazebo Error in REST request 错误处理">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">tab键补全指令.gvfs错误</span>
+                        <span class="hidden-mobile">gazebo Error in REST request 错误处理</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -398,8 +387,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/23/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/Linux%E7%B3%BB%E7%BB%9F/Linux%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4/" title="Linux常用软件版本查看命令">
-                        <span class="hidden-mobile">Linux常用软件版本查看命令</span>
+                      <a href="/2020/08/15/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%9E%84%E5%BB%BA/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF%E6%A0%88/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/ubuntu%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/tab%E9%94%AE%E8%A1%A5%E5%85%A8%E6%8C%87%E4%BB%A4.gvfs%E9%94%99%E8%AF%AF/" title="tab键补全指令.gvfs错误">
+                        <span class="hidden-mobile">tab键补全指令.gvfs错误</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
